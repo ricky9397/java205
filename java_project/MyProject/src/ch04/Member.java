@@ -39,17 +39,23 @@ public class Member {
 //		m.checkup(1988);
 //		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("1)독감예방접종 2)건강검진");
+		System.out.println("1)독감예방접종 2)건강검진 3)종료");
 		int y = sc.nextInt();
-		switch(y) {
-		case 1:
-			System.out.println("태어난 년도를 입력해주세요.");
-			m.influenza(sc.nextInt());
-			break;
-		case 2:
-			System.out.println("대한민국 성인(20세)의 경우 무료로 2년마다 건강검진을 받을 수 있습니다.");
-			System.out.println("태어난 년도를 입력해주세요.");
-			m.checkup(sc.nextInt());
+		while(true) {
+			switch(y) {
+			case 1:
+				System.out.println("태어난 년도를 입력해주세요.");
+				m.influenza(sc.nextInt());
+				break;
+			case 2:
+				System.out.println("대한민국 성인(20세)의 경우 무료로 2년마다 건강검진을 받을 수 있습니다.");
+				System.out.println("태어난 년도를 입력해주세요.");
+				m.checkup(sc.nextInt());
+				break;
+			case 3:
+				System.out.println("프로그램을 종료합니다.");
+				System.exit(3);
+			}
 		}
 	}
 }
