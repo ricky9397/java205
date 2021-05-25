@@ -34,6 +34,10 @@ public class Member {
 				major + " 학년:" + grade + " 메일:" + email + " 생일:" + birthday
 				+ " 주소:" + address;
 	}
+	public String toStirngs() {
+		return "이름:"+studentName + " 전화번호:" + phonNumber + " 전공:" + 
+				major + " 학년:" + grade + " 메일:" + email;
+	}
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -70,7 +74,7 @@ public class Member {
 		Member m2 = new Member(name1, phonNumber1, major1, grade1, email1);
 		
 		System.out.println(m1.toString());
-		System.out.println(m2.toString());
+		System.out.println(m2.toStirngs());
 		
 	}
 }
