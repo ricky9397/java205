@@ -32,10 +32,7 @@ public class Member {
 	
 	public static void main(String[] args) {
 		Member m = new Member();
-//		m.influenza(2008);
-//		System.out.println();
-//		m.checkup(1988);
-//		
+
 		Scanner sc = new Scanner(System.in);
 		System.out.println("1)독감예방접종 2)건강검진 3)종료");
 		int y = sc.nextInt();
