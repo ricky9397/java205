@@ -9,7 +9,7 @@ public class Member {
 	void influenza(int age) {
 		this.age = year - age+1;
 		System.out.println("나이는 : " + this.age +"세");
-		if(this.age >= 15 && this.age <= 65) {
+		if(this.age < 15 || this.age >= 65) {
 			System.out.println("무료예방접종이 가능합니다.");
 		} else {
 			System.out.println("무료접종 대상이 아닙니다.");
