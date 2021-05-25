@@ -24,6 +24,7 @@ public class Person {
 		System.out.println("이름 : " + person.name);
 		person.name = "손흥민";
 		person.showData();
+		
 	}
 	
 }
