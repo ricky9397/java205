@@ -18,3 +18,4 @@ public class Person {
 		System.out.println(p.rsdntRgnmb);
 	}
 }
+

@@ -1,5 +1,6 @@
 package ch01;
 
+// ch01.Member
 public class Member {
 
 	public static void main(String[] args) {
