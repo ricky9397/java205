@@ -54,6 +54,7 @@ public class Member {
 				break;
 			case 3:
 				System.out.println("프로그램을 종료합니다.");
+				sc.close();
 				System.exit(3);
 			}
 		}
