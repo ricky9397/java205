@@ -8,8 +8,7 @@ public class Member {
 	
 	void influenza(int age) {
 		this.age = year - age+1;
-//		System.out.println("태어난 년도는 : " + age +"년");
-//		System.out.println("나이는 : " + this.age +"세");
+		System.out.println("나이는 : " + this.age +"세");
 		if(this.age >= 15 && this.age <= 65) {
 			System.out.println("무료예방접종이 가능합니다.");
 		} else {
@@ -19,8 +18,7 @@ public class Member {
 	
 	void checkup(int age) {
 		this.age = year - age+1;
-//		System.out.println("태어난 년도는 : " + age +"년");
-//		System.out.println("나이는 : " + this.age +"세");
+		System.out.println("나이는 : " + this.age +"세");
 			if(this.age >= 20 && this.age %2 == 0) {
 				System.out.println("올해 무료 검강검진 대상자 입니다.");
 				if(this.age >= 40) {
