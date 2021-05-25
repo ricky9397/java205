@@ -6,26 +6,48 @@ public class Average {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int kor, en, math;
+		int kor = 0, en = 0, math = 0;
 		int total;
 		float age;
-		String[] name = new String[10];
-		
+		int sum = 0;
+		int max = 0;
+		int min = 0;
 		System.out.println("학생수를 입력하세요.");
 		int input = sc.nextInt();
-		int[][] arr = new int[input][3];
-		for(int i = 0; i < input; i++) {
+		String[] name = new String[input];
+		int[][] score = new int[input][3];
+		for(int i = 0; i < score.length; i++) {
 			System.out.println("이름을 입력하세요.");
 			name[i] = sc.next();
-			for(int j = 0; j < input; j++)
-				System.out.println("국어점수를 입력하세요.");
-				kor = sc.nextInt();
-				System.out.println("영어점수를 입력하세요.");
-				en = sc.nextInt();
-				System.out.println("수학점술르 입력하세요.");
-				math = sc.nextInt();
+			System.out.println("국어점수를 입력하세요.");
+			score[i][0] = sc.nextInt();
+			System.out.println("영어점수를 입력하세요.");
+			score[i][1] = sc.nextInt();
+			System.out.println("수학점수를 입력하세요.");
+			score[i][2] = sc.nextInt();
 			
-			
+			kor += score[i][0];
+			en += score[i][1];
+			math += score[i][2];
+			sum = kor + en + math;
+		}
+		System.out.println("================");
+		System.out.println("[이름] [국어] [영어] [수학]");
+		for(int i = 0;i < score.length; i++) {
+			System.out.print(name[i]+"     ");
+            for(int j = 0;j < score[i].length; j++){
+                System.out.print(+score[i][j] + "    ");
+            }
+            System.out.println();
+        }
+		for(int k = 0; k < score.length; k++) {
+			for(int e = 0; e < score[k].length; e++) {
+				if(score[k][0] > max) {
+					max = score[k][0];
+				} else if(score[k][2] < max) {
+					min = score[k][2];
+				}
+			}
 		}
 	}
 
