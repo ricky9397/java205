@@ -47,7 +47,7 @@ public class Member2 {
 	}
 	
 	public static void main(String[] args) {
-
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("태어난 년도를 입력해주세요.");
 		int birthYear = sc.nextInt();
