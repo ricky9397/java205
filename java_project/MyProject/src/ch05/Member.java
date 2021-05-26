@@ -1,7 +1,5 @@
 package ch05;
 
-import java.util.Scanner;
-
 public class Member {
 	String studentName;
 	String phonNumber;
@@ -34,47 +32,14 @@ public class Member {
 				major + " 학년:" + grade + " 메일:" + email + " 생일:" + birthday
 				+ " 주소:" + address;
 	}
-	public String toStirngs() {
-		return "이름:"+studentName + " 전화번호:" + phonNumber + " 전공:" + 
-				major + " 학년:" + grade + " 메일:" + email;
-	}
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("이름을 입력해주세요.");
-		String name = sc.next();
-		System.out.println("전화번호를 입력해주세요.");
-		String phonNumber = sc.next();
-		System.out.println("전공을 입력해주세요.");
-		String major = sc.next();
-		System.out.println("학년을 입력해주세요.");
-		int grade = sc.nextInt();
-		System.out.println("이메일을 입력해주세요.");
-		String email = sc.next();
-		System.out.println("생일을 입력해주세요.");
-		int birthday = sc.nextInt();
-		System.out.println("주소를 입력해주세요.");
-		String address = sc.next();
-		
-		Member m1 = new Member(name, phonNumber, major, grade, email, birthday, address);
-		
-		
-		System.out.println("이름을 입력해주세요.");
-		String name1 = sc.next();
-		System.out.println("전화번호를 입력해주세요.");
-		String phonNumber1 = sc.next();
-		System.out.println("전공을 입력해주세요.");
-		String major1 = sc.next();
-		System.out.println("학년을 입력해주세요.");
-		int grade1 = sc.nextInt();
-		System.out.println("이메일을 입력해주세요.");
-		String email1 = sc.next();
-		
-		Member m2 = new Member(name1, phonNumber1, major1, grade1, email1);
+
+		Member m1 = new Member("홍길동", "010-1234-1234", "컴공", 1, "asdadsad@asdasd.net", 880630, "서대문구");
+		Member m2 = new Member("이순신", "123-1234-1234", "문과", 2, "asd@asd.com");
 		
 		System.out.println(m1.toString());
-		System.out.println(m2.toStirngs());
+		System.out.println(m2.toString());
 		
 	}
 }
