@@ -3,7 +3,6 @@ package ch04;
 import java.util.Calendar;
 import java.util.Scanner;
 
-// 4번문제 선생님 풀이
 public class Member2 {
 	void vaccinCheck(int birthYear) {
 		
