@@ -69,7 +69,17 @@ public class Student {
 				change();
 				break;
 			case 3:
-				allSection();
+				allSelect();
+				break;
+			case 4:
+				delete();
+				break;
+			case 5:
+				System.out.println("프로그램을 종료합니다.");
+				sc.close();
+				System.exit(5);
+			default:
+				System.out.println("잘못입력하셧습니다. 다시입력해주세요.");
 				break;
 			} //switch end
 		} //while end
@@ -159,8 +169,52 @@ public class Student {
 		}
 	}
 	
-	void allSection() {
-		
+	void allSelect() throws InterruptedException {
+		while(true) {
+			for(int i = 0; i < student.size(); i++) {
+				System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+				System.out.println("이름 : " + student.get(i).getStudentName());
+				System.out.println("전화번호 : " + student.get(i).getPhonNumber());
+				System.out.println("전공 : " + student.get(i).getMajor());
+				System.out.println("학년 : " + student.get(i).getGrade());
+				System.out.println("이메일 : " + student.get(i).getEmail());
+				System.out.println("생일 : " + student.get(i).getBirthday());
+				System.out.println("주소 : " + student.get(i).getAddress());
+			}
+			System.out.println("초기 메뉴 이동:[z] \t 프로그램종료:[0]");
+			String input = sc.next();
+			if(input.equalsIgnoreCase("z")) {
+				break;
+			} else if (input.equalsIgnoreCase("0")) {
+				System.out.println("프로그램을 종료합니다.");
+				Thread.sleep(1000);
+				System.exit(0);
+			} else {
+				System.out.println("잘못 누르셧습니다. 초기화면으로 이동");
+				break;
+			}
+		}
+	}
+	
+	void delete() {
+		while(true) {
+			System.out.println("삭제할 이름을 입력해주세요.");
+			String input = sc.next();
+			int cnt = 0;
+			for (int i = 0; i < student.size(); i++) {
+				if(input.equals(student.get(i).getStudentName())) {
+					student.remove(i);
+					cnt++;
+					System.out.println("삭제 완료");
+					break;
+				}
+			}
+			if(cnt == 0) {
+				System.out.println("존재하지 않는 이름입니다. 다시입력해주세요.");
+			} else {
+				break;
+			}
+		}
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
