@@ -61,7 +61,7 @@ public class Average {
 					for(int e = 0; e < score[k].length; e++) {
 						if(score[k][0] > max) {
 							max = score[k][0];
-						} else if(score[k][2] < max) {
+						} else if(score[k][2] > min) {
 							min = score[k][2];
 						}
 					}
