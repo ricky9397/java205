@@ -68,6 +68,9 @@ public class Student {
 			case 2:
 				change();
 				break;
+			case 3:
+				allSection();
+				break;
 			} //switch end
 		} //while end
 	} // 메소드 끝
@@ -154,6 +157,10 @@ public class Student {
 				break;
 			}
 		}
+	}
+	
+	void allSection() {
+		
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
