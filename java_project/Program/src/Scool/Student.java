@@ -1,4 +1,4 @@
-package ch05;
+ package Scool;
 
 import java.util.*;
 

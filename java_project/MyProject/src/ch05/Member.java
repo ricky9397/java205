@@ -27,10 +27,10 @@ public class Member {
 		this.email = email;
 	}
 	
-	public String toString() {
-		return "이름:"+studentName + " 전화번호:" + phonNumber + " 전공:" + 
+	public void showInfo() {
+		System.out.println("이름:"+studentName + " 전화번호:" + phonNumber + " 전공:" + 
 				major + " 학년:" + grade + " 메일:" + email + " 생일:" + birthday
-				+ " 주소:" + address;
+				+ " 주소:" + address);
 	}
 	
 	public static void main(String[] args) {
@@ -38,8 +38,8 @@ public class Member {
 		Member m1 = new Member("홍길동", "010-1234-1234", "컴공", 1, "asdadsad@asdasd.net", 880630, "서대문구");
 		Member m2 = new Member("이순신", "123-1234-1234", "문과", 2, "asd@asd.com");
 		
-		System.out.println(m1.toString());
-		System.out.println(m2.toString());
+		m1.showInfo();
+		m2.showInfo();
 		
 	}
 }
