@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Student {
 	private String name;
 	private int kor, en, math;
-	int total;
-	float avg;
+	private int total;
+	private float avg;
 	
 	public String getName() {
 		return name;
@@ -34,11 +34,17 @@ public class Student {
 		this.math = math;
 	}
 	
-	public void totalScore() {
-		total = kor + en + math;
+	public int getTotal() {
+		return total = kor + en + math;
 	}
-	public void average() {
-		avg = total / 3.0f;
+	public void setTotal(int total) {
+		this.total = total;
+	}
+	public float getAvg() {
+		return avg = total / 3.0f;
+	}
+	public void setAvg(float avg) {
+		this.avg = avg;
 	}
 	
 	public static void main(String[] args) {
@@ -61,16 +67,14 @@ public class Student {
 			st[i].setKor(kor);
 			st[i].setEn(en);
 			st[i].setMath(math);
-			st[i].totalScore();
-			st[i].average();
-			
+
 		}
-		
+
+		System.out.println("학생인원:" + input + "명");
 		for(Student s : st) {
-			System.out.println("학생인원:" + input);
 			System.out.println(" 학생이름:" + s.getName() + " 국어점수:" + s.getKor() + 
 					" 영어점수:" + s.getEn() + " 수학점수" + s.getMath());
-			System.out.println("총점수 : " + s.total + "평균 : " + s.avg + "\n");
+			System.out.println("총점수 :" + s.getTotal() + " 평균 : "+ s.getAvg());
 		}
 	}
 }
