@@ -16,6 +16,7 @@ public class Student2Main {
 		students[1] = new Student2("홍길동2", 70, 40, 76);
 		students[2] = new Student2("홍길동3", 80, 56, 56);
 		students[3] = new Student2("홍길동4", 60, 40, 89);
+		students[4] = new Student2("홍길동5", 70, 77, 75);
 		students[5] = new Student2("홍길동6", 88, 88, 66);
 		students[6] = new Student2("홍길동7", 77, 40, 55);
 		students[7] = new Student2("홍길동8", 86, 55, 43);
