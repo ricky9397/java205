@@ -43,36 +43,29 @@ public class Baseball {
 			}
 			for(int i=0; i<3; i++){
 				for(int j=0; j<3; j++){
-				if(arr[i] == arr[j]){
-					if(i == j)  {
-						strike++;
-				}else  ball++;
+					if(arr[i] == arr[j]){
+						if(i == j)  {
+							strike++;
+						}else  
+							ball++;
 					}
 				}
 			}
 			
 			if(strike==3) {
-				System.out.println("you win"); 
+				System.out.println("홈런"); 
 				break; 
 				}
 			flag--;
 			if(flag==0) {
 				System.out.println("you lose");
 			break;
-		}
+			}
 			else { //아닌경우 스트라이크, 볼 횟수, 도전 기회 출력
 				System.out.println("strike: " + strike + "\t ball : "+ ball);
 				System.out.println(flag+"번 남았음");
 			}
-		}
+		} // whlie end
 	}
 			
-//			for(int i=0; i<3; i++) {
-//				arr[i] = sc.nextInt();
-//				if(arr[0] == strike) {
-//					System.out.println("strike");
-//				}
-//			}
-	
-
 }
