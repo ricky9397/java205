@@ -2,7 +2,7 @@ package project01;
 
 import java.util.Scanner;
 
-public class Profile {
+public class Contact {
 	Scanner sc = new Scanner(System.in);
 	private String name;
 	private String phon;
@@ -11,7 +11,7 @@ public class Profile {
 	private String birth;
 	private String group;
 	
-	public Profile() {}
+	public Contact() {}
 	
 	public String getName() {
 		return name;
@@ -87,7 +87,7 @@ public class Profile {
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Profile p = new Profile();
+		Contact p = new Contact();
 		while(true) {
 			System.out.println("[1]회원가입 [2]회원정보 변경 [3]회원정보출력 [4]프로그램종료");
 			int input = sc.nextInt();
