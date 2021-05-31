@@ -21,13 +21,14 @@ public class ContactMain {
 				smart.showData();
 				break;
 			case 4:
+				smart.delete();
 				break;
 			case 5:
 				break;
 			case 6:
 				System.out.println("프로그램을 종료합니다.");
 				sc.close();
-				System.exit(3);
+				System.exit(6);
 			default:
 				System.out.println("잘못입력하셨습니다.");
 				break;

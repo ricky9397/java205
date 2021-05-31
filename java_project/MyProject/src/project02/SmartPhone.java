@@ -21,9 +21,11 @@ public class SmartPhone {
 		cont.setBirth(sc.next());
 		System.out.println("그룹을 입력하세요.");
 		cont.setGroup(sc.next());
+		
 		co[cnt] = cont;
 		cnt++;
 		System.out.println("회원가입 되셨습니다.");
+		
 	}
 	
 	public void allShowData() {
@@ -53,7 +55,20 @@ public class SmartPhone {
 				System.out.println("그      룹 : " + co[i].getGroup());
 				break;
 			}
-		} 
+		}
+	}
+	
+	public void delete() {
+		System.out.println("삭제할 이름을 입력하시오.");
+		String name = sc.next();
+		for(int i = 0; i < cnt; i++) {
+			if(name.equals(co[i].getName())) {
+				for(int j = i; j <= cnt-1; j++) {
+					co[j] = co[j+1];
+					cnt--;
+				}
+			}
+		}
 	}
 	
 }
