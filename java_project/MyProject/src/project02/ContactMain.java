@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ContactMain {
 
 	public static void main(String[] args) {
-		SmartPhone smart = new SmartPhone(10);
+		SmartPhone smart = new SmartPhone();
 		Scanner sc = new Scanner(System.in);
 		while(true) {
 			System.out.println("[1]회원가입 [2]모든회원정보출력 [3]회원정보검색 [4]회원삭제 [5]회원정보수정 [6]프로그램종료");
@@ -21,6 +21,9 @@ public class ContactMain {
 				smart.showData();
 				break;
 			case 4:
+				break;
+			case 5:
+				break;
 			case 6:
 				System.out.println("프로그램을 종료합니다.");
 				sc.close();

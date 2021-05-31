@@ -67,7 +67,7 @@ public class Student {
 			st[i].setKor(kor);
 			st[i].setEn(en);
 			st[i].setMath(math);
-
+			
 		}
 
 		System.out.println("학생인원:" + input + "명");

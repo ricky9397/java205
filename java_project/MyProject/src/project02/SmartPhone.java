@@ -4,40 +4,35 @@ import java.util.Scanner;
 
 public class SmartPhone {
 	Scanner sc = new Scanner(System.in);
-	Contact[] contact;
+	Contact[] co = new Contact[10];
 	int cnt; 
 	
-	public SmartPhone(int num) {
-		this.contact = new Contact[num];
-		this.cnt = 0;
-	}
-	
 	public void addJoinMembership() {
-
-		
-		System.out.println("이름 입력 >> ");
-		String name = sc.next();
+		Contact cont = new Contact();
+		System.out.println("이름 입력 입력해주세요. ");
+		cont.setName(sc.next());
 		System.out.println("전화번호를 입력해주세요.");
-		String phon = sc.next();
+		cont.setPhon(sc.next());
 		System.out.println("이메일을 입력해주세요.");
-		String email = sc.next();
+		cont.setEmail(sc.next());
 		System.out.println("주소를 입력해주세요.");
-		String address = sc.next();
+		cont.setAddress(sc.next());
 		System.out.println("생일을 입력해주세요.");
-		String birth = sc.next();
+		cont.setBirth(sc.next());
 		System.out.println("그룹을 입력하세요.");
-		String group = sc.next();
-		
-		Contact con = new Contact(name, phon, email, address, birth, group);
-		contact[cnt++] = con;
+		cont.setGroup(sc.next());
+		co[cnt] = cont;
+		cnt++;
+		System.out.println("회원가입 되셨습니다.");
 	}
 	
 	public void allShowData() {
 		System.out.println("모든 정보를 출력합니다.");
 		System.out.println("=========================");
 		if(cnt > 0) {
-			for(int i = 0; i < contact.length; i++) {
-				contact[i].showInfo();
+			for(int i = 0; i < cnt; i++) {
+				co[i].showInfo();
+				System.out.println("============================");
 			}
 		} else {
 			System.out.println("입력된 정보가 없습니다.");
@@ -48,15 +43,17 @@ public class SmartPhone {
 	public void showData() {
 		System.out.println("회원이름을 검색하세요.");
 		String tmp = sc.next();
-		if(cnt > 0) {
-			for(int i = 0; i < contact.length; i++) {
-				if(tmp.equals(contact[i])) {
-					contact[i].showInfo();
-				} else {
-					System.out.println("존재하지 않는 이름입니다.");
-				}
+		for(int i = 0; i <= cnt; i++) {
+			if(tmp.equals(co[i].getName())) {
+				System.out.println("이      름 : " + co[i].getName());
+				System.out.println("전화번호 : " + co[i].getPhon());
+				System.out.println("이 메 일  : " + co[i].getEmail());
+				System.out.println("주      소 : " + co[i].getAddress());
+				System.out.println("생      일 : " + co[i].getBirth());
+				System.out.println("그      룹 : " + co[i].getGroup());
+				break;
 			}
-		}
+		} 
 	}
 	
 }
