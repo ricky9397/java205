@@ -1,7 +1,5 @@
 package ch11;
 
-import java.util.Objects;
-
 public class FootballPlayer {
 	String name;
 	int number;
