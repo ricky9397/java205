@@ -1,6 +1,8 @@
 package ch11;
 
-public class FootballPlayer {
+import java.util.Comparator;
+
+public class FootballPlayer implements Comparable<FootballPlayer>{
 	String name;
 	int number;
 	String team;
@@ -12,38 +14,48 @@ public class FootballPlayer {
 		this.team = team;
 		this.age = age;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + age;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + number;
+		result = prime * result + ((team == null) ? 0 : team.hashCode());
 		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		FootballPlayer other = (FootballPlayer) obj;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (number != other.number)
-			return false;
-		return true;
+		
+		boolean result = false;
+		if(obj != null && obj instanceof FootballPlayer) {
+			FootballPlayer f = (FootballPlayer)obj;
+			if(this.name == f.name && this.team == f.team && this.age == f.age) {
+				result = true;
+			}
+		}
+		return result;
+	}
+	
+	@Override
+	public String toString() {
+		return "FootballPlayer [이름=" + name + ", 번호=" + number + ", 팀이름=" + team + ", 나이=" + age + "]";
 	}
 
 	@Override
-	public String toString() {
-		return "FootballPlayer [name=" + name + ", number=" + number + ", team=" + team + ", age=" + age + "]";
+	public int compareTo(FootballPlayer o) {
+		if(this.team.compareTo(o.team) > 0) {
+			return 1;
+		} else if (this.team.compareTo(o.team) < 0) {
+			return -1;
+		} else {
+			if(this.name.compareTo(o.name) > 0) {
+				return 1;
+			} else if (this.name.compareTo(o.name) < 0) {
+			}
+			return 1;
+		}
 	}
-	
+
 }
