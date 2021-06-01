@@ -10,15 +10,17 @@ public class FootballTwo {
 		
 		arr.add(new FootballPlayer("이동국", 1, "전북", 43));
 		arr.add(new FootballPlayer("이동국", 2, "전북", 43));
-		arr.add(new FootballPlayer("박지성", 3, "성남", 40));
-		arr.add(new FootballPlayer("손흥민", 4, "안양", 30));
+		arr.add(new FootballPlayer("박지성", 3, "전북", 40));
+		arr.add(new FootballPlayer("손흥민", 4, "서울", 30));
 		arr.add(new FootballPlayer("이청용", 5, "울산", 34));
-		arr.add(new FootballPlayer("기성용", 6, "서울", 33));
+		arr.add(new FootballPlayer("이청용", 6, "울산", 34));
+		arr.add(new FootballPlayer("기성용", 7, "서울", 33));
 
+		System.out.println("요소의개수 : " + arr.size());
+		
 		Iterator<FootballPlayer> itr = arr.iterator();
 		while(itr.hasNext()) {
-			FootballPlayer currentStr = itr.next();
-			System.out.println(currentStr);
+			System.out.println(itr.next());
 		}
 
 	}

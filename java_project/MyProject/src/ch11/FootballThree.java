@@ -10,18 +10,13 @@ public class FootballThree {
 	public static void main(String[] args) {
 		TreeSet<FootballPlayer> arr = new TreeSet<FootballPlayer>();
 		
-		arr.add(new FootballPlayer("호날두", 7, "유벤투스", 37));
-		arr.add(new FootballPlayer("메시", 10, "바르셀로나", 35));
-		arr.add(new FootballPlayer("가레스베일", 9, "토트넘", 21));
-		arr.add(new FootballPlayer("네이마르", 10, "파리 생제르맹", 30));
-		arr.add(new FootballPlayer("음바페", 7, "파리 생제르맹", 24));
-		arr.add(new FootballPlayer("피에르에밀호이비에르", 5, "토트넘", 28));
-		arr.add(new FootballPlayer("다빈손산체스", 6, "토트넘", 31));
-		arr.add(new FootballPlayer("손흥민", 7, "토트넘", 30));
-		arr.add(new FootballPlayer("해리윙크스", 8, "토트넘", 27));
-		arr.add(new FootballPlayer("가레스베일", 9, "토트넘", 26));
-		arr.add(new FootballPlayer("해리케인", 10, "토트넘", 29));
-		arr.add(new FootballPlayer("에릭라멜라", 11, "토트넘", 23));
+		arr.add(new FootballPlayer("이동국", 1, "전북", 43));
+		arr.add(new FootballPlayer("이동국", 2, "전북", 43));
+		arr.add(new FootballPlayer("박지성", 3, "전북", 40));
+		arr.add(new FootballPlayer("손흥민", 4, "서울", 30));
+		arr.add(new FootballPlayer("이청용", 5, "울산", 34));
+		arr.add(new FootballPlayer("이청용", 6, "울산", 34));
+		arr.add(new FootballPlayer("기성용", 7, "서울", 33));
 		
 		Iterator<FootballPlayer> itr = arr.iterator();
 		while(itr.hasNext()) {
