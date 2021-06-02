@@ -1,7 +1,5 @@
 package ex.io;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,7 +9,7 @@ import java.io.OutputStream;
 
 
 
-public class ByteFileCopy {
+public class ByteBufferedFileCopy {
 
 	public static void main(String[] args) {
 		
@@ -23,11 +21,7 @@ public class ByteFileCopy {
 			
 			// 2. 파일을 쓰기위한 스트림 생성 : FileOutputStream
 			//FileOutputStream out = new FileOutputStream("copy.pdf");
-			OutputStream out = new FileOutputStream("copy3.pdf");
-			
-			// 필터 스트림 생성 -> 기본 스트림이 필요
-			BufferedInputStream fin = new BufferedInputStream(in);
-			BufferedOutputStream fout = new BufferedOutputStream(out);
+			OutputStream out = new FileOutputStream("copy.pdf");
 			
 			// 카피한 데이터의 크기
 			int copyByte = 0;
@@ -35,7 +29,7 @@ public class ByteFileCopy {
 			int bData = -1;
 			
 			while(true) {
-				bData = fin.read();
+				bData = in.read();
 				
 				// 탈출의 조건 : 파일의 모든 데이터를 읽은 경우
 				if(bData == -1) {
@@ -43,7 +37,7 @@ public class ByteFileCopy {
 				}
 				
 				// 출력 : 파일에 데이터를 쓴다
-				fout.write(bData);
+				out.write(bData);
 				copyByte++;
 			}
 			
