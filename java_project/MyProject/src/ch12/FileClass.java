@@ -1,43 +1,79 @@
 package ch12;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.Scanner;
 
 public class FileClass {
 
 	public static void main(String[] args) {
+		// 현재 날짜와 시간 으로 설정 된다.
+		Calendar today = Calendar.getInstance();
+		Scanner sc = new Scanner(System.in);
+		File newDir = new File("C:\\Users\\kimzz\\Documents\\GitHub\\java205\\java_project\\MyProject\\메모장");
 		
-		File myFile = new File("C:\\Users\\bitcamp\\Documents\\GitHub\\java205\\java_project\\MyProject\\MEMO.txt");
-		System.out.println(myFile);
-		
-		if(!myFile.exists()) {
-			System.out.println("파일이 존재하지 않습니다.");
-			System.out.println("프로그램을 종료합니다.");
-			return;
-		}
-		
-		// 새로운 폴더 생성
-		File newDir = new File("C:\\MEMO");
-		System.out.println("1. exist ?? --> " + newDir.exists());
-		
-		if(newDir.exists()) {
+		if(!newDir.exists()) {
 			// 폴더생성
 			newDir.mkdir();
-			System.out.println("2. exist ?? --> " + newDir.exists());
+		}
+		String input = null;// 파일 이름 저장
+		try {
+			System.out.println("파일 이름 입력 >> ");
+			input = sc.next(); 
+			BufferedWriter out = new BufferedWriter(new FileWriter(input + ".txt"));
+			System.out.println("쓰기 시작");
+			out.write(today.get(Calendar.YEAR)+"년 "+ today.get(Calendar.MONTH) + "월 " + today.get(Calendar.DATE) +"일");
+			out.newLine();
+			out.write("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ제목ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			System.out.println("제목입력 >> ");
+			out.newLine();
+			out.write(sc.next());
+			out.newLine();
+			out.write("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ메모ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			out.newLine();
+			System.out.println("메모입력 >> ");
+			out.write(sc.next());
+			out.newLine();
+			
+			out.close();
+			System.out.println("작성 완료");
+			File newFile = new File(newDir.getName());
+			newDir.renameTo(newFile);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
-		System.out.println(myFile.getName());
-		
-		// 이동할 경로와 파일 이름
-		File newFile = new File(newDir, myFile.getName());
-		// 이동
-		myFile.renameTo(newFile);
-		
-		if(newFile.exists()) {
-			System.out.println("파일이동");
-		} else {
-			System.out.println("이동실패");
-		}
+		try {
+			BufferedReader in = new BufferedReader(new FileReader(input + ".txt"));
 
+			// 임시 변수
+			String str = null;
+			
+			while(true) {
+				str = in.readLine();
+				if(str == null) {
+					break;
+				}
+				System.out.println(str);
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 	}
-
 }
