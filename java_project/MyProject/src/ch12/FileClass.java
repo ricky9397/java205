@@ -43,8 +43,6 @@ public class FileClass {
 			
 			out.close();
 			System.out.println("작성 완료");
-			File newFile = new File(newDir.getName());
-			newDir.renameTo(newFile);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
