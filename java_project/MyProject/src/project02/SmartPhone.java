@@ -70,5 +70,9 @@ public class SmartPhone {
 			}
 		}
 	}
+
+	public void modify() {
+		System.out.println("수정하실 이름을 입력하세요.");
+	}
 	
 }
