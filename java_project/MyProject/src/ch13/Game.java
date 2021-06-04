@@ -1,6 +1,5 @@
 package ch13;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
@@ -13,7 +12,6 @@ public class Game {
 		it.start();
 		ct.start();
 	}
-
 }
 
 class InputThread extends Thread {
