@@ -24,9 +24,9 @@ class InputThread extends Thread {
 			System.out.println("1~100 사이의 숫자를 입력해주세요.");
 			input = sc.nextInt();
 			if(input > random) {
-				System.out.println("더 작은 수로 입력하세요."); 
+				System.out.println("하이 입니다."); 
 			} else if (input < random) {
-				System.out.println("더 큰수로 입력하세요.");
+				System.out.println("로우 입니다.");
 			}
 		} while (input != random);
 		System.out.println("정답입니다.");

@@ -18,7 +18,6 @@ public class ByteBufferedFileCopy {
 			//FileInputStream in = new FileInputStream("origin.pdf");
 			InputStream in = new FileInputStream("origin.pdf");
 			
-			
 			// 2. 파일을 쓰기위한 스트림 생성 : FileOutputStream
 			//FileOutputStream out = new FileOutputStream("copy.pdf");
 			OutputStream out = new FileOutputStream("copy.pdf");
