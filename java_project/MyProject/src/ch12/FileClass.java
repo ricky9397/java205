@@ -16,17 +16,19 @@ public class FileClass {
 		// 현재 날짜와 시간 으로 설정 된다.
 		Calendar today = Calendar.getInstance();
 		Scanner sc = new Scanner(System.in);
-		File newDir = new File("C:\\Users\\kimzz\\Documents\\GitHub\\java205\\java_project\\MyProject\\메모장");
+		File newDir = new File("C:\\Users\\bitcamp\\Documents\\GitHub\\java205\\java_project\\MyProject\\메모장");
 		
 		if(!newDir.exists()) {
 			// 폴더생성
 			newDir.mkdir();
 		}
+		
 		String input = null;// 파일 이름 저장
 		try {
+			
 			System.out.println("파일 이름 입력 >> ");
 			input = sc.next(); 
-			BufferedWriter out = new BufferedWriter(new FileWriter(input + ".txt"));
+			BufferedWriter out = new BufferedWriter(new FileWriter(new File(newDir, input + ".txt")));
 			System.out.println("쓰기 시작");
 			out.write(today.get(Calendar.YEAR)+"년 "+ today.get(Calendar.MONTH) + "월 " + today.get(Calendar.DATE) +"일");
 			out.newLine();
@@ -50,7 +52,7 @@ public class FileClass {
 		}
 		
 		try {
-			BufferedReader in = new BufferedReader(new FileReader(input + ".txt"));
+			BufferedReader in = new BufferedReader(new FileReader(new File(newDir, input + ".txt")));
 
 			// 임시 변수
 			String str = null;
