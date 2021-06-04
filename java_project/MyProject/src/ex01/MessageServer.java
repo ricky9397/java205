@@ -43,6 +43,7 @@ public class MessageServer {
 				str2 = sc.nextLine();
 				dout.writeUTF(str2);
 				dout.flush();
+				
 			}
 			
 		} catch (IOException e) {
