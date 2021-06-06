@@ -7,7 +7,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-import com.sun.corba.se.impl.javax.rmi.CORBA.Util;
 
 public class MessageServer {
 
