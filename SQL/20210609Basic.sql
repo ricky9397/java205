@@ -61,7 +61,8 @@ order by deptno  -- 정렬 : 행의 정렬
 -- select ~ from ~ 구문에 where절을 이용
 -- where 뒤에는 조건식이 정의 -> where 컬럼명 비교연산자 값
 -- where sal >= 3000
-select *
+-- 사원이름, 사원 번호, 급여
+select ename, empno, sal
 from emp
 where sal >= 3000
 ;
