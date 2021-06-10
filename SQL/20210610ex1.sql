@@ -5,15 +5,15 @@ SELECT ENAME, SAL, SAL+300 AS UPSAL
 FROM EMP;
 
 --2. 사원의 이름, 급여, 연간 총 수입을 총 수입이 많은 것부터 작은 순으로 출력하시오, 연간 총수입은 월급에 12를 곱한 후 $100의 상여금을 더해서 계산하시오.
-SELECT ENAME, SAL, COMM, SAL*12 AS YSAL1, SAL*12+100 AS YSAL2
+SELECT ENAME, SAL, SAL*12+100 AS YSAL
 FROM EMP
-ORDER BY SAL DESC;
+ORDER BY YSAL DESC;
 
 --3. 급여가 2000을 넘는 사원의 이름과 급여를 표현, 급여가 많은 것부터 작은 순으로 출력하시오.
 SELECT ENAME, SAL
 FROM EMP
-WHERE SAL >= 2000
-ORDER BY SAL;
+WHERE SAL > 2000
+ORDER BY SAL DESC;
 
 --4. 사원번호가 7788인 사원의 이름과 부서번호를 출력하시오.
 SELECT ENAME, EMPNO
