@@ -23,10 +23,22 @@ public class ContactMain {
 				break;
 			case 4:
 				c.deleteContact();
+				break;
 			case 5:
 				c.allContact();
+				break;
 			case 6:
 				c.fileSave();
+				break;
+			case 7:
+				c.loadFile();
+				break;
+			case 8:
+				sc.close();
+				System.exit(8);
+			default:
+				System.out.println("잘못입력하셨습니다. 다시입력하세요.");
+				break;
 			}
 		}
 		

@@ -12,7 +12,7 @@ import java.util.List;
 public class FootballOne {
 
 	public static void main(String[] args) {
-		File newDir = new File("C:\\Users\\bitcamp\\Documents\\GitHub\\java205\\java_project\\MyProject\\축구선수명단");
+		File newDir = new File("C:\\Users\\kimzz\\Documents\\GitHub\\java205\\java_project\\MyProject\\축구선수명단");
 
 		if(!newDir.exists()) {
 			// 폴더생성

@@ -1,13 +1,16 @@
 package project08;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Contact implements Serializable {
@@ -28,14 +31,11 @@ public class Contact implements Serializable {
 	public void setNumber(String number) {
 		this.number = number;
 	}
-
-	public void showInfo() {
-		System.out.println("-----------------------");
-		System.out.println("이름 : " + getName());
-		System.out.println("연락처 : " + getNumber());
-		System.out.println("-----------------------");
+	
+	@Override
+	public String toString() {
+		return "Contact [name=" + name + ", number=" + number + "]";
 	}
-
 
 	public void inputContact() {
 		while(true) {
@@ -86,7 +86,10 @@ public class Contact implements Serializable {
 		int cnt = 0;
 		for (int i = 0; i < co.size(); i++) {
 			if(tmp.equals(co.get(i).getName())) {
-				co.get(i).showInfo();
+				System.out.println("-------------------------------");
+				System.out.println("이름 : " + co.get(i).getName());
+				System.out.println("연락처 : " + co.get(i).getNumber());
+				System.out.println("-------------------------------");
 				cnt++;
 				break;
 			}
@@ -132,34 +135,46 @@ public class Contact implements Serializable {
 	public void allContact() {
 		System.out.println("==========연락처 전체 리스트==========");
 		for (int i = 0; i < co.size(); i++) {
-			co.get(i).showInfo();
+			System.out.println("-------------------------------");
+			System.out.println("이름 : " + co.get(i).getName());
+			System.out.println("연락처 : " + co.get(i).getNumber());
+			System.out.println("-------------------------------");
 		}
 	}
 
 	public void fileSave() {
-		File newDir = new File("C:\\Users\\bitcamp\\Documents\\GitHub\\java205\\java_project\\MyProject\\연락처명단");
-
-		if(!newDir.exists()) {
-			newDir.mkdir();
-		}
-		ObjectOutputStream out = null;
-		FileOutputStream fos = null;
-
 		try {
-			fos = new FileOutputStream(new File(newDir, "Football.ser"));
-			out = new ObjectOutputStream(fos);
-			out.writeObject(co);
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("contact.ser"));
+			ArrayList<Contact> co1 = new ArrayList<Contact>();
+		
+			out.writeObject(co1);
+			out.close();
+			System.out.println("파일 저장 완료");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
+	
 	public void loadFile() {
-
+		
+		try {
+			
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream("contact.ser"));
+			ArrayList<Contact> co2 = (ArrayList<Contact>) in.readObject();
+			
+			for(Contact c : co2) {
+				System.out.println(co2.toString());
+			}
+			System.out.println("복원된 파일 데이터 출력");
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
