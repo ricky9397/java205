@@ -23,7 +23,7 @@ WHERE EMPNO = 7788;
 --5. 급여가 2000에서 3000 사이에 포함되지 않는 사원의 이름과 급여를 출력하시오.
 SELECT ENAME, SAL
 FROM EMP
-WHERE SAL BETWEEN 2000 AND 3000;
+WHERE SAL NOT BETWEEN 2000 AND 3000;
 
 --6. 1981년 2월 20일 부터 1981년 5월 1일 사이에 입사한 사원의 이름, 담당업무, 입사일을 출력하시오.
 SELECT ENAME, JOB, HIREDATE
