@@ -28,7 +28,7 @@ WHERE SAL NOT BETWEEN 2000 AND 3000;
 --6. 1981년 2월 20일 부터 1981년 5월 1일 사이에 입사한 사원의 이름, 담당업무, 입사일을 출력하시오.
 SELECT ENAME, JOB, HIREDATE
 FROM EMP
-WHERE HIREDATE BETWEEN '81/2/20' AND '81/5/1';
+WHERE HIREDATE BETWEEN '81/02/20' AND '81/05/01';
 
 --7. 부서번호가 20 및 30에 속한 사원의 이름과 부서번호를 출력, 이름을 기준(내림차순)으로 영문자순으로 출력하시오.
 SELECT ENAME, DEPTNO
