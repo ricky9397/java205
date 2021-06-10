@@ -1,5 +1,7 @@
 --1 마당서점의고객이요구하는다음질문에대해SQL 문을작성하시오.
-
+DESC BOOK;
+DESC CUSTOMER;
+DESC ORDERS;
 --(1) 도서번호가1인도서의이름
 SELECT BOOKNAME
 FROM BOOK
