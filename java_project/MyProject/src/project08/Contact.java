@@ -19,6 +19,11 @@ public class Contact implements Serializable {
 	private String number;
 	ArrayList<Contact> co = new ArrayList<Contact>();
 
+	public Contact(String name, String number) {
+		super();
+		this.name = name;
+		this.number = number;
+	}
 	public String getName() {
 		return name;
 	}
@@ -39,7 +44,7 @@ public class Contact implements Serializable {
 
 	public void inputContact() {
 		while(true) {
-			Contact cont = new Contact();
+			Contact cont = new Contact(name, number);
 
 			while(true) {
 				System.out.println("이름을 입력해주세요>>");
@@ -146,7 +151,7 @@ public class Contact implements Serializable {
 		try {
 			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("contact.ser"));
 			ArrayList<Contact> co1 = new ArrayList<Contact>();
-		
+			
 			out.writeObject(co1);
 			out.close();
 			System.out.println("파일 저장 완료");
@@ -161,10 +166,10 @@ public class Contact implements Serializable {
 		try {
 			
 			ObjectInputStream in = new ObjectInputStream(new FileInputStream("contact.ser"));
-			ArrayList<Contact> co2 = (ArrayList<Contact>) in.readObject();
+			ArrayList<Contact> co1 = (ArrayList<Contact>) in.readObject();
 			
-			for(Contact c : co2) {
-				System.out.println(co2.toString());
+			for(Contact c : co1) {
+				System.out.println(c);
 			}
 			System.out.println("복원된 파일 데이터 출력");
 			

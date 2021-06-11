@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ContactMain {
 
 	public static void main(String[] args) {
-		Contact c = new Contact();
+		Contact c = new Contact(null, null);
 		Scanner sc = new Scanner(System.in);
 
 		while(true) {
