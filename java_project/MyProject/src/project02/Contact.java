@@ -59,31 +59,6 @@ public class Contact {
 		this.group = group;
 	}
 	
-	void joinMembership() {
-		System.out.println("이름을 입력해주세요.");
-		setName(sc.next());
-		System.out.println("전화번호를 입력해주세요.");
-		setPhon(sc.next());
-		System.out.println("이메일을 입력해주세요.");
-		setEmail(sc.next());
-		System.out.println("주소를 입력해주세요.");
-		setAddress(sc.next());
-		System.out.println("생일을 입력해주세요.");
-		setBirth(sc.next());
-		System.out.println("그룹을 입력하세요.");
-		setGroup(sc.next());
-	}
-	
-	void modified() {
-		System.out.println("수정할 번호 입력");
-		setPhon(sc.next());
-		System.out.println("수정할 이메일 입력");
-		setEmail(sc.next());
-		System.out.println("수정할 주소 입력");
-		setAddress(sc.next());
-		System.out.println("수정이 완료되었습니다.");
-	}
-	
 	void showInfo() {
 		System.out.println("이름 : " + getName());
 		System.out.println("전화번호 : " + getPhon());

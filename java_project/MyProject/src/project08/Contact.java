@@ -151,7 +151,6 @@ public class Contact implements Serializable {
 		try {
 			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("contact.ser"));
 			ArrayList<Contact> co1 = new ArrayList<Contact>();
-			
 			out.writeObject(co1);
 			out.close();
 			System.out.println("파일 저장 완료");
@@ -166,9 +165,9 @@ public class Contact implements Serializable {
 		try {
 			
 			ObjectInputStream in = new ObjectInputStream(new FileInputStream("contact.ser"));
-			ArrayList<Contact> co1 = (ArrayList<Contact>) in.readObject();
-			
-			for(Contact c : co1) {
+			ArrayList<Contact> co2 = (ArrayList<Contact>) in.readObject();
+			co = co2;
+			for(Contact c : co) {
 				System.out.println(c);
 			}
 			System.out.println("복원된 파일 데이터 출력");
