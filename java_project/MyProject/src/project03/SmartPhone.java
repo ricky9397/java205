@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class SmartPhone {
 	Scanner sc = new Scanner(System.in);
-	Contact[] co = new Contact[10];
-	Contact[] co1 = new CompanyContact1[10];
+	Contact[] co = new CompanyContact1[10];
 	
 	int cnt; 
 	
