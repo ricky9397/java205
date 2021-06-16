@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class SmartPhone {
 	Scanner sc = new Scanner(System.in);
 	Contact[] co = new Contact[10];
+	Contact[] co1 = new CompanyContact1[10];
+	
 	int cnt; 
 	
 	public void addJoinMembership() {
@@ -104,4 +106,5 @@ public class SmartPhone {
 			System.out.println("입력 정보가 없습니다.");
 		}
 	}
+	
 }
