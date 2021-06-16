@@ -26,7 +26,6 @@ public class CompanyContact1 extends Contact {
 	
 	@Override
 	public void showInfo() {
-		super.showInfo();
 		System.out.println("회사이름 : " + getCpName());
 		System.out.println("부서이름 : " + getDmName());
 		System.out.println("직급 : " + getPosition());
