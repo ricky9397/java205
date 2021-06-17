@@ -4,29 +4,48 @@ import java.util.Scanner;
 
 public class SmartPhone {
 	Scanner sc = new Scanner(System.in);
-	Contact[] co = new Contact[10];
-	
+	Contact[] co;
 	int cnt; 
 	
-	public void addJoinMembership() {
-		Contact cont = new Contact();
-		System.out.println("이름 입력 입력해주세요. ");
-		cont.setName(sc.next());
-		System.out.println("전화번호를 입력해주세요.");
-		cont.setPhon(sc.next());
-		System.out.println("이메일을 입력해주세요.");
-		cont.setEmail(sc.next());
-		System.out.println("주소를 입력해주세요.");
-		cont.setAddress(sc.next());
-		System.out.println("생일을 입력해주세요.");
-		cont.setBirth(sc.next());
-		System.out.println("그룹을 입력하세요.");
-		cont.setGroup(sc.next());
+	public SmartPhone() {
+		this.co = new Contact[10];
+	}
+	
+	public void addJoinMembership(int choice) {
 		
-		co[cnt] = cont;
-		cnt++;
+		System.out.println("이름 입력 입력해주세요. ");
+		String name = sc.next();
+		System.out.println("전화번호를 입력해주세요.");
+		String phon = sc.next();
+		System.out.println("이메일을 입력해주세요.");
+		String email = sc.next();
+		System.out.println("주소를 입력해주세요.");
+		String address = sc.next();
+		System.out.println("생일을 입력해주세요.");
+		String birth = sc.next();
+		System.out.println("그룹을 입력하세요.");
+		String group = sc.next();
+		addArray(new Contact(name, phon, email, address, birth, group));
+
 		System.out.println("회원가입 되셨습니다.");
 		
+		if(choice == 2) {
+			System.out.println("회사 이름을 입력하세요.");
+			String cpName = sc.next();
+			System.out.println("부서 이름을 입력하세요.");
+			String dmName = sc.next();
+			System.out.println("직급을 입력하세요.");
+			String position = sc.next();
+			
+			addArray(new CompanyContact1(name, phon, email, address, birth, group, cpName, dmName, position));
+		} else if(choice == 3){
+			System.out.println("");
+		}
+	}
+	
+	public void addArray(Contact c) {
+		co[cnt] = c;
+		System.out.println("저장된 정보가 없습니다.");
 	}
 	
 	public void allShowData() {

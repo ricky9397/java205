@@ -5,6 +5,15 @@ public class CompanyContact2 extends Contact{
 	private String buyName;
 	private String position;
 	
+	
+	public CompanyContact2(String name, String phon, String email, String address, String birth, String group,
+			String cName, String buyName, String position) {
+		super(name, phon, email, address, birth, group);
+		this.cName = cName;
+		this.buyName = buyName;
+		this.position = position;
+	}
+	
 	public String getcName() {
 		return cName;
 	}

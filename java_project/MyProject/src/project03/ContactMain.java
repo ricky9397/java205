@@ -16,7 +16,7 @@ public class ContactMain {
 				int input2 = sc.nextInt();
 				switch(input2) {
 				case 1:
-					smart.addJoinMembership();
+					smart.addJoinMembership(input1);
 					break;
 				case 2:
 					smart.allShowData();

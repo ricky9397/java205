@@ -11,9 +11,6 @@ public class Contact {
 	private String birth;
 	private String group;
 	
-	public Contact() {
-	}
-	
 	public Contact(String name, String phon, String email, String address, String birth, String group) {
 		this.name = name;
 		this.phon = phon;
