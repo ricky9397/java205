@@ -9,10 +9,10 @@ public class SmartPhone {
 	
 	public SmartPhone() {
 		this.co = new Contact[10];
+		this.cnt = 0;
 	}
 	
 	public void addJoinMembership(int choice) {
-		
 		System.out.println("이름 입력 입력해주세요. ");
 		String name = sc.next();
 		System.out.println("전화번호를 입력해주세요.");
@@ -26,7 +26,8 @@ public class SmartPhone {
 		System.out.println("그룹을 입력하세요.");
 		String group = sc.next();
 		addArray(new Contact(name, phon, email, address, birth, group));
-
+		
+		
 		System.out.println("회원가입 되셨습니다.");
 		
 		if(choice == 2) {
