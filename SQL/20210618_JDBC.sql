@@ -9,3 +9,7 @@ insert into dept01 values (dept01_deptno_seq.nextval, 'dev', 'SEOUL');
 create sequence dept01_deptno_seq
 start with 10
 increment by 10;
+
+delete from dept01 where deptno=?;
+
+update dept01 set dname =?, loc=? where deptno=?
