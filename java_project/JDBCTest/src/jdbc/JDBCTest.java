@@ -84,6 +84,7 @@ public class JDBCTest {
 			e.printStackTrace();
 		} finally {
 			
+			
 			// 4. close
 			
 			if(pstmt != null) {

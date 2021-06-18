@@ -66,6 +66,7 @@ public class JDBCTestEMP {
 			e.printStackTrace();
 		} finally {
 			
+			
 			// 4. close
 			
 			if(pstmt != null) {
