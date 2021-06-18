@@ -50,7 +50,6 @@ public class DeptManager {
 			e.printStackTrace();
 		}
 		System.out.println("데이터베이스 연결 성공!!!");
-
 	}
 	
 	// 데이터 입력
