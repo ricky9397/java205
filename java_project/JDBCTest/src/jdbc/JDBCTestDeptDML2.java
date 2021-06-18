@@ -63,6 +63,7 @@ public class JDBCTestDeptDML2 {
 				System.out.println("조건에 맞는 데이터가 존재하지 않습니다.");
 			}
 			
+			
 			// 트렌젝션 완료(성공)
 			conn.commit();
 			
