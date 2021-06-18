@@ -12,4 +12,9 @@ increment by 10;
 
 delete from dept01 where deptno=?;
 
-update dept01 set dname =?, loc=? where deptno=?
+update dept01 set dname =?, loc=? where deptno=?;
+
+select dept01_deptno_seq.nextval from dual;
+
+select * from dept01;
+select * from dept;
