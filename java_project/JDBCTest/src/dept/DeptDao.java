@@ -61,7 +61,7 @@ public class DeptDao {
 		}
 		
 		return list;
-	}
+	} 
 	
 	
 	// 2. DEPT 테이블에 데이터 저장하는 메소드
@@ -140,6 +140,40 @@ public class DeptDao {
 			}
 		}
 
+		return result;
+	}
+	
+	// 4. DEPT 테이블의 데이터를 삭제
+	// 삭제된 행의 개수를 반환
+	// 사용자로부터 deptno 받아서 처리
+	int deleteDept(Connection conn, int deptno) {
+		
+		int result = 0;
+		
+		// 데이터 베이스 처리 sql
+		PreparedStatement pstmt = null;
+		
+		try {
+			String sql = "delete from dept where deptno=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, deptno);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
 		return result;
 	}
 	
