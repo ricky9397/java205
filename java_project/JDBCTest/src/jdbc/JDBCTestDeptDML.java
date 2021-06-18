@@ -86,6 +86,7 @@ public class JDBCTestDeptDML {
 			
 		} finally {
 			
+			
 			// 4. close
 			
 			if(pstmt != null) {
