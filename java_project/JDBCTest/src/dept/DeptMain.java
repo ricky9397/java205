@@ -10,6 +10,7 @@ public class DeptMain {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		
 		try {
 			// 1. 드라이버 로드
 			Class.forName("oracle.jdbc.driver.OracleDriver");
