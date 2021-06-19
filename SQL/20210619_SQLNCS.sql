@@ -56,4 +56,10 @@ CREATE INDEX EMP_INDEX ON EMP(ENAME);
 
 --2. EMP 테이블과 DEPT 테이블을 조인하는 SQL을 기반으로 view 객체를 생성하는 SQL을 작성하시오.
 --   view 의 이름은 emp_view 로 하시오.
-CREATE 
+CREATE VIEW EMP_VIEW AS
+SELECT *
+FROM EMP E , DEPT D
+WHERE E.EMPNO=D.EMPNO;
+
+--3. EMP 테이블에서 모든 사원의 부서번호를 이름이 'SCOTT'인 사원의 부서번호로 변경하는 SQL을 작성하시오.
+UPDATE EMP DEPTNO = (SELECT DEPTNO FROM EMP WHERE ENAME='SCOTT');
