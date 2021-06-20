@@ -10,6 +10,10 @@ public class EmpManager {
 	
 	private EmpDao dao;
 	private Scanner sc;
+	private String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String user = "hr";
+	private String pw = "tiger";
+	
 	
 	public EmpManager(EmpDao dao) {
 		this.dao = dao;
@@ -21,11 +25,6 @@ public class EmpManager {
 		// Connection 객체 생성 -> 트렌젝션 처리 가능
 		Connection con = null;
 
-		// 2. 연결
-		String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "hr";
-		String pw = "tiger";
-		
 		try {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
 			
@@ -60,11 +59,6 @@ public class EmpManager {
 	void inputData() {
 		// Connection 객체 생성 -> 트렌젝션 처리 가능
 		Connection con = null;
-
-		// 2. 연결
-		String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "hr";
-		String pw = "tiger";
 		
 		try {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
@@ -96,11 +90,6 @@ public class EmpManager {
 		// Connection 객체 생성 -> 트렌젝션 처리 가능
 		Connection con = null;
 
-		// 2. 연결
-		String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "hr";
-		String pw = "tiger";
-
 		try {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
 			
@@ -128,12 +117,6 @@ public class EmpManager {
 	void delEmp() {
 		// Connection 객체 생성 -> 트렌젝션 처리 가능
 		Connection con = null;
-
-		// 2. 연결
-		String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "hr";
-		String pw = "tiger";
-		
 		
 		try {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
