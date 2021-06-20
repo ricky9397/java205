@@ -1,6 +1,6 @@
 package emp;
 
-public class Emp {
+public class EmpDto {
 	
 	private int empno; 			// 직원번호
 	private String ename;		// 직원명
@@ -11,9 +11,9 @@ public class Emp {
 	private int comm;			// 보너스
 	private int deptno;			// 부서번호
 	
-	public Emp() {	}
+	public EmpDto() {	}
 	
-	public Emp(int empno, String ename, String job, int mgr, String hiredate, int sal, int comm, int deptno) {
+	public EmpDto(int empno, String ename, String job, int mgr, String hiredate, int sal, int comm, int deptno) {
 		this.empno = empno;
 		this.ename = ename;
 		this.job = job;

@@ -27,9 +27,9 @@ public class EmpDao {
 	
 	// 1. 전체 데이터 검색기능
 	// Connection 클래스 => 연결객체
-	ArrayList<Emp> getdeptList(Connection con) {
+	ArrayList<EmpDto> getdeptList(Connection con) {
 		
-		ArrayList<Emp> list = null;
+		ArrayList<EmpDto> list = null;
 		
 		// sql을 실행 할 메소드 제공
 		Statement stmt = null;
@@ -48,7 +48,7 @@ public class EmpDao {
 			
 			// 데이터를 Dept 객체로 생성 -> list에 저장
 			while(rs.next()) {
-				list.add(new Emp(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getInt(4), 
+				list.add(new EmpDto(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getInt(4), 
 						rs.getString(5), rs.getInt(6), rs.getInt(7), rs.getInt(8)));
 			}
 			
@@ -77,7 +77,7 @@ public class EmpDao {
 	}
 	
 	// 2. EMP 테이블에 데이터 자장하는 메소드
-	int insertEmp(Connection con, Emp emp)	{
+	int insertEmp(Connection con, EmpDto emp)	{
 		
 		int result = 0;
 		
@@ -115,7 +115,7 @@ public class EmpDao {
 	}
 	
 	// 3. EMP 테이블의 데이터 수정 메소드
-	int updateEmp(Connection con, Emp emp) {
+	int updateEmp(Connection con, EmpDto emp) {
 		int result = 0;
 
 		PreparedStatement pstmt = null;

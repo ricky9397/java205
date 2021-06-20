@@ -28,14 +28,14 @@ public class EmpManager {
 		try {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
 			
-			List<Emp> list = dao.getdeptList(con);
+			List<EmpDto> list = dao.getdeptList(con);
 			
 			System.out.println("회사 정보 리스트");
 			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 			System.out.println("직원번호\t 직원이름\t 직책\t 담당매니저\t 입사일\t 월급\t 보너스\t 부서번호\t");
 			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 			
-			for(Emp emp : list) {
+			for(EmpDto emp : list) {
 				System.out.printf("%d\t %s\t %s %d\t %s\t %d\t %d\t %d \n",
 									emp.getEmpno(),
 									emp.getEname(),
@@ -69,7 +69,7 @@ public class EmpManager {
 			String inputData = sc.nextLine();
 			String[] EmpData = inputData.split(" ");
 			
-			Emp emp = new Emp(Integer.parseInt(EmpData[0]), EmpData[1], EmpData[2], Integer.parseInt(EmpData[3]), EmpData[4], Integer.parseInt(EmpData[5]), Integer.parseInt(EmpData[6]), Integer.parseInt(EmpData[7]));
+			EmpDto emp = new EmpDto(Integer.parseInt(EmpData[0]), EmpData[1], EmpData[2], Integer.parseInt(EmpData[3]), EmpData[4], Integer.parseInt(EmpData[5]), Integer.parseInt(EmpData[6]), Integer.parseInt(EmpData[7]));
 			
 			int result = dao.insertEmp(con, emp);
 			
@@ -99,7 +99,7 @@ public class EmpManager {
 			String editEmp = sc.nextLine();
 			String[] eData = editEmp.split(" ");
 			
-			Emp emp = new Emp(0, eData[0], null, 0, null, Integer.parseInt(eData[1]), 0, 0);
+			EmpDto emp = new EmpDto(0, eData[0], null, 0, null, Integer.parseInt(eData[1]), 0, 0);
 			
 			int result = dao.updateEmp(con, emp);
 			
