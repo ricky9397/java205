@@ -12,10 +12,9 @@ import teamDTO.Order;
 
 public class OrderManager {
 	
-	private OrderDAO dao = new OrderDAO();
-	private Scanner sc = new Scanner(System.in);
+	OrderDAO dao = new OrderDAO();
+	Scanner sc = new Scanner(System.in);
 	ArrayList<Order> arr = new ArrayList<Order>();
-	
 	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "hr";
 	String pw = "tiger";
@@ -119,7 +118,7 @@ public class OrderManager {
 			int input = sc.nextInt();
 			switch(input) {
 			case 1:
-				
+				// 여기에 카트 만들면 메뉴 넣기 
 				Orderinsert();
 				break;
 			case 2:
