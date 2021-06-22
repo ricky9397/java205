@@ -42,5 +42,24 @@ public class ProductManager {
 		}
 	}
 	
-
+	public void allMenu() {
+		while(true) {
+			System.out.println("[1]전체메뉴 [2]메뉴추가 [3]메뉴삭제 [4]메뉴수정 [0]돌아가기");
+			int input = sc.nextInt();
+			switch(input) {
+			case 1:
+				productList();
+				break;
+			case 2:
+				// insert메뉴추가 넣기
+				break;
+			case 3:
+				// del메뉴추가 넣기
+				break;
+			case 4:
+				// 메뉴수정
+				break;
+			}
+		}
+	}
 }
