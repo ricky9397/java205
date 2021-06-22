@@ -113,7 +113,6 @@ public class OrderManager {
 		}
 	}
 	
-	
 	public void menu() {
 		while(true) {
 			System.out.println("[1]주문하기 [2]주문내역확인 [3]주문삭제 [0]돌아가기");
