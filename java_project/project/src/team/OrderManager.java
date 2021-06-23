@@ -17,27 +17,31 @@ import teamDTO.Product;
 public class OrderManager {
 	ProductManager p;
 	ProductDAO pdao;
-	OrderDAO odao = new OrderDAO();
-	ArrayList<Product> pro;
+	OrderDAO odao;
+	Order or;
+	Product product;
 	Scanner sc;
+	ArrayList<Product> pro;
 	ArrayList<Order> arr;
+	
 	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "hr";
 	String pw = "tiger";
-	
 	public OrderManager() {
 		 p = new ProductManager();
 		 pdao = new ProductDAO();
-		 
+		 odao = new OrderDAO();
 		 arr = new ArrayList<Order>();
 		 sc = new Scanner(System.in);
+		 or = new Order();
+		 product = new Product();
 	}
 
 	void orderinsert() {
 		Connection conn = null;
 		
 		try {
-			Order or = new Order();
+			
 
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			
@@ -46,43 +50,71 @@ public class OrderManager {
 			
 			
 			while (true) {
+				System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 				System.out.println("주문하실 메뉴를 선택해주세요.");
 				int a = sc.nextInt();
 				or.setIcode(a);
 				System.out.println("주문하실 갯수를 선택해주세요.");
 				int b = sc.nextInt();
 				or.setCount(b);
-				
 				for (int i = 0; i < pro.size(); i++) {
 					if(pro.get(i).getIcode() == a) {
+						System.out.println("주문하신 메뉴번호 :" + or.getIcode());
+						System.out.println("주문하신 갯수 : " + or.getCount());
 						or.setPrice(pro.get(i).getIprice()*b);
+						System.out.println("주문하신 총가격 : " + or.getPrice());
+						arr.add(or);
 						break;
 					}
 				}
 				
-				System.out.println("주문하시 겠습니까?[y],[n]");
+				System.out.println("[1]추가주문 [2]주문완료 [3]초기화면으로");
+				int sum = sc.nextInt();
+				switch(sum) {
+				case 1 :
+					System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+					System.out.println("주문하실 메뉴를 선택해주세요.");
+					int c = sc.nextInt();
+					or.setIcode(c);
+					System.out.println("주문하실 갯수를 선택해주세요.");
+					int d = sc.nextInt();
+					or.setCount(d);
+					for (int i = 0; i < pro.size(); i++) {
+						if(pro.get(i).getIcode() == c) {
+							or.setPrice(pro.get(i).getIprice()*d);
+							break;
+						}
+					}
+					break;
+				}
+				
+				
+				System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+				System.out.println("주문하신 메뉴번호 :" + or.getIcode());
+				System.out.println("주문하신 갯수 : " + or.getCount());
+				System.out.println("주문하신 총가격 : " + or.getPrice());
+				System.out.println("주문완료!! [y], 뒤로가기[n]");
 				String input = sc.next();
 				if (input.equalsIgnoreCase("y")) {
 					arr.add(or);
 					System.out.println("주문되셨습니다.감사합니다.");
 					break;
 				} else if (input.equalsIgnoreCase("n")) {
-					System.out.println("다시입력해주세요.");
+					System.out.println("초기화면으로 돌아갑니다.");
+					break;
 				} else {
 					System.out.println("잘못입력하셨습니다. 초기화면으로 이동합니다.");
 					break;
 				}
 			}
 			
-			long ordercode = System.nanoTime();
+			long ordercode = System.nanoTime(); // 주문코드
 			
 			for (int i = 0; i < arr.size(); i++) {
-				
 				arr.get(i).setOrdercode(ordercode);
 				int result = odao.orderInsert(conn, arr.get(i));
 			}
 			for (int i = 0; i < arr.size(); i++) {
-
 				int result = odao.updateProduct(conn, arr.get(i));
 			}
 			
@@ -126,9 +158,9 @@ public class OrderManager {
 					System.out.println("구매가격 : " + arr.get(i).getPrice());
 					System.out.println("----------------------------------------------------------------");
 					cnt++;
-//					break;
 				}
 			}
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -159,6 +191,7 @@ public class OrderManager {
 //		}
 //	}
 
+	
 	public void menu() {
 		while (true) {
 			System.out.println("[1]주문하기 [2]주문내역확인 [3]주문취소 [0]돌아가기");

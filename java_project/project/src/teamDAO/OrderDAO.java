@@ -20,7 +20,7 @@ public class OrderDAO {
 		
 		try {
 			
-			String sql = "select * from iorder";
+			String sql = "select * from iorder order by oidx";
 
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);

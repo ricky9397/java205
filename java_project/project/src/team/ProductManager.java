@@ -35,10 +35,11 @@ public class ProductManager {
 
 			pro = dao.getProductList(conn);
 
-			System.out.println("-----------메뉴입니다-----------");
-			System.out.println("-----------------------------");
-			System.out.println("상품번호 \t 상품이름 \t 상품가격");
-			System.out.println("-----------------------------");
+			System.out.println("■■■■■■■■■■■■■ MENU ■■■■■■■■■■■■■");
+			System.out.println("--------------------------------");
+			System.out.println("상품번호 \t 상품이름 \t\t 상품가격");
+			System.out.println("--------------------------------");
+
 
 			for (Product p : pro) {
 				System.out.printf("%d \t %s \t %s \n", p.getIcode(), p.getIname(), p.getIprice());

@@ -31,35 +31,33 @@ CREATE TABLE IORDER (           oidx NUMBER(6) CONSTRAINT ORDER_OCODE_PK PRIMARY
                                 oprice Integer
                                
                               ) ;
---½ÃÄö½º »èÁ¦
+--ì‹œí€€ìŠ¤ ì‚­ì œ
 drop sequence member_idx_seq ;
 drop sequence iorder_oidx_seq ;
 
 
---½ÃÄö½º »ı¼º
+--ì‹œí€€ìŠ¤ ìƒì„±
 create sequence member_idx_seq ;
-create sequence iorder_oidx_seq start with 1
-increment by 1;
-
-                       
+create sequence iorder_oidx_seq ;
+                              
 --member dml  --idx ,id,pw, name, phonenum, email
-insert into member values (member_idx_seq.nextval, 'apple','1234','È«±æµ¿', '01012341234','fods@gmail.com');
-insert into member values (member_idx_seq.nextval, 'banana','1234','°­È£µ¿', '01045741234','djwd@gmail.com');
+insert into member values (member_idx_seq.nextval, 'apple','1234','í™ê¸¸ë™', '01012341234','fods@gmail.com');
+insert into member values (member_idx_seq.nextval, 'banana','1234','ê°•í˜¸ë™', '01045741234','djwd@gmail.com');
 
 
 --product dml --- icode, iname, iprice, count
-insert into product values (1,'¹Ù´Ò¶ó ¾ÆÀÌ½ºÅ©¸²', '2000',5);
-insert into product values (2,'ÃÊÄÚ ¾ÆÀÌ½ºÅ©¸²', '2500',6);
-insert into product values (3,'µş±â ¾ÆÀÌ½ºÅ©¸²', '2500',3);
-insert into product values (4,'¹Ù³ª³ª ¾ÆÀÌ½ºÅ©¸²', '2700',6);
-insert into product values (5,'Ä¿ÇÇ ¾ÆÀÌ½ºÅ©¸²', '2700',2);
-insert into product values (6,'¹ÎÆ® ¾ÆÀÌ½ºÅ©¸²', '2800',2);
-insert into product values (7,'¿ä°ÅÆ® ¾ÆÀÌ½ºÅ©¸²', '3000',5);
+insert into product values (1,'ë°”ë‹ë¼ ì•„ì´ìŠ¤í¬ë¦¼', '2000',5);
+insert into product values (2,'ì´ˆì½” ì•„ì´ìŠ¤í¬ë¦¼', '2500',6);
+insert into product values (3,'ë”¸ê¸° ì•„ì´ìŠ¤í¬ë¦¼', '2500',3);
+insert into product values (4,'ë°”ë‚˜ë‚˜ ì•„ì´ìŠ¤í¬ë¦¼', '2700',6);
+insert into product values (5,'ì»¤í”¼ ì•„ì´ìŠ¤í¬ë¦¼', '2700',2);
+insert into product values (6,'ë¯¼íŠ¸ ì•„ì´ìŠ¤í¬ë¦¼', '2800',2);
+insert into product values (7,'ìš”ê±°íŠ¸ ì•„ì´ìŠ¤í¬ë¦¼', '3000',5);
 
 --iorder dml -- oidx, ordercode, icode,idx,orderdate,count,price
-insert into iorder values (iorder_oidx_seq.nextval, '', 1,2,sysdate,5,10000);
-insert into iorder values (iorder_oidx_seq.nextval, '', 1,2,'21/06/22',5,10000);
-insert into iorder values (iorder_oidx_seq.nextval, '', 1,2,'21/05/22',5,10000);
+insert into iorder values (iorder_oidx_seq.nextval, '', 1,3,sysdate,5,10000);
+insert into iorder values (iorder_oidx_seq.nextval, '', 1,4,'21/06/22',5,10000);
+insert into iorder values (iorder_oidx_seq.nextval, '', 1,4,'21/05/22',5,10000);
 
 
 commit;
@@ -69,4 +67,3 @@ commit;
 select * from iorder;
 select * from member;
 select * from product;
-

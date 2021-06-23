@@ -5,8 +5,8 @@ public class Product {
 	private String iname;
 	private int iprice;
 	private int count;
+	
 	public Product() {
-		
 	}
 	public Product(int icode, String iname, int iprice, int count) {
 		this.icode = icode; // 상품번호
