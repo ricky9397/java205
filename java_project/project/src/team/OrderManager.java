@@ -41,8 +41,6 @@ public class OrderManager {
 		Connection conn = null;
 		
 		try {
-			
-
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			
 			conn.setAutoCommit(false);
@@ -194,21 +192,25 @@ public class OrderManager {
 	
 	public void menu() {
 		while (true) {
-			System.out.println("[1]주문하기 [2]주문내역확인 [3]주문취소 [0]돌아가기");
+			System.out.println("[1]메뉴보기 [2]주문하기 [3]주문내역확인 [0]돌아가기");
 			int input = sc.nextInt();
 			switch (input) {
 			case 1:
 				p.productList();
-				orderinsert();
 				break;
 			case 2:
-				orderList();
+				orderinsert();
 				break;
 			case 3:
+				orderList();
+				break;
+			case 4:
 //				delOrder();
 				break;
 			case 0:
 				continue;
+			default:
+				System.out.println("잘못입력하셨습니다. 다시입력해주세요.");
 			}
 		}
 	}

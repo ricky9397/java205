@@ -40,10 +40,10 @@ public class ProductManager {
 			System.out.println("상품번호 \t 상품이름 \t\t 상품가격");
 			System.out.println("--------------------------------");
 
-
 			for (Product p : pro) {
 				System.out.printf("%d \t %s \t %s \n", p.getIcode(), p.getIname(), p.getIprice());
 			}
+			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
