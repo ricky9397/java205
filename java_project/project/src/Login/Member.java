@@ -1,13 +1,12 @@
-package jdbc;
+package Login;
 
-public class MemberDTO {
+public class Member {
 	private String id;
 	private String pw;
 	private String name;
 	private String phone;
 	private String email;
-	public MemberDTO(String id, String pw, String name, String phone, String email) {
-		super();
+	public Member(String id, String pw, String name, String phone, String email) {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;

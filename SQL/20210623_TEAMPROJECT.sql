@@ -19,7 +19,7 @@ CREATE TABLE  PRODUCT (
                               ) ;          
           
           
-          
+
                               
                               
 CREATE TABLE IORDER (           oidx NUMBER(6) CONSTRAINT ORDER_OCODE_PK PRIMARY KEY,

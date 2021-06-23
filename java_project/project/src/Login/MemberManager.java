@@ -1,4 +1,4 @@
-package jdbc;
+package Login;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,8 @@ import java.util.Scanner;
 
 
 public class MemberManager {
-	
+	Scanner sc = new Scanner(System.in);
+	List<Member> m = new ArrayList<>();
 	private MemberDAO dao;
 	
 	public MemberManager(MemberDAO mem) {
@@ -21,20 +22,21 @@ public class MemberManager {
 	String user = "hr";
 	String pw = "tiger";
 	
+	// 회원 정보리스트 수정 필요 
 	void MemberList() {
 		Connection con = null;
 		
 		try {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
 			
-			List<MemberDTO> list = dao.getMemberList(con);
+			List<Member> list = dao.getMemberList(con);
 			
 			System.out.println("회원 정보 리스트");
 			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 			System.out.println("id\t pw\t 이름\t 번호\t 메일");
 			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 			
-			for(MemberDTO md : list) {
+			for(Member md : list) {
 				System.out.printf("%s\t %s\t %s\t %s\t %s \n",
 									md.getId(),
 									md.getPw(),
@@ -63,52 +65,31 @@ public class MemberManager {
 		
 	}
 	
-	Scanner sc = new Scanner(System.in);
-	List<MemberDTO> m = new ArrayList<>();
-	
+	// 로그인 후 접속 진행방향
 	public void munus() {
 		System.out.println("관리자 전용 입니다.");
-		System.out.println("[1]회원전체리스트");
+		System.out.println("[1]맴버쉽전용 [2]관리자전용 ");
 		int num = sc.nextInt();
 		switch(num) {
 		case 1:
 			MemberList();
 			break;
-		}
-		
-	}
-	public void run() {
-		
-		int key = 0;
-		while((key = menu()) != 0) {
-			switch(key) {
-			case 1:
-				Login();
-				break;
-			case 2:
-				MemberJoin();
-				break;
-			case 3:
-				SelectMember();
-				break;
-			case 4:
-				munus();
-				break;
-			}
+		case 2:
+			break;
 		}
 	}
 	
+	// 테스트 출력용 
 	private void SelectMember() {
-		Iterator<MemberDTO> ite = m.iterator();
+		Iterator<Member> ite = m.iterator();
 		
 		while(ite.hasNext()) {
 			System.out.println(ite.next() + " ");
-			
 		}
 	}
 	
+	// 회원가입 다시수정 필요
 	private void MemberJoin() {
-
 		Connection con = null;
 
 		try {
@@ -116,16 +97,18 @@ public class MemberManager {
 			System.out.println("회원가입합니다.");
 			sc.nextLine();
 			String id = getStrInput("id : ");
+			if(idCheck(id)) {
+				System.out.println("중복된 id입니다.");
+			}
 			String pw = getStrInput("pw : ");
 			String pw2 = getStrInput("pw confirm : ");
 			String name = getStrInput("name : ");
 			String phone = getStrInput("phone : ");
 			String email = getStrInput("email : ");
 			
-			if(idCheck(id)) {
-				System.out.println("중복된 id입니다.");
-			} else if (pw.equals(pw2)) {
-				MemberDTO mem = new MemberDTO(id, pw, name, phone, email);
+			
+			if (pw.equals(pw2)) {
+				Member mem = new Member(id, pw, name, phone, email);
 				m.add(mem);
 				int result = dao.inserMemberDTO(con, mem);
 				
@@ -139,17 +122,16 @@ public class MemberManager {
 				System.out.println("비밀번호를 확인해주세요.");
 			}
 			
-			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
 		
+	// 가입할때 아이디 중복 체크
 	private boolean idCheck(String id) {
 		boolean check = true;
-		MemberDTO member = FindByID(id);
+		Member member = FindByID(id);
 		if(member == null) {
 			check = false;
 			return check;
@@ -157,12 +139,13 @@ public class MemberManager {
 		return check;
 	}
 	
+	// 로그인 구현 기능 수정 필요
 	private void Login() {
 		sc.nextLine();
 		String id = getStrInput("id : ");
 		String pw = getStrInput("pw : ");
 		
-		MemberDTO member = FindByID(id);
+		Member member = FindByID(id);
 		if(member == null) {
 			System.out.println("등록되지 않은 ID입니다.");
 		} else if(member.getPw().equals(pw)) {
@@ -172,8 +155,9 @@ public class MemberManager {
 		}
 	}
 	
-	private MemberDTO FindByID(String id) {
-		for(MemberDTO memberDTO : m) {
+	// 아이디 비교 하는 메소드 
+	private Member FindByID(String id) {
+		for(Member memberDTO : m) {
 			if(memberDTO.getId().equals(id)) {
 				return memberDTO;
 			}
@@ -181,6 +165,7 @@ public class MemberManager {
 		return null;
 	}
 	
+	// 입력값 메소드
 	private String getStrInput(String msg) {
 		System.out.println(msg);
 		return sc.nextLine();
@@ -190,9 +175,34 @@ public class MemberManager {
 		return sc.nextInt();
 	}
 	
+	// 첫시작 로그인
 	private int menu() {
-		System.out.println("어서오세용");
-		return getNumInput("[1]로그인 [2]회원가입 [3]전체 회원 보기 [4]관리자 로그인 [0]종료");
+		return getNumInput("[1]회원가입 [2]로그인 [3]테스트용회원보기 [0]종료");
 				
 	}
+	
+	// 메인 돌려보는 메소드
+	public void run() {
+
+		int key = 0;
+		while((key = menu()) != 0) {
+			switch(key) {
+			case 1:
+				MemberJoin();
+				break;
+			case 2:
+				Login();
+				break;
+			case 3:
+				SelectMember();
+				break;
+			case 0:
+				System.out.println("프로그램을 종료합니다.");
+				System.exit(0);
+			default:
+				System.out.println("잘못입력했다. 제대로입력해라");
+			}
+		}
+	}
+	
 }
