@@ -1,21 +1,21 @@
 -- 2021.06.17
 
 
--- ì‹œí€€ìŠ¤ : ìˆ«ìë¥¼ ìƒì„±í•˜ëŠ” ê°ì²´ 
--- ì„¤ì •ì„ í†µí•´ ì¼ë ¨ë²ˆí˜¸ë¥¼ ìƒì„± -> ê¸°ë³¸í‚¤ê°€ ëŒ€ë¦¬í‚¤ì¸ê²½ìš° ì…ë ¤ë˜ëŠ” ê°’ìœ¼ë¡œ ì‚¬ìš©
+-- ?‹œ???Š¤ : ?ˆ«?ë¥? ?ƒ?„±?•˜?Š” ê°ì²´ 
+-- ?„¤? •?„ ?†µ?•´ ?¼? ¨ë²ˆí˜¸ë¥? ?ƒ?„± -> ê¸°ë³¸?‚¤ê°? ??ë¦¬í‚¤?¸ê²½ìš° ?…? ¤?˜?Š” ê°’ìœ¼ë¡? ?‚¬?š©
 
--- dept í…Œì´ë¸”ì„ ë³µì‚¬ -> deptnoì— ë“¤ì–´ê°ˆ ë°ì´í„° ì‹œì¿¼ìŠ¤ ìƒì„± -> insert í…ŒìŠ¤íŠ¸
+-- dept ?…Œ?´ë¸”ì„ ë³µì‚¬ -> deptno?— ?“¤?–´ê°? ?°?´?„° ?‹œì¿¼ìŠ¤ ?ƒ?„± -> insert ?…Œ?Š¤?Š¸
 drop table dept03;
 create table dept03
 as select * from dept where 1=0;
 
 select * from dept03;
 
--- sequence ìƒì„±
+-- sequence ?ƒ?„±
 create sequence dept_deptno_seq
-start with 10
-increment by 10;
+start with 1
+increment by 1;
 
--- dept03ì— ì €ì¥
+-- dept03?— ???¥
 insert into dept03 values (dept_deptno_seq.nextval, 'dev', 'seoul');
 select * from dept03;

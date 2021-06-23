@@ -12,14 +12,21 @@ import teamDTO.Order;
 import teamDTO.Product;
 
 public class ProductManager {
-	ProductDAO dao = new ProductDAO();
-	Scanner sc = new Scanner(System.in);
-	ArrayList<Order> arr = new ArrayList<Order>();
-	ArrayList<Product> pro = new ArrayList<Product>();
+	ProductDAO dao;
+	Scanner sc;
+	ArrayList<Order> arr;
+	ArrayList<Product> pro;
 	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "hr";
 	String pw = "tiger";
-
+	
+	ProductManager() {
+		sc = new Scanner(System.in);
+		dao = new ProductDAO();
+		arr = new ArrayList<Order>();
+		pro = new ArrayList<Product>();
+	}
+	
 	public void productList() {
 		Connection conn = null;
 

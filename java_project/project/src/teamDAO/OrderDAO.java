@@ -12,24 +12,25 @@ import teamDTO.Product;
 
 public class OrderDAO {
 
-	public ArrayList<Order> getOrderList(Connection conn) {
+	public ArrayList<Order> getOrderList(Connection conn, Order order) {
 
 		ArrayList<Order> list = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		
 		try {
+			
+			String sql = "select * from iorder";
+
 			stmt = conn.createStatement();
-			String sql = "select * from iorder where icode=1, count=?, price=?";
-
 			rs = stmt.executeQuery(sql);
-
 			list = new ArrayList<>();
 
 			while (rs.next()) {
-				Order d = new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getString(5), rs.getInt(6), rs.getInt(7));
+				Order d = new Order(rs.getInt(1), rs.getLong(2), rs.getInt(3), rs.getInt(4), rs.getString(5), rs.getInt(6), rs.getInt(7));
 				list.add(d);
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

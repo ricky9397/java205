@@ -15,6 +15,14 @@ public class Order {
 		this.icode = icode;
 		this.count = count;
 	}
+	public Order(int oidx, int icode, int idx, String orderdate, int count, int price) {
+		this.oidx = oidx;
+		this.icode = icode;
+		this.idx = idx;
+		this.orderdate = orderdate;
+		this.count = count;
+		this.price = price;
+	}
 	public Order(int oidx, long ordercode, int icode, int idx, String orderdate, int count, int price) {
 		this.oidx = oidx;
 		this.ordercode = ordercode;
