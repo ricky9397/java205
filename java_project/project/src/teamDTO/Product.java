@@ -5,12 +5,14 @@ public class Product {
 	private String iname;
 	private int iprice;
 	private int count;
-	
+	public Product() {
+		
+	}
 	public Product(int icode, String iname, int iprice, int count) {
-		this.icode = icode;
-		this.iname = iname;
-		this.iprice = iprice;
-		this.count = count;
+		this.icode = icode; // 상품번호
+ 		this.iname = iname; // 상품이름
+		this.iprice = iprice; // 상품가격
+		this.count = count; // 상품제고
 	}
 	public int getIcode() {
 		return icode;

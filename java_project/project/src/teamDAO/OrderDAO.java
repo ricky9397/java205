@@ -8,14 +8,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import teamDTO.Order;
+import teamDTO.Product;
 
 public class OrderDAO {
+
 	public ArrayList<Order> getOrderList(Connection conn) {
 
 		ArrayList<Order> list = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-
+		
 		try {
 			stmt = conn.createStatement();
 			String sql = "select * from iorder where icode=1, count=?, price=?";
@@ -50,21 +52,22 @@ public class OrderDAO {
 	}
 
 	public int orderInsert(Connection conn, Order order) {
-
+		Product p = new Product();
 		int result = 0;
 		PreparedStatement pstmt = null;
 		try {
-
-			String sql = "insert into iorder values (1, 1, ?, 1, 1, sysdate, ?)";
+			
+			String sql = "insert into iorder values (iorder_oidx_seq.nextval, ?, ?, 2, sysdate, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setLong(1, order.getIcode());
-			pstmt.setInt(2, order.getCount());
+			pstmt.setLong(1, order.getOrdercode());
+			pstmt.setInt(2, order.getIcode());
+			pstmt.setInt(3, order.getCount());
+			pstmt.setInt(4, order.getPrice());
 
 			result = pstmt.executeUpdate();
 
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 
@@ -72,7 +75,6 @@ public class OrderDAO {
 				try {
 					pstmt.close();
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -90,6 +92,35 @@ public class OrderDAO {
 			String sql = "delete from order where oidx=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, order);
+
+			result = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return result;
+	}
+	
+	public int updateProduct(Connection conn, Order order) {
+
+		int result = 0;
+		PreparedStatement pstmt = null;
+
+		try {
+
+			String sql = "update product set count = count-? where icode=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, order.getCount());
+			pstmt.setInt(2, order.getIcode());
 
 			result = pstmt.executeUpdate();
 

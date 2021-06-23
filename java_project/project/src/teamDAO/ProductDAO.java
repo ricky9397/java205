@@ -59,7 +59,7 @@ public class ProductDAO {
 		PreparedStatement pstmt = null;
 		try {
 
-			String sql = "insert into iorder (icode,iname,iprice,count) values (?, ?, ?, ?)";
+			String sql = "insert into product (icode, iname, iprice, count) values (?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, product.getIcode());
 			pstmt.setString(2, product.getIname());

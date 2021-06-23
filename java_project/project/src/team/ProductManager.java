@@ -15,7 +15,7 @@ public class ProductManager {
 	ProductDAO dao = new ProductDAO();
 	Scanner sc = new Scanner(System.in);
 	ArrayList<Order> arr = new ArrayList<Order>();
-
+	ArrayList<Product> pro = new ArrayList<Product>();
 	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "hr";
 	String pw = "tiger";
@@ -26,16 +26,76 @@ public class ProductManager {
 		try {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 
-			List<Product> list = dao.getProductList(conn);
+			pro = dao.getProductList(conn);
 
 			System.out.println("-----------메뉴입니다-----------");
 			System.out.println("-----------------------------");
 			System.out.println("상품번호 \t 상품이름 \t 상품가격");
 			System.out.println("-----------------------------");
 
-			for (Product pro : list) {
-				System.out.printf("%d \t %s \t %s \n", pro.getIcode(), pro.getIname(), pro.getIprice());
+			for (Product p : pro) {
+				System.out.printf("%d \t %s \t %s \n", p.getIcode(), p.getIname(), p.getIprice());
 			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	void productInsert() {
+		Connection conn = null;
+
+		try {
+			conn = DriverManager.getConnection(jdbcUrl, user, pw);
+			
+			while(true) {
+				Product p = new Product();
+				while(true) {
+					System.out.println("아이스크림 메뉴번호를 입력해주세요.");
+					int icode = sc.nextInt();
+					int cnt = 0;
+					for (int i = 0; i < pro.size(); i++) {
+						if(icode == pro.get(i).getIcode()) {
+							cnt++;
+							System.out.println("메뉴번호가 중복입니다. 다시입력하세요.");
+							break;
+						}
+					}
+					if(cnt == 0) {
+						p.setIcode(icode);
+						break;
+					}
+				}
+				System.out.println("아이스크림 상품명을 입력해주세요. ");
+				p.setIname(sc.next());
+				System.out.println("아이스크림 가격을 입력해주세요.");
+				p.setIprice(sc.nextInt());
+				System.out.println("아이스크림 수량을 입력해주세요.");
+				p.setCount(sc.nextInt());
+				
+				
+				System.out.println("입력하시겠습니까?[y],[n]");
+				String input = sc.next();
+				if(input.equalsIgnoreCase("y")) {
+					pro.add(p);
+					System.out.println("입력되셨습니다.");
+					break;
+				} else if(input.equalsIgnoreCase("n")) {
+					System.out.println("다시입력해주세요.");
+				} else {
+					System.out.println("잘못입력하셨습니다. 초기화면으로 이동합니다.");
+					break;
+				}
+				
+				int result = dao.insertProduct(conn, p);
+				
+				if(result > 0) {
+					System.out.println("입력되었습니다.");
+				} else {
+					System.out.println("입력 실패!!!!");
+				}
+			}
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,7 +111,7 @@ public class ProductManager {
 				productList();
 				break;
 			case 2:
-				// insert메뉴추가 넣기
+				productInsert();
 				break;
 			case 3:
 				// del메뉴추가 넣기

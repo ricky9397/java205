@@ -1,35 +1,40 @@
 package teamDTO;
 
 public class Order {
-	private int oidx;
-	private int ordercode;
-	private int icode;
-	private int idx;
-	private String orderdate; 
-	private int price;
-	private int count;
+	private int oidx;	// pk
+	private long ordercode; // 주문코드
+	private int icode; // 상품번호
+	private int idx; // 회원번호
+	private String orderdate; // 주문날짜 
+	private int count; // 수량갯수
+	private int price; // 가격
+	
 	public Order() {
-		
 	}
-	public Order(int oidx, int ordercode, int icode, int idx, String orderdate, int price, int count) {
+	public Order(int icode, int count) {
+		this.icode = icode;
+		this.count = count;
+	}
+	public Order(int oidx, long ordercode, int icode, int idx, String orderdate, int count, int price) {
 		this.oidx = oidx;
 		this.ordercode = ordercode;
 		this.icode = icode;
 		this.idx = idx;
 		this.orderdate = orderdate;
-		this.price = price;
 		this.count = count;
+		this.price = price;
 	}
+
 	public int getOidx() {
 		return oidx;
 	}
 	public void setOidx(int oidx) {
 		this.oidx = oidx;
 	}
-	public int getOrdercode() {
+	public long getOrdercode() {
 		return ordercode;
 	}
-	public void setOrdercode(int ordercode) {
+	public void setOrdercode(long ordercode) {
 		this.ordercode = ordercode;
 	}
 	public int getIcode() {
@@ -50,24 +55,23 @@ public class Order {
 	public void setOrderdate(String orderdate) {
 		this.orderdate = orderdate;
 	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
 	public int getCount() {
 		return count;
 	}
 	public void setCount(int count) {
 		this.count = count;
 	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
 	@Override
 	public String toString() {
 		return "Order [oidx=" + oidx + ", ordercode=" + ordercode + ", icode=" + icode + ", idx=" + idx + ", orderdate="
-				+ orderdate + ", price=" + price + ", count=" + count + "]";
+				+ orderdate + ", count=" + count + ", price=" + price + "]";
 	}
-	
 	
 	
 }
