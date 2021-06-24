@@ -102,31 +102,35 @@ public class MemberDAO {
 		return result;
 	}
 	
-//	public int login (String id, String pw) {
-//		Connection con = null;
-//		PreparedStatement pstmt = null;
-//		String sql = "select pw from member where id=?";
-//		
-//		
-//		try {
-//			pstmt = con.prepareStatement(sql);
-//			pstmt.setString(1, id);
-//			rs = pstmt.executeQuery();
-//			if(rs.next()) {
-//				if(rs.getString(1).equals(pw)) {
-//					return 1; //로그인성공
-//				} else {
-//					return 0; // 비밀번호틀림
-//				}
-//			}
-//			return -1; // 아이디없음
-//			
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return 2; // 오류
+	public MemberDTO login (String id, String pw) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "select pw from member where id=?";
 		
-//	}
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getString(1).equals(pw)) {
+					System.out.println("로그인성공");
+					return null  ; //로그인성공
+				} else {
+					System.out.println("비밀번호 틀리셨습니다.");
+					return null; // 비밀번호틀림
+				}
+			}
+			System.out.println("아이디가없습니다.");
+			return null; // 아이디없음
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("데이터베이스오류");
+		return null ; // 오류
+		
+	}
 	
 }
