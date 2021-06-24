@@ -39,7 +39,7 @@ public class OrderManager {
 
 	void orderinsert() {
 		Connection conn = null;
-		
+		Product product = new Product();
 		try {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			
