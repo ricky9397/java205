@@ -19,7 +19,7 @@ public class OrderManager {
 	ArrayList<Product> pro;
 	ArrayList<Order> arr;
 	long ordercode;
-
+	
 	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "hr";
 	String pw = "tiger";
@@ -35,15 +35,12 @@ public class OrderManager {
 
 	void orderinsert() {
 		Connection conn = null;
-<<<<<<< HEAD
 		Product product = new Product();
-=======
 		arr.clear();
 
->>>>>>> f0c6da08948f1ac19acc185c11cba5aa8d4aa089
 		try {
 			Order or =null;
-
+			
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 
 			conn.setAutoCommit(false);
@@ -51,7 +48,7 @@ public class OrderManager {
 
 
 			while (true) {
-				or = new Order();
+				or = new Order(MemberManager.idx);
 				p.productList();
 				System.out.println("주문하실 메뉴 번호를 선택해주세요.");
 				int a = sc.nextInt();
@@ -73,7 +70,7 @@ public class OrderManager {
 				String input = sc.next();
 				
 
-				if (input.equalsIgnoreCase(	"1")) {
+				if (input.equalsIgnoreCase("1")) {
 					
 					System.out.println();
 					continue;
@@ -91,6 +88,7 @@ public class OrderManager {
 					return;
 				}
 			}			
+			
 			
 			ordercode = System.nanoTime();
 

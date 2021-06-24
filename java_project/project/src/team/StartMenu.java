@@ -5,12 +5,10 @@ import java.util.Scanner;
 import teamDAO.MemberDAO;
 
 public class StartMenu {
-//	static String idx(MemberManager m) {
-//		
-//		return "dddd";
-//	}
 	
-	static int idx;
+//	static int  idx;
+	
+	
 	
 	void FirstMenu() {
 		OrderManager o = new OrderManager();
@@ -20,7 +18,6 @@ public class StartMenu {
 		//		      AdminMenu am = new AdminMenu();	// 관리자
 		int choice;
 		
-
 		while(true) {
 			System.out.println();
 			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
@@ -42,9 +39,9 @@ public class StartMenu {
 				switch(choice) {
 				case 1 : 
 					System.out.println("로그인");
-					 idx = m.Login();
+					 m.Login();
 					 m.munus();
-					 m.memberUpdate(idx);
+					 m.memberUpdate();
 					break;
 				case 2 : 
 					System.out.println("회원가입");

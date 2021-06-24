@@ -12,7 +12,6 @@ public class MainMenu {
 //		로그인
 //		MemberManager m = new MemberManager(MemberDAO.getInstance());
 //		m.run();
-		
 //		try {
 //			Class.forName("oracle.jdbc.driver.OracleDriver");
 			start.FirstMenu();
@@ -22,7 +21,6 @@ public class MainMenu {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-
 
 
 	}

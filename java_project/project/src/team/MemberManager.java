@@ -16,12 +16,17 @@ public class MemberManager {
 	Scanner sc = new Scanner(System.in);
 	List<Member> m ;
 	private MemberDAO dao;
+	Member member;
 	OrderManager o;
-	
+	static int idx;
+	public MemberManager(int idx) {
+		this.idx = idx;
+	}
 	public MemberManager(MemberDAO mem) {
 		m = new ArrayList<>();
 		o = new OrderManager();
 		this.dao = mem;
+		member = new Member();
 	}
 	
 	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -156,7 +161,7 @@ public class MemberManager {
 				System.out.println("등록되지 않은 ID입니다.");
 			} else if(member.getPassword().equals(password)) {
 				System.out.println("[" + member.getId() + "]님께서 로그인 하셨습니다.");
-				result = member.getIdx();
+				idx = member.getIdx();
 			} else {
 				System.out.println("비밀번호가 틀렸습니다.");
 			}
@@ -187,13 +192,13 @@ public class MemberManager {
 		return sc.nextInt();
 	}
 	
-	void memberUpdate(int idx) {
+	void memberUpdate() {
 		Connection conn = null;
 //		this.idx = idx;
 		
 		try {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
-		
+			
 			String pw = getStrInput("수정하실 패스워드 : ");
 			String name = getStrInput("수정하실 이름 : ");
 			String phone = getStrInput("수정하실 핸드폰번호 : ");
@@ -208,8 +213,6 @@ public class MemberManager {
 			e.printStackTrace();
 		}
 	}
-	
-	
 	
 	// 첫시작 로그인
 	private int menu() {

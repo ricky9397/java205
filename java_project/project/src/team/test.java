@@ -1,7 +1,6 @@
 
 package team;
 
-<<<<<<< HEAD
 import java.util.Scanner;
 
 public class test {
@@ -11,7 +10,6 @@ public class test {
 		
 		ProductManager p = new ProductManager();
 		p.allMenu();
-		
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("테스트용");
@@ -26,19 +24,6 @@ public class test {
 		}
 		
 	}
-=======
-public class test {
-	public static void main(String[] args) {
-		//주문용
-//		OrderManager or = new OrderManager(); 
-//		or.menu();
-		// 메뉴
-//		ProductManager p = new ProductManager();
-//		p.allMenu();
-//		
-		
-	   }
-	
->>>>>>> f0c6da08948f1ac19acc185c11cba5aa8d4aa089
-	
+
+
 }

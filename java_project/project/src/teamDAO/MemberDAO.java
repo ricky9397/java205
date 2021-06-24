@@ -78,7 +78,6 @@ public class MemberDAO {
 			pstmt.setString(3, mem.getName());
 			pstmt.setString(4, mem.getPhonenum());
 			pstmt.setString(5, mem.getEmail());
-			
 			result = pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
