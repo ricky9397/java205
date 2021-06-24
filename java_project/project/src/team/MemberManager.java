@@ -19,9 +19,7 @@ public class MemberManager {
 	Member member;
 	OrderManager o;
 	static int idx;
-	public MemberManager(int idx) {
-		this.idx = idx;
-	}
+	
 	public MemberManager(MemberDAO mem) {
 		m = new ArrayList<>();
 		o = new OrderManager();
