@@ -7,10 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import teamDTO.Order;
 import teamDTO.Product;
 
-public class ProductDAO {
+public class ProductDao {
 	
 	// 아이스크림 메뉴 출력
 	public ArrayList<Product> getProductList(Connection conn) {

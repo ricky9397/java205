@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import teamDTO.Order;
 import teamDTO.Product;
 
-public class OrderDAO {
+public class OrderDao {
 
 	public ArrayList<Order> getOrderList(Connection conn, Order order) {
 
@@ -58,13 +58,13 @@ public class OrderDAO {
 		PreparedStatement pstmt = null;
 		try {
 			
-			String sql = "insert into iorder values (iorder_oidx_seq.nextval, ?, ?, 2, sysdate, ?, ?)";
+			String sql = "insert into iorder values (iorder_oidx_seq.nextval, ?, ?, ?, sysdate, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setLong(1, order.getOrdercode());
 			pstmt.setInt(2, order.getIcode());
-			pstmt.setInt(3, order.getCount());
-			pstmt.setInt(4, order.getPrice());
-
+			pstmt.setInt(3, order.getIdx());
+			pstmt.setInt(4, order.getCount());
+			pstmt.setInt(5, order.getPrice());
 			result = pstmt.executeUpdate();
 
 

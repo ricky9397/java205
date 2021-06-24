@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import teamDAO.ProductDAO;
+import teamDAO.ProductDao;
 import teamDTO.Order;
 import teamDTO.Product;
 
 public class ProductManager {
-	ProductDAO dao;
+	ProductDao dao;
 	Scanner sc;
 	ArrayList<Order> arr;
 	ArrayList<Product> pro;
@@ -22,7 +22,7 @@ public class ProductManager {
 	
 	ProductManager() {
 		sc = new Scanner(System.in);
-		dao = new ProductDAO();
+		dao = new ProductDao();
 		arr = new ArrayList<Order>();
 		pro = new ArrayList<Product>();
 	}
