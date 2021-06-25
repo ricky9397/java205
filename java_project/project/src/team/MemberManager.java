@@ -59,18 +59,6 @@ public class MemberManager {
 		}
 	}
 
-	void inputData() {
-		Connection conn = null;
-
-		try {
-			conn = DriverManager.getConnection(jdbcUrl, user, pw);
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-	}
-
 	// 테스트 출력용 
 	private void SelectMember() {
 		Iterator<Member> ite = m.iterator();
@@ -83,7 +71,6 @@ public class MemberManager {
 	// 회원가입
 	public void memberInsert() {
 		Connection conn = null;
-
 		try {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			m = dao.getMemberList(conn);
@@ -126,7 +113,7 @@ public class MemberManager {
 		return check;
 	}
 
-	// 로그인 구현 기능 수정 필요
+	// 로그인 구현 기능
 	public void Login() {
 		Connection conn = null;
 		try {
@@ -152,7 +139,8 @@ public class MemberManager {
 			e.printStackTrace();
 		}
 	}
-	// aaa = ?? select id from member ==> result 
+	
+	
 	// 아이디 비교 하는 메소드 
 	private Member FindByID(String id) {
 		for(Member memberDTO : m) { 
@@ -168,14 +156,15 @@ public class MemberManager {
 		System.out.println(msg);
 		return sc.nextLine();
 	}
+	// 입력값 메소드
 	private int getNumInput(String msg) {
 		System.out.println(msg);
 		return sc.nextInt();
 	}
-
+	
+	// 회원정보 수정
 	void memberUpdate() {
 		Connection conn = null;
-		//		this.idx = idx;
 
 		try {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
@@ -204,8 +193,6 @@ public class MemberManager {
 					break;
 				}
 			}
-
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -240,6 +227,5 @@ public class MemberManager {
 				System.out.println("잘못입력하셨습니다. 숫자 1~3번 만 입력하세요.");
 			}
 		}
-
 	}
 }
