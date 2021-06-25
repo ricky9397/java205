@@ -28,9 +28,9 @@ public class OrderManager2 {
 	String user = "hr";
 	String pw = "tiger";
 	public OrderManager2() {
-		 p = new ProductManager();
-		 pdao = new ProductDao();
-		 odao = new OrderDao();
+//		 p = new ProductManager();
+//		 pdao = new ProductDao();
+//		 odao = new OrderDao();
 		 arr = new ArrayList<Order>();
 		 sc = new Scanner(System.in);
 		 or = new Order();

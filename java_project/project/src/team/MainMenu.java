@@ -1,9 +1,5 @@
 package team;
 
-import java.util.Scanner;
-
-import teamDAO.MemberDao;
-
 public class MainMenu {
 
 	public static void main(String[] args) {
