@@ -19,11 +19,11 @@ public class OrderManager {
 	ArrayList<Product> pro;
 	ArrayList<Order> arr;
 	long ordercode;
-	
+
 	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "hr";
 	String pw = "tiger";
-	
+
 	public OrderManager(OrderDao order, ProductDao product) {
 		this.pdao = product;
 		this.odao = order;
@@ -39,7 +39,7 @@ public class OrderManager {
 
 		try {
 			Order or =null;
-			
+
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 
 			conn.setAutoCommit(false);
@@ -54,7 +54,7 @@ public class OrderManager {
 				System.out.println("주문 수량을 선택해주세요.");
 				int b = sc.nextInt();
 				or.setCount(b);
-				
+
 				for (int i = 0; i < pro.size(); i++) {
 					if(pro.get(i).getIcode() == a) {
 						or.setPrice(pro.get(i).getIprice()*b);
@@ -63,13 +63,12 @@ public class OrderManager {
 				}
 
 				arr.add(or);
-				
+
 				System.out.println(" [1]  계속 주문하기 ,  [2] 결제하기  , [3] 돌아가기 ");
 				String input = sc.next();
-				
+
 
 				if (input.equalsIgnoreCase("1")) {
-					
 					System.out.println();
 					continue;
 
@@ -80,16 +79,17 @@ public class OrderManager {
 					arr.clear();
 					System.out.println("이전으로 돌아갑니다.");
 					return;
-				
 				} else {
 					System.out.println("잘못입력하셨습니다. .");
 					return;
 				}
 			}			
-			
-			
+
+
 			ordercode = System.nanoTime();
 
+
+			// 나노 ㅋ
 			for (int i = 0; i < arr.size(); i++) {
 
 				arr.get(i).setOrdercode(ordercode);
@@ -134,7 +134,6 @@ public class OrderManager {
 					sum += arr.get(i).getPrice();
 
 				}
-
 			}
 			System.out.println("-----------------------------------------------------------------");
 			System.out.println("      총 구매 내역 :  \t\t "+sum +"원");
@@ -145,7 +144,6 @@ public class OrderManager {
 			e.printStackTrace();
 		}
 	}
-
 
 	public void menu() {
 		System.out.println("주문을 시작합니다. ");
