@@ -83,6 +83,10 @@ public class MemberManager {
 				}
 				String pw = getStrInput("PW : ");
 				String pw2 = getStrInput("PW CONFIRM : ");
+				if(!(pw.equals(pw2))) {
+					System.out.println("비밀번호를 잘못입력하셨습니다. 다시입력하세요.");
+					continue;
+				}
 				String name = getStrInput("NAEM : ");
 				String phone = getStrInput("PHONE : ");
 				String email = getStrInput("EMAIL : ");
