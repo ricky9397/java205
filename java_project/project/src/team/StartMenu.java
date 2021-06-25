@@ -40,7 +40,7 @@ public class StartMenu {
 				case 1 : 
 					System.out.println("로그인");
 					 m.Login();
-					 m.munus();
+					 m.memberEdit();
 					 m.memberUpdate();
 					break;
 				case 2 : 

@@ -38,7 +38,7 @@ public class MemberDAO {
 			
 			while(rs.next()) {
 				list.add(new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
-			}
+			}                                         // id -> 
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
