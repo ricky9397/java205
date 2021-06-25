@@ -14,14 +14,13 @@ import teamDTO.Member;
 
 public class MemberManager {
 	Scanner sc = new Scanner(System.in);
-	List<Member> m ;
+	ArrayList<Member> m = new ArrayList<Member>();
 	private MemberDAO dao;
-	Member member;
+	Member member;	// 멤버 객체
 	OrderManager o;
 	static int idx;
 
 	public MemberManager(MemberDAO mem) {
-		m = new ArrayList<>();
 		o = new OrderManager();
 		this.dao = mem;
 		member = new Member();
@@ -87,57 +86,27 @@ public class MemberManager {
 
 		try {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
-			while(true) {
-				Member mem = new Member();
-				while(true) {
-					System.out.println("ID : ");
-					String id = sc.nextLine();
-					int cnt = 0;
-					for (int i = 0; i < m.size(); i++) {
-						/*aaa*/ if(id.equals(m.get(i).getId())) {
-							cnt++;
-							System.out.println("아이디가 중복입니다. 다시입력해주세요.");
-							break;
-						}
-					}
-					if(cnt == 0) {
-						mem.setId(id);
-					}
-					String pw = getStrInput("PW : ");
-					String pw2 = getStrInput("PW CONFIRM : ");
-					String name = getStrInput("NAEM : ");
-					String phone = getStrInput("PHONE : ");
-					String email = getStrInput("EMAIL : ");
-					m.add(mem);
-					int result  = dao.inserMemberDTO(conn, mem);
-					
-					if(result > 0) {
-						System.out.println("입력되었습니다.");
-					} else {
-						System.out.println("입력 실패!!!!");
-					}
-			}	
-//				if(idCheck(id)) {
-//					System.out.println("중복된 id입니다.");
-//				} 
-//				
-//				else if (pw.equals(pw2)) {
-//					Member mem = new Member(id, pw, name, phone, email);
-//					int result = dao.inserMemberDTO(con, mem);
-//					
-//					if(result > 0) {
-//						System.out.println("입력되었습니다.");
-//					} else {
-//						System.out.println("입력 실패");
-//					}
-//					System.out.println(id + "님 가입을 축하드립니다.");
-//				} else {
-//					System.out.println("비밀번호를 확인해주세요.");
-//				}
-//			}
-			
-//			String id = getStrInput("ID : ");
+			m = dao.getMemberList(conn);
+
+			String id = getStrInput("ID : ");
+			if(idCheck(id)) {
+				System.out.println("중복된 id입니다.");
 			}
+			String pw = getStrInput("PW : ");
+			String pw2 = getStrInput("PW CONFIRM : ");
+			String name = getStrInput("NAEM : ");
+			String phone = getStrInput("PHONE : ");
+			String email = getStrInput("EMAIL : ");
+			
+			if (pw.equals(pw2)) {
+				Member mem = new Member(id, pw, name, phone, email);
+				dao.inserMemberDTO(conn, mem);
+
+				System.out.println(id + "님 가입을 축하드립니다.");
+			} else {
+				System.out.println("비밀번호를 확인해주세요.");
+			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -182,7 +151,7 @@ public class MemberManager {
 		}
 		return result;
 	}
-// aaa = ?? select id from member ==> result 
+	// aaa = ?? select id from member ==> result 
 	// 아이디 비교 하는 메소드 
 	private Member FindByID(String id) {
 		for(Member memberDTO : m) { 
@@ -217,7 +186,6 @@ public class MemberManager {
 				String phone = getStrInput("수정하실 핸드폰번호 : ");
 				String email = getStrInput("수정하실 메일 : ");
 
-				int result = dao.updateMember(conn, member);
 
 				System.out.println("입력한 사항이 모두 맞습니까? 예(1) 아니오(2)");
 				int input = Integer.parseInt(sc.nextLine());
@@ -225,6 +193,7 @@ public class MemberManager {
 				if(input == 1) {
 					System.out.println("수정이 완료되었습니다.");
 					Member member = new Member(idx, pw, name, phone, email);
+					int result = dao.updateMember(conn, member);
 					break;
 				} else if(input == 2) {
 					System.out.println("메인으로 이동");
@@ -245,10 +214,10 @@ public class MemberManager {
 	public void memberEdit() {
 		int choice;
 		while(true) {
-			System.out.println("[1]회원정보수정 [2]주문 [3]돌아가기");
+			System.out.println("[1]회원정보수정 [2]회원정보보기 [3]주문 [4]돌아가기");
 			try {
 				choice= Integer.parseInt(sc.nextLine());
-				if(choice<1 || choice>3) {
+				if(choice<1 || choice>4) {
 					throw new Exception("잘못입력하셨습니다. 1,2,3번 중 하나를 선택해주세요. ");
 				}
 				switch(choice) {
@@ -256,10 +225,13 @@ public class MemberManager {
 					memberUpdate();
 					break;
 				case 2:
-					o.menu();
+					MemberList();
 					break;
 				case 3:
-					continue;
+					o.menu();
+					break;
+				case 4:
+					break;
 				}
 			} catch(Exception e) {
 				System.out.println("잘못입력하셨습니다. 숫자 1~3번 만 입력하세요.");
