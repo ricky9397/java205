@@ -90,33 +90,33 @@ public class OrderDao {
 		return result;
 	}
 
-	public int deleteProduct(Connection conn, int order) {
-
-		int result = 0;
-
-		PreparedStatement pstmt = null;
-
-		try {
-			String sql = "delete from order where oidx=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, order);
-
-			result = pstmt.executeUpdate();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-
-			if(pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		return result;
-	}
+//	public int deleteProduct(Connection conn, int order) {
+//
+//		int result = 0;
+//
+//		PreparedStatement pstmt = null;
+//
+//		try {
+//			String sql = "delete from order where oidx=?";
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setInt(1, order);
+//
+//			result = pstmt.executeUpdate();
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//
+//			if(pstmt != null) {
+//				try {
+//					pstmt.close();
+//				} catch (SQLException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}
+//		return result;
+//	}
 	
 	public int updateProduct(Connection conn, Order order) {
 
