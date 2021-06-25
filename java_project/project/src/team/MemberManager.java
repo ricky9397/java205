@@ -8,6 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+
 import teamDAO.MemberDAO;
 import teamDTO.Member;
 
@@ -38,20 +40,18 @@ public class MemberManager {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 
 			m = dao.getMemberList(conn);
-
-			System.out.println("회원 정보 리스트");
-			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-			System.out.println("id\t pw\t 이름\t 번호\t 메일");
-			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-
-			for(Member md : m) {
-				System.out.printf("%s\t %s\t %s\t %s\t %s \n",
-						md.getIdx(),
-						md.getId(), 
-						md.getPassword(),
-						md.getName(),
-						md.getPhonenum(),
-						md.getEmail());
+			
+			System.out.println("-------------회원 정보 리스트-------------");
+			System.out.println("-------------------------------------");
+			for (int i = 0; i < m.size(); i++) {
+				if(idx==m.get(i).getIdx()) {
+					System.out.println("회원 ID : " + m.get(i).getId());
+					System.out.println("회원 PW : " + m.get(i).getPassword());
+					System.out.println("회원이름 : " + m.get(i).getName());
+					System.out.println("회원 핸드폰 : " + m.get(i).getPhonenum());
+					System.out.println("회원 이메일 : " + m.get(i).getEmail());
+					System.out.println("-------------------------------------");
+				}
 			}
 
 		} catch (SQLException e) {
@@ -210,12 +210,13 @@ public class MemberManager {
 			e.printStackTrace();
 		}
 	}
-
+	
 	// 메인 돌려보는 메소드
 	public void memberMenu() {
+		StartMenu startMenu = new StartMenu();
 		int choice;
 		while(true) {
-			System.out.println("[1]회원정보수정 [2]회원정보보기 [3]주문 [4]돌아가기");
+			System.out.println("[1]회원정보수정 [2]회원정보보기 [3]주문 [4]로그아웃");
 			try {
 				choice= Integer.parseInt(sc.nextLine());
 				if(choice<1 || choice>4) {
@@ -232,6 +233,7 @@ public class MemberManager {
 					o.menu();
 					break;
 				case 4:
+					startMenu.FirstMenu();
 					break;
 				}
 			} catch(Exception e) {
