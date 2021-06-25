@@ -90,14 +90,26 @@ public class MemberManager {
 				String name = getStrInput("NAEM : ");
 				String phone = getStrInput("PHONE : ");
 				String email = getStrInput("EMAIL : ");
+				
+				System.out.println("회원가입시겠습니까? 예(y) 아니오(n)");
+				String input = sc.nextLine();
 
-				if (pw.equals(pw2)) {
-					Member mem = new Member(id, pw, name, phone, email);
-					dao.inserMemberDTO(conn, mem);
-					System.out.println(id + "님 가입을 축하드립니다.");
+				if(input.equalsIgnoreCase("y")) {
+					if (pw.equals(pw2)) {
+						Member mem = new Member(id, pw, name, phone, email);
+						dao.inserMemberDTO(conn, mem);
+						System.out.println(id + "님 가입을 축하드립니다.");
+						break;
+					} else {
+						System.out.println("비밀번호를 확인해주세요.");
+					}
+					break;
+				} else if(input.equalsIgnoreCase("n")) {
+					System.out.println("메인으로 이동");
 					break;
 				} else {
-					System.out.println("비밀번호를 확인해주세요.");
+					System.out.println("잘못 누르셨습니다. 초기 메뉴로 이동합니다.");
+					break;
 				}
 			}
 		} catch (SQLException e) {
