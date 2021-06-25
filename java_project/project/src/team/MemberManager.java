@@ -87,26 +87,28 @@ public class MemberManager {
 		try {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			m = dao.getMemberList(conn);
+			while(true) {
 
-			String id = getStrInput("ID : ");
-			if(idCheck(id)) {
-				System.out.println("중복된 id입니다.");
+				String id = getStrInput("ID : ");
+				if(idCheck(id)) {
+					System.out.println("중복된 id입니다.");
+					continue;
+				}
+				String pw = getStrInput("PW : ");
+				String pw2 = getStrInput("PW CONFIRM : ");
+				String name = getStrInput("NAEM : ");
+				String phone = getStrInput("PHONE : ");
+				String email = getStrInput("EMAIL : ");
+
+				if (pw.equals(pw2)) {
+					Member mem = new Member(id, pw, name, phone, email);
+					dao.inserMemberDTO(conn, mem);
+					System.out.println(id + "님 가입을 축하드립니다.");
+					break;
+				} else {
+					System.out.println("비밀번호를 확인해주세요.");
+				}
 			}
-			String pw = getStrInput("PW : ");
-			String pw2 = getStrInput("PW CONFIRM : ");
-			String name = getStrInput("NAEM : ");
-			String phone = getStrInput("PHONE : ");
-			String email = getStrInput("EMAIL : ");
-			
-			if (pw.equals(pw2)) {
-				Member mem = new Member(id, pw, name, phone, email);
-				dao.inserMemberDTO(conn, mem);
-
-				System.out.println(id + "님 가입을 축하드립니다.");
-			} else {
-				System.out.println("비밀번호를 확인해주세요.");
-			}
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -125,9 +127,8 @@ public class MemberManager {
 	}
 
 	// 로그인 구현 기능 수정 필요
-	public int Login() {
+	public void Login() {
 		Connection conn = null;
-		int result = 0;
 		try {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 			String id = getStrInput("id : ");
@@ -142,6 +143,7 @@ public class MemberManager {
 			} else if(member.getPassword().equals(password)) {
 				System.out.println("[" + member.getId() + "]님께서 로그인 하셨습니다.");
 				idx = member.getIdx();
+				memberMenu();
 			} else {
 				System.out.println("비밀번호가 틀렸습니다.");
 			}
@@ -149,7 +151,6 @@ public class MemberManager {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return result;
 	}
 	// aaa = ?? select id from member ==> result 
 	// 아이디 비교 하는 메소드 
@@ -211,7 +212,7 @@ public class MemberManager {
 	}
 
 	// 메인 돌려보는 메소드
-	public void memberEdit() {
+	public void memberMenu() {
 		int choice;
 		while(true) {
 			System.out.println("[1]회원정보수정 [2]회원정보보기 [3]주문 [4]돌아가기");

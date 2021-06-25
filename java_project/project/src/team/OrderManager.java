@@ -46,7 +46,6 @@ public class OrderManager {
 			conn.setAutoCommit(false);
 			pro = pdao.getProductList(conn);
 
-
 			while (true) {
 				or = new Order(MemberManager.idx);
 				p.productList();

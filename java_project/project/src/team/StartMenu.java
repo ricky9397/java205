@@ -39,9 +39,8 @@ public class StartMenu {
 				switch(choice) {
 				case 1 : 
 					System.out.println("로그인");
-					 m.Login();
-					 m.memberEdit();
-					 m.memberUpdate();
+					m.Login();
+//					m.memberMenu();
 					break;
 				case 2 : 
 					System.out.println("회원가입");
@@ -57,6 +56,8 @@ public class StartMenu {
 
 
 				}
+				
+				continue;
 			} catch (Exception e) {
 				System.out.println("잘못입력하셨습니다. 숫자 1,2,3,4번 중 하나를 선택해주세요. ");
 			}
