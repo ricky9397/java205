@@ -7,18 +7,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import team.MemberManager;
-import team.StartMenu;
 import teamDTO.Member;
 
-public class MemberDAO {
+public class MemberDao {
 	
 	
 	// 싱글톤
-	private MemberDAO() {
+	private MemberDao() {
 	}
-	static private MemberDAO dao = new MemberDAO();
-	public static MemberDAO getInstance() {
+	static private MemberDao dao = new MemberDao();
+	public static MemberDao getInstance() {
 		return dao;
 	}
 	

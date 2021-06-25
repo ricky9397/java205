@@ -5,27 +5,27 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
-
-import teamDAO.MemberDAO;
+import teamDAO.MemberDao;
+import teamDAO.OrderDao;
+import teamDAO.ProductDao;
 import teamDTO.Member;
 
 
 public class MemberManager {
 	Scanner sc = new Scanner(System.in);
-	ArrayList<Member> m = new ArrayList<Member>();
-	private MemberDAO dao;
+	ArrayList<Member> mList;
+	private MemberDao dao;
 	Member member;	// 멤버 객체
-	OrderManager o;
+	OrderManager oManager;
 	static int idx;
-
-	public MemberManager(MemberDAO mem) {
-		o = new OrderManager();
+	
+	public MemberManager(MemberDao mem) {
+		this.mList = new ArrayList<Member>();
+		this.oManager = new OrderManager(OrderDao.getInstance(), ProductDao.getInstance());
+		this.member = new Member();
 		this.dao = mem;
-		member = new Member();
 	}
 
 	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -39,17 +39,17 @@ public class MemberManager {
 		try {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
 
-			m = dao.getMemberList(conn);
+			mList = dao.getMemberList(conn);
 			
 			System.out.println("-------------회원 정보 리스트-------------");
 			System.out.println("-------------------------------------");
-			for (int i = 0; i < m.size(); i++) {
-				if(idx==m.get(i).getIdx()) {
-					System.out.println("회원 ID : " + m.get(i).getId());
-					System.out.println("회원 PW : " + m.get(i).getPassword());
-					System.out.println("회원이름 : " + m.get(i).getName());
-					System.out.println("회원 핸드폰 : " + m.get(i).getPhonenum());
-					System.out.println("회원 이메일 : " + m.get(i).getEmail());
+			for (int i = 0; i < mList.size(); i++) {
+				if(idx==mList.get(i).getIdx()) {
+					System.out.println("회원 ID : " + mList.get(i).getId());
+					System.out.println("회원 PW : " + mList.get(i).getPassword());
+					System.out.println("회원이름 : " + mList.get(i).getName());
+					System.out.println("회원 핸드폰 : " + mList.get(i).getPhonenum());
+					System.out.println("회원 이메일 : " + mList.get(i).getEmail());
 					System.out.println("-------------------------------------");
 				}
 			}
@@ -61,7 +61,7 @@ public class MemberManager {
 
 	// 테스트 출력용 
 	private void SelectMember() {
-		Iterator<Member> ite = m.iterator();
+		Iterator<Member> ite = mList.iterator();
 
 		while(ite.hasNext()) {
 			System.out.println(ite.next() + " ");
@@ -73,7 +73,7 @@ public class MemberManager {
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(jdbcUrl, user, pw);
-			m = dao.getMemberList(conn);
+			mList = dao.getMemberList(conn);
 			while(true) {
 
 				String id = getStrInput("ID : ");
@@ -121,7 +121,7 @@ public class MemberManager {
 			String id = getStrInput("id : ");
 			String password = getStrInput("pw : ");
 
-			m = dao.getMemberList(conn);
+			mList = dao.getMemberList(conn);
 
 			Member member = FindByID(id);
 
@@ -143,7 +143,7 @@ public class MemberManager {
 	
 	// 아이디 비교 하는 메소드 
 	private Member FindByID(String id) {
-		for(Member memberDTO : m) { 
+		for(Member memberDTO : mList) { 
 			if(memberDTO.getId().equals(id)) {
 				return memberDTO;
 			}
@@ -217,7 +217,7 @@ public class MemberManager {
 					MemberList();
 					break;
 				case 3:
-					o.menu();
+					oManager.menu();
 					break;
 				case 4:
 					startMenu.FirstMenu();

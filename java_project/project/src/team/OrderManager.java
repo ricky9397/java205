@@ -23,12 +23,11 @@ public class OrderManager {
 	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "hr";
 	String pw = "tiger";
-
-
-	public OrderManager() {
-		odao = new OrderDao();
-		p = new ProductManager();
-		pdao = new ProductDao();
+	
+	public OrderManager(OrderDao order, ProductDao product) {
+		this.pdao = product;
+		this.odao = order;
+		p = new ProductManager(pdao);
 		arr = new ArrayList<Order>();
 		sc = new Scanner(System.in);
 	}

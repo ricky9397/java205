@@ -2,7 +2,7 @@ package team;
 
 import java.util.Scanner;
 
-import teamDAO.MemberDAO;
+import teamDAO.MemberDao;
 
 public class MainMenu {
 

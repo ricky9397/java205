@@ -20,9 +20,9 @@ public class ProductManager {
 	String user = "hr";
 	String pw = "tiger";
 	
-	ProductManager() {
+	ProductManager(ProductDao product) {
 		sc = new Scanner(System.in);
-		dao = new ProductDao();
+		dao = product;
 		arr = new ArrayList<Order>();
 		pro = new ArrayList<Product>();
 	}
@@ -50,6 +50,7 @@ public class ProductManager {
 		}
 	}
 	
+	// 아이스메뉴 입력
 	void productInsert() {
 		Connection conn = null;
 

@@ -2,7 +2,9 @@ package team;
 
 import java.util.Scanner;
 
-import teamDAO.MemberDAO;
+import teamDAO.MemberDao;
+import teamDAO.OrderDao;
+import teamDAO.ProductDao;
 
 public class StartMenu {
 	
@@ -11,9 +13,9 @@ public class StartMenu {
 	
 	
 	void FirstMenu() {
-		OrderManager o = new OrderManager();
-		MemberManager m = new MemberManager(MemberDAO.getInstance());
-		ProductManager p = new ProductManager();
+		OrderManager o = new OrderManager(OrderDao.getInstance(), ProductDao.getInstance());
+		MemberManager m = new MemberManager(MemberDao.getInstance());
+		ProductManager p = new ProductManager(ProductDao.getInstance());
 		Scanner sc = new Scanner(System.in);
 		//		      AdminMenu am = new AdminMenu();	// 관리자
 		int choice;

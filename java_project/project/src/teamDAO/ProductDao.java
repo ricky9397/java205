@@ -11,6 +11,13 @@ import teamDTO.Product;
 
 public class ProductDao {
 	
+	private ProductDao() {
+	}
+	static private ProductDao dao = new ProductDao();
+	public static ProductDao getInstance() {
+		return dao;
+	}
+	
 	// 아이스크림 메뉴 출력
 	public ArrayList<Product> getProductList(Connection conn) {
 

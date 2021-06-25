@@ -11,7 +11,14 @@ import teamDTO.Order;
 import teamDTO.Product;
 
 public class OrderDao {
-
+	
+	private OrderDao() {
+	}
+	static private OrderDao dao = new OrderDao();
+	public static OrderDao getInstance() {
+		return dao;
+	}
+	
 	public ArrayList<Order> getOrderList(Connection conn, Order order) {
 
 		ArrayList<Order> list = null;
