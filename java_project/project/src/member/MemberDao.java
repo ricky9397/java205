@@ -1,4 +1,4 @@
-package teamDAO;
+package member;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,69 +7,59 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import teamDTO.Member;
+import admin.CloseDB;
 
 public class MemberDao {
-	
-	
-	// 싱글톤
-	private MemberDao() {
-	}
+
+
+	// 싱글톤처리
+	private MemberDao() {}
 	static private MemberDao dao = new MemberDao();
 	public static MemberDao getInstance() {
 		return dao;
 	}
+
 	
+	
+	//모든 회원의 정보 읽기
 	public ArrayList<Member> getMemberList(Connection con){
-		
+
 		ArrayList<Member> list = null;
-		
+
 		Statement stmt = null;
 		ResultSet rs = null;
 		String sql = "select * from member";
-		
+
 		try {
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
-			
+
 			list = new ArrayList<>();
-			
+
 			while(rs.next()) {
 				list.add(new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
-			}                                         // id -> 
-			
+			}                                        
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			if(rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			CloseDB.dbClose(rs);
+			CloseDB.dbClose(stmt);
 		}
-		
-		if(stmt != null) {
 
-			try {
-				stmt.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		
 		return list;
 	}
+
 	
-	public int inserMemberDTO(Connection con, Member mem) {
-	    
+	//회원테이블에 새로운 회원 추가하기 (회원가입)
+	public int insertMember(Connection con, Member mem) {
+
 		int result = 0;
-		
+
 		PreparedStatement pstmt = null;
-		
-	    try {
-	    	String sql = "INSERT INTO MEMBER VALUES (member_idx_seq.nextval, ?, ?, ?, ?, ?)";
+
+		try {
+			String sql = "INSERT INTO MEMBER VALUES (member_idx_seq.nextval, ?, ?, ?, ?, ?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, mem.getId());
 			pstmt.setString(2, mem.getPassword());
@@ -77,28 +67,23 @@ public class MemberDao {
 			pstmt.setString(4, mem.getPhonenum());
 			pstmt.setString(5, mem.getEmail());
 			result = pstmt.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			if(pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			CloseDB.dbClose(pstmt);
 		}
 		return result;
 	}
+
 	
-	// 내일 팀원들이랑 같이 수정
+	// 로그인한 회원의 정보 수정
 	public int updateMember(Connection conn, Member member) {
 		int result = 0;
 		PreparedStatement pstmt = null;
 
 		try {
-			
+
 			String sql = "update member set pw=?, name=?, phonenum=?, email=? where idx=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getPassword());
@@ -112,45 +97,10 @@ public class MemberDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
+			CloseDB.dbClose(pstmt);
+		}
+		return result;
+	}
 
-			if(pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		return result;
-	}
-	
-	// 회원삭제 가능한지 팀원상의후 결정
-	public int deleteMember(Connection conn, int order) {
-		
-		int result = 0;
-		
-		PreparedStatement pstmt = null;
-		
-		try {
-			String sql = "delete from member where oidx=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, order);
-			
-			result = pstmt.executeUpdate();
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			
-			if(pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		return result;
-	}
-	
 }
+
