@@ -5,21 +5,8 @@
 열심히 잔디를 심어봅시다!!!
 
 
-안녕하세요! 
-
-오늘은 README 작성 방법에 대해 알아볼까 합니다. 
-
-이 포스팅을 클릭하셨다는건, README.md가 뭔지 아시는 분들일 테니 README.md가 뭔지는 생략하겠습니다.
-
-그래도 아쉬우니까.. ㅎㅎ 간단히 설명하자면 README는 해당 소프트웨어(프로그램)에 대한 정보(ex 사용법, 저작권, 프로젝트에 대한 설명 등)들을 기입해놓은 문서 파일이라고 생각하면 될 것 같습니다. 
-
-README.md 파일의 작성은 MARKDOWN을 사용합니다. 확장자 md가 바로 이 MARKDOWN의 확장자 명이죠. 
-
-결국 오늘 설명 할 내용은 MARKDOWN 문법입니다. 
-
-작성하고자 하는 글씨 앞에 보라색 기호를 넣어 작성하면 됩니다. 
-
- 
+# HTMLCSS
+HTMLCSS
 
 1. 제목(글머리) 작성 
 
@@ -80,17 +67,7 @@ ___
 [참조명]: 링크 주소
  
 
-9. 이미지 추가하기
-
-![텍스트](이미지링크)
-
-tip) 이미지 크기 조절
-<img src="이미지 링크" width="너비 " height="높이">
-
-ex)
-<img src="https://user-images.githubusercontent.com/31477658/85016059-f962aa80-b1a3-11ea-8c91-dacba2666b78.jpeg" width="700" height="370">
-
-tip2) Github README.md에 이미지 추가 (하단 참조) 
+![image](https://user-images.githubusercontent.com/84554175/123606499-e911f080-d837-11eb-95bc-d2674e5d5c2e.png)
  
 
 10. 코드 블록 추가하기
@@ -128,28 +105,11 @@ etc.
  
 
 Github README.md에 이미지 추가하는 방법
-
-1. 깃헙 레포지토리에서 이슈 클릭
-
-
- 
-
-2. New issue 클릭
-
-
-3. 이미지 드래그 & 드랍
-
-
-4. 생성된 텍스트 README.md에 복붙!!
-
-
-이미지 추가 번외)
-
-이미지를 위와같은 방법 말고 프로젝트 폴더 안에 넣어서 추가 하고 싶다면, 폴더에 추가하고자 하는 이미지를 넣으시고 다음과 같이 입력하시면 됩니다. SampleImg.png <- 폴더 안에 들어있는 사진
-
-<img src="SampleImg.png" width="300">
- 
-
+![image](https://user-images.githubusercontent.com/84554175/123601241-66d2fd80-d832-11eb-8326-a5b1bda6cdd5.png)
+![image](https://user-images.githubusercontent.com/84554175/123601276-718d9280-d832-11eb-83d0-93890cdb6c6d.png)
+![image](https://user-images.githubusercontent.com/84554175/123601411-9bdf5000-d832-11eb-9f09-910c43c51e27.png)
+![image](https://user-images.githubusercontent.com/84554175/123601442-a568b800-d832-11eb-8bb1-1162e91445b3.png)
+![image](https://user-images.githubusercontent.com/84554175/123601463-ad285c80-d832-11eb-81ce-9dcddc75c015.png)
 위에 정리한 내용을 바탕으로 README.md를 작성해보면 다음과 같은 결과가 나옵니다.
 
 # MARKDOWN
@@ -256,8 +216,3 @@ br태그를 사용한 문장개행
 
 ### 정리내용
 [정리 내용 보기](https://lsh424.tistory.com/37)
- 
-
-결과: github.com/lsh424/MARKDOWN/blob/master/README.md  에서 확인하세요 :) 
-
-많은 도움이 되셨길 바라며, 읽어주셔서 감사합니다!
