@@ -24,10 +24,65 @@
 </head>
 <body>
 
+
+
+        <!-- 서버로 전송하고자 하는 폼 데이터를 묶는다.
+    action : 데이터를 전송할 경로(위치)
+    method : 전송 방식 ( GET / POST ) -->
+    <form action="#" method="get">
+        type=text : <input type="text" name="username" value="tester"> <br>
+        type=password : <input type="password" name="pw"> <br>
+        type=checkbox : <input type="checkbox" name="chk" value="ok1">
+        <input type="checkbox" name="chk" value="ok2"><br>
+        type=radio : A<input type="radio" name="choice" value="A">
+        B<input type="radio" name="choice" value="B">
+        C<input type="radio" name="choice" value="C">
+        D<input type="radio" name="choice" value="D">
+        F<input type="radio" name="choice" value="F"> <br>
+        type=color : <input type="color" name="color"> <br>
+        type=datetime-local : <input type="datetime-local" name="localDatetime"><br>
+        type=date : <input type="date" name="date"><br>
+        type=time : <input type="time" name="time"><br>
+        type=month : <input type="month"><br>
+        type=week : <input type="week"> <br>
+        type=email : <input type="email" name="email"><br>
+        type=file : <input type="file" name="userPhoto"><br>
+        type=hidden : 화면에는 표현되지 않는다.
+        <input type="hidden" name="idx" value="1"> <br>
+        type=image : <input type="image" src="image/mini1.jpg" height="50"><br>
+        type=number : <input type="number" name="num"> <br>
+        type=range : <input type="range" name="age" min="0" , max="150"> <br>
+        type= tel : <input type="tel"> <br>
+        type=url : <input type="url" name="url"><br> 
+        
+        <select>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+        </select>
+        
+        <br> <br>
+        <input type="submit"> <input type="reset">
+
+        
+    </form>
+
+
+    <hr>
+
+    <!-- poster 영상전 썸네일 -->
+    <video src="media/trailer.mp4" controls 
+            preload="auto" poster="image/mini3.jpg" 
+            loop
+            width="700px"
+            height="500px">
+    </video>
+
+
+
     <audio src="media/old_pop.mp3" controls></audio>
     
-
-
     
 
     <hr>
