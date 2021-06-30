@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+
+    <style>
+        /* 여러개의 선택자 지정 */
+        h1, p{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* 전체선택자 */
+        *{
+            /* color: red; */
+        }
+
+        /* 태그선택자 */
+        h1{
+            /* background-color: yellow;
+            margin-top: 30px;
+            margin-left: 30px; */
+        }
+
+        p{
+            background-color: chartreuse;
+        }
+
+        /* 아이디 선택자 */
+        #title{
+           /* font-size: 16px; */ 
+        }
+
+        /* 클래스 선택자 */
+        .font_a{
+            font-style: italic;
+        }
+
+        .font_b{
+            font-weight: 100px;
+        }
+
+        #header{
+            background-color: red;
+            color: white;
+            width: 400px;
+              /* 화면을 늘렷다 줄여도 센터를 유지한다. */
+              /* 상하간격 좌우간격 */
+            margin: 10px auto;
+        }
+
+        #aside{
+            background-color: blue;
+            color: white;
+            /* %로하면 화면을 늘렷다 줄일때 같이 줄어들고 늘어난다. */
+            width: 50%;
+        }
+
+        #content{
+            background-color: green;
+            color: white;
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>header</h1>
+    </div>
+        <div id="wrap">
+            <div id="aside">
+                <h1>aside</h1>
+            </div>
+            <div id="content">
+                <h1>content</h1>
+            </div>
+        </div>
+    
+
+    <hr>
+
+
+    <h1 id="title" class="font_a">코로나19 신규 확진 794명…68일 만에 최다</h1>
+    <p class="font_a font_b">중앙방역대책본부는 오늘 0시 기준 코로나19 확진 환자가 794명 추가 확인돼 모두 15만6,961명으로 늘었다고 밝혔습니다.</p>
+</body>
+</html>
