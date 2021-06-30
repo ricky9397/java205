@@ -7,11 +7,21 @@
     <title>CSS</title>
 
     <style>
+
       /* 여러개의 선택자 지정 */
       h1,
       p {
         margin: 0px;
         padding: 0px;
+      }
+
+      h1::selection, p::selection{
+          background-color: lightseagreen;
+          color: darkkhaki;
+      }
+
+      hr{
+          margin: 50px 0;
       }
 
       /* 전체선택자 */
@@ -176,10 +186,101 @@
           border: 5px solid red;
       }
 
+      div.box{
+          width: 500px;
+          height: 150px;
+          border: 1px solid black;
+      }
+
+      input[type=checkbox]:checked{
+          width: 30px;
+          height: 30px;
+      }
+
+      input[type=checkbox]:checked+div{
+          /* background-color: burlywood; */
+          /* height: 0px; */
+          /* overflow: hidden; */
+          display: none;
+      }
+
+      label{
+          font-size: 200%;
+          font-weight: bold;
+      }
+
+      ol{
+          overflow: hidden;
+          list-style: none;
+      }
+
+      ol > li{
+          float: left;
+          /* width: 100px; */
+          padding: 5px 30px;
+        }
+
+        
+        ol > li:first-child{
+            border-radius: 10px 0px 0px 10px;
+        }
+        ol>li:last-child{
+            border-radius: 0 10px 10px 0;
+        }
+        
+        ol > li:nth-child(2n){
+            background-color: chartreuse;
+        }
+        ol > li:nth-child(2n+1){
+            background-color: cyan;
+        }
+        
+        ol > li:hover{
+            background-color: darkcyan;
+            color: white;
+            font-weight: bold;
+        }
+
+        a{
+            text-decoration: none;
+            color: chocolate;
+        }
+        a:visited{
+            color: chocolate;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+        
     </style>
   </head>
   <body>
 
+    <ol>
+        <li><a href="http://www.naver.com">naver</a></li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+        <li>seven</li>
+    </ol>
+
+    <hr>
+    <label for="chk"> check</label>
+    <input id="chk" type="checkbox">
+    <div class="box">
+        <h1>개인정보보호정책</h1>
+        <p>
+            개인 정보를 활용합니다.
+        </p>    
+    </div>
+    
+    
+    
+    <hr>
     <input>
 
     <input disabled value="test">
