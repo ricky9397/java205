@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        div.box{
+            width: 100px;
+            height: 100px;
+            
+            /* 순서대로 겹쳐진다. */
+            position: absolute;
+        }
+        #b1{
+            background-color: red;
+            left:50px;
+            top: 50px;
+            /* z-index는 맨위로 올릴때 사용(숫자가 제일 높은 것이 위로온다) */
+            z-index: 1000;
+        }
+        #b2{
+            background-color: green;
+            left: 100px;
+            top: 100px;
+            z-index: 999;
+        }
+        #b3{
+            background-color: blue;
+            left: 150px;
+            top: 150px;
+            z-index: 100;
+        }
+
+        header{
+            font-size: 2.0em;
+            border: 1px solid #ddd;
+        }
+        footer{
+            border: 1px solid #ddd;
+        }
+
+        #wrap{
+            height: 100px;
+            width: 500px;
+            border: 1px solid #ddd;
+            /* wrap영역에서 시작 */
+            position: relative;
+            /* overflow: hidden => 넓이 높이 맞춰 들어감 */
+            /* overflow: hidden; */
+            /* overflow: auto scroll이랑 비슷하다 */
+            /* overflow: auto; */
+            /* ovderflow: scroll => 높이 상관없이 스크롤 안으로 들어감 */
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+
+    <header>해더 영역입니다.</header>
+
+    <div id="wrap">
+        <div id="b1" class="box"></div>
+        <div id="b2" class="box"></div>
+        <div id="b3" class="box"></div>
+    </div>
+
+    <footer>
+        푸터 영역입니다.
+    </footer>
+
+</body>
+</html>
