@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        /* 버튼만들기 */
+        #btn{
+            width: 300px;
+            height: 100px;
+            background-color: orange;
+            border: 10px solid #eee;
+            margin: 50px;
+            border-radius: 30px;
+        }
+
+        /* btn안에 a태그선택 */
+        #btn > a{
+            /* 센터에 글씨를 넣기전에 폭 -> display: block을 잡아주자 */
+            display: block;
+            text-align: center;
+            /* 높이 센터 넣기전에 높이를 영역을 가지고 line-height을 넣어준다. */
+            height: 100px;
+            line-height: 100px;
+            
+            font-size: 36px;
+            /* 폰트 기울기 */
+            font-style: italic;
+            /* 폰트 굵기 */
+            font-weight: bold;
+            /* 모서리 둥글게 */
+            border-radius: 20px;
+        }
+
+        /* hover 마우스를 갖다 댈때 변경 */
+        #btn > a:hover{
+            background-color: tan;
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="btn">
+        <a href="#">Click</a>
+    </div>
+</body>
+</html>
