@@ -121,13 +121,26 @@
             margin: 20px 10px;
         }
 
+        a{
+            color: black;
+            font-size: 120%;
+        }
+        a:hover{
+            color: #aaa;
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
+    <!-- header 시작 -->
     <header class="border div_algin_center">
         <h1>코로나 국내 현황</h1>
         
     </header>
+    <!-- header 끝 -->
+
+    <!-- nav 시작 -->
     <nav class="border div_algin_center hidden">
         <div class="search_area">
             <form>
@@ -142,6 +155,9 @@
             <li><a href="#move4">거리두기단계</a></li>
         </ul>
     </nav>
+    <!-- nav 끝 -->
+
+    <!-- content 시작 -->
     <div id="wrap" class="div_algin_center">
         <section class="border">
             <article>
@@ -193,10 +209,14 @@
             </div>
         </aside>
     </div>
+    <!-- content 끝 -->
+
+    <!-- footer 시작 -->
     <footer class="border div_algin_center a_font">출처 
         <a href="http://ncov.mohw.go.kr/">코로나공식홈페이지</a>
         <a href="http://www.mohw.go.kr/react/index.jsp">보건복지부</a>
         <a href="http://kdca.go.kr/index.es?sid=a2">질병관리청</a>
     </footer>
+    <!-- footer 끝 -->
 </body>
 </html>
