@@ -142,23 +142,18 @@ p > a:hover{
     text-decoration: underline;
 }
 
-footer{
-    height: 50px;
-}
 .footer_ul {
-    padding-top: 2%;
-    padding-left: 15%;
+    padding-top: 30px;
 }
 .footer_ul > ul{
     width:1200px;
-
+    margin: 0 auto;
     margin-bottom: 15px;
     border-bottom:1px solid #d7d7d7;
     list-style: none;
 }
 
 .footer_ul > ul > li{
-    /* float: left; */
     display:inline-block;
     color: #8a8d91;
     padding-bottom: 15px;
@@ -177,7 +172,7 @@ footer{
 
 .footer_ul2 > ul{
     width:1200px;
-    padding-left: 15%;
+    margin: 0 auto;
     list-style: none;
     line-height: 10px;
 }
@@ -208,7 +203,7 @@ footer > p{
 }
 
 footer > p {
-    padding-left:15%;
+    padding-left:26.5%;
 }
 
 /* +모양 버튼 */
@@ -217,6 +212,7 @@ footer > p {
     margin-left: -5px;
     margin-bottom: -8px;
     border: 1px solid #ddd;
+    background-color: #f3f3f5;
 }
 
 /* 공통 클래스 */
