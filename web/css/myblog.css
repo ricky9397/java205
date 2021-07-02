@@ -44,7 +44,7 @@ body{
 /* header영역 */
 header{
     /* header영역에 있는 제목 떨어트리기 */
-   padding: 20px; 
+    padding: 20px; 
 }
 /* header안에 있는 h1선택 */
 header > h1{
