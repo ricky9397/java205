@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 전체 wrap */
+#wrap {
+    background-color: #f0f2f5;
+    width: 0 auto;
+}
+
+/* logo,login감싸는 header */
+header{
+    width:1200px;
+    height: 700px;
+    margin: 0 auto;
+    padding-bottom: 112px;
+    padding-top: 72px;
+    overflow: hidden;
+}
+
+
+footer{
+    background-color: white;
+}
+
+
+/* facebook 로고 이미지 */
+.post_img{
+    width: 400px;
+    margin-bottom: -20px;
+    margin-left: -40px;
+}
+
+/* logo 글씨 */
+header > div > h2{
+    font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+    font-size: 33px;
+    font-weight: normal;
+    width: 590px;
+}
+
+.logo{
+    padding: 112px 16px;
+    float: left;
+}
+
+.rogin_wraps{
+    float: right;
+    margin-top: 60px;
+}
+
+#rogin_wrap{
+    width: 450px;
+    height: 400px;
+    background-color: white;
+    float: right;
+    text-align: center;
+    font-size: 17px;
+    box-shadow: 3px 2px 4px #ddd;
+}
+
+#rogin_wrap{
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px auto;
+    margin-bottom: 30px;
+}
+
+.login_id_pw > input{
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 21px;
+}
+
+.login_id_pw > input[type=text]{
+    width: 405px;
+    height: 25px;
+    margin-bottom: 15px;
+}
+
+.login_id_pw > input[type=password]{
+    width: 405px;
+    height: 25px;
+    margin-bottom: 15px;
+}
+
+.login_box1 > a{
+    width: 450px;
+    height: 65px;
+    overflow: hidden;
+    display: block;
+    line-height: 65px;
+    background-color: #1877f2;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.login_box1 > a:hover{
+    background-color: #156cdf;
+}
+
+.login_box2 > a{
+    font-size: 18px;
+    color: #1877f2;
+}
+
+.login_box2 > a:hover{
+    text-decoration: underline;
+}
+
+.login{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.in_submit > input{
+    width: 180px;
+    height: 60px;
+    font-size: 21px;
+    font-weight: bold;
+    color: white;
+    background-color: #42b72a;
+    border-radius: 10px;
+    margin-top: 25px;
+    border: none;
+}
+
+.p{
+    text-align: center;
+}
+
+p > a{
+    color: black;
+    font-weight: bold;
+}
+
+p > a:hover{
+    text-decoration: underline;
+}
+
+footer{
+    height: 50px;
+}
+.footer_ul {
+    padding-top: 2%;
+    padding-left: 15%;
+}
+.footer_ul > ul{
+    width:1200px;
+
+    margin-bottom: 15px;
+    border-bottom:1px solid #d7d7d7;
+    list-style: none;
+}
+
+.footer_ul > ul > li{
+    /* float: left; */
+    display:inline-block;
+    color: #8a8d91;
+    padding-bottom: 15px;
+
+}
+.footer_ul > ul > li > a {
+    font-size: 15px;
+    padding: 0 5px;
+    color: #8a8d91;
+    text-decoration: none;
+}
+
+.footer_ul > ul > li > a:hover{
+    text-decoration: underline;
+}
+
+.footer_ul2 > ul{
+    width:1200px;
+    padding-left: 15%;
+    list-style: none;
+    line-height: 10px;
+}
+
+.footer_ul2 > ul > li{
+    display: inline-block;
+    color: #8a8d91;
+    padding-bottom: 15px;
+}
+
+.footer_ul2 > ul > li > a{
+    font-family: inherit;
+    font-size: 15px;
+    padding-right: 15px;
+    color: #8a8d91;
+    text-decoration: none;
+}
+
+.footer_ul2 > ul > li > a:hover{
+    text-decoration: underline;
+}
+
+footer > p{
+    margin-top: 15px;
+    font-weight: bold;
+    color: #8a8d91;
+    font-size: 14px;
+}
+
+footer > p {
+    padding-left:15%;
+}
+
+/* +모양 버튼 */
+.footer_ul > ul > li > a > img{
+    padding: 3px 8px;
+    margin-left: -5px;
+    margin-bottom: -8px;
+    border: 1px solid #ddd;
+}
+
+/* 공통 클래스 */
+.border{
+    border: 1px solid #ddd;
+}
+.text_deco{
+    text-decoration: none;
+}
+
+.footer_color{
+    color: #8a8d91;;
+}

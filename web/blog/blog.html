@@ -12,27 +12,56 @@
             list-style: none;
             /* 밑줄 죽이기 */
             text-decoration: none;
-            /* 테이블 선 붙이기 */
-            border-collapse: collapse;
             margin: 0px;
             padding: 0px;
-            /* 기본 폰트색깔 */
         }
         
         body{
             padding-top: 20px;
             margin-bottom: 20px;
+            background-color: rgb(189, 183, 153);
         }
+
+        #wrap{
+            width: 900px;
+            border: 1px solid rgb(86, 92, 56);
+            margin: 10px auto;
+        }
+
+        header{
+            width: 898px;
+            height: 80px;
+            margin: 10px;
+            padding: 20px;
+            line-height: 80px;
+            font-size: 110%;
+        }
+
+         /* 메뉴 오른쪽으로 정렬 */
+         nav{
+            height: 35px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            overflow: hidden;
+        }
+        nav > ul{
+            float:left;
+            overflow: hidden;
+        }
+
+        nav > ul > li{
+            float: left;
+            padding-left: 10px;
+            height: 35px;
+            line-height: 25px;
+        }
+
 
         /* 블로그창 가운데정렬 */
         .div_algin_center{
             margin: 0px auto;
         }
 
-        /* 메뉴 오른쪽으로 정렬 */
-        .nav{
-            display: flex;
-        }
         /* 검색창 오른쪽으로보내기 */
         .search_area{
             float: right;
@@ -42,19 +71,6 @@
             margin: 5px;
         }
         
-        header{
-            width: 898px;
-            height: 80px;
-            line-height: 80px;
-            font-size: 110%;
-        }
-
-        /* 메뉴 영역 */
-        nav{
-            width: 898px;
-            height: 30px;
-            line-height: 30px;
-        }
 
         /* 내용영역 */
         section{
@@ -129,94 +145,96 @@
             color: #aaa;
             text-decoration: underline;
         }
-
+        
     </style>
 </head>
 <body>
-    <!-- header 시작 -->
-    <header class="border div_algin_center">
-        <h1>코로나 국내 현황</h1>
-        
-    </header>
-    <!-- header 끝 -->
-
-    <!-- nav 시작 -->
-    <nav class="border div_algin_center hidden">
-        <div class="search_area">
-            <form>
-                <input type="text" class="serch1">
-                <input type="button" value="검색" class="serch2">
-            </form>
+    <div id="wrap">
+        <!-- header 시작 -->
+        <header class="border div_algin_center">
+            <h1>코로나 국내 현황</h1>
+            
+        </header>
+        <!-- header 끝 -->
+    
+        <!-- nav 시작 -->
+        <nav class="border div_algin_center hidden">
+            <div class="search_area">
+                <form>
+                    <input type="text" class="serch1">
+                    <input type="button" value="검색" class="serch2">
+                </form>
+            </div>
+            <ul class="nav">
+                <li><a href="#move1">개요</a></li>
+                <li><a href="#move2">국내현황</a></li>
+                <li><a href="#move3">예방접종</a></li>
+                <li><a href="#move4">거리두기단계</a></li>
+            </ul>
+        </nav>
+        <!-- nav 끝 -->
+    
+        <!-- content 시작 -->
+        <div id="wrap" class="div_algin_center">
+            <section class="border">
+                <article>
+                    <div class="content1">
+                        <h3 id="move1">코로나 개요</h3>
+                        <img src="../image/corona.jpg" width="430px" height="280px">
+                        <p>2019년 12월 중국 우한에서 처음 발생한 이후 중국 전역과 전 세계로 확산된, 새로운 유형의 코로나바이러스(SARS-CoV-2)에 의한 호흡기 감염질환이다. 코로나바이러스감염증-19는 감염자의 비말(침방울)이 호흡기나 눈·코·입의 점막으로 침투될 때 전염된다. 감염되면 약 2~14일(추정)의 잠복기를 거친 뒤 발열(37.5도) 및 기침이나 호흡곤란 등 호흡기 증상, 폐렴이 주증상으로 나타나지만 무증상 감염 사례 빈도도 높게 나오고 있다.</p>
+                    </div>
+                    <hr>
+                    <div class="content2">
+                        <h3 id="move2">코라나 국내현황</h3>
+                        <img src="../image/corona2.png" width="430px" height="360px">
+                        <p>국내현황 2021.07.01. 00:00 집계 기준<br>
+                            코로나19 감염이 의심되면 즉시 보건소 및 콜센터(전화 1339)에 신고바랍니다.</p>
+                    </div>
+                    <hr>
+                    <div class="content3">
+                        <h3 id="move3">예방접종</h3>
+                        <img src="../image/corono3.png" width="450px" height="300px">
+                        <p>전국 1차 접종<br>29.7%<br>누적 15,336,361 / 신규 14,233</p>
+                        <p>전국 2차 접종<br>9.8%<br>누적 5,041,240 / 신규 107,695</p>
+                    </div>
+                    <hr>
+                    <div class="content4">
+                        <h3 id="move4">거리두기단계</h3>
+                        <img src="../image/corona4.png" width="450px" height="320px">
+                        <p>7월1일부터 수도권2단계 비수도권1단계 거리두기 시행</p>
+                    </div>
+                </article>
+            </section>
+            <aside class="border">
+                <div class="side1">
+                    <h3>카테고리</h3>
+                    <ul>
+                        <li><a href="#">data</a></li>
+                        <li><a href="#">data</a></li>
+                        <li><a href="#">data</a></li>
+                        <li><a href="#">data</a></li>
+                        <li><a href="#">data</a></li>
+                    </ul>
+                </div>
+                <div class="side2">
+                    <h3>최근 글</h3>
+                    <ul>
+                        <li><a href="#">data</a></li>
+                        <li><a href="#">data</a></li>
+                        <li><a href="#">data</a></li>
+                    </ul>
+                </div>
+            </aside>
         </div>
-        <ul class="nav">
-            <li><a href="#move1">개요</a></li>
-            <li><a href="#move2">국내현황</a></li>
-            <li><a href="#move3">예방접종</a></li>
-            <li><a href="#move4">거리두기단계</a></li>
-        </ul>
-    </nav>
-    <!-- nav 끝 -->
-
-    <!-- content 시작 -->
-    <div id="wrap" class="div_algin_center">
-        <section class="border">
-            <article>
-                <div class="content1">
-                    <h3 id="move1">코로나 개요</h3>
-                    <img src="../image/corona.jpg" width="430px" height="280px">
-                    <p>2019년 12월 중국 우한에서 처음 발생한 이후 중국 전역과 전 세계로 확산된, 새로운 유형의 코로나바이러스(SARS-CoV-2)에 의한 호흡기 감염질환이다. 코로나바이러스감염증-19는 감염자의 비말(침방울)이 호흡기나 눈·코·입의 점막으로 침투될 때 전염된다. 감염되면 약 2~14일(추정)의 잠복기를 거친 뒤 발열(37.5도) 및 기침이나 호흡곤란 등 호흡기 증상, 폐렴이 주증상으로 나타나지만 무증상 감염 사례 빈도도 높게 나오고 있다.</p>
-                </div>
-                <hr>
-                <div class="content2">
-                    <h3 id="move2">코라나 국내현황</h3>
-                    <img src="../image/corona2.png" width="430px" height="360px">
-                    <p>국내현황 2021.07.01. 00:00 집계 기준<br>
-                        코로나19 감염이 의심되면 즉시 보건소 및 콜센터(전화 1339)에 신고바랍니다.</p>
-                </div>
-                <hr>
-                <div class="content3">
-                    <h3 id="move3">예방접종</h3>
-                    <img src="../image/corono3.png" width="450px" height="300px">
-                    <p>전국 1차 접종<br>29.7%<br>누적 15,336,361 / 신규 14,233</p>
-                    <p>전국 2차 접종<br>9.8%<br>누적 5,041,240 / 신규 107,695</p>
-                </div>
-                <hr>
-                <div class="content4">
-                    <h3 id="move4">거리두기단계</h3>
-                    <img src="../image/corona4.png" width="450px" height="320px">
-                    <p>7월1일부터 수도권2단계 비수도권1단계 거리두기 시행</p>
-                </div>
-            </article>
-        </section>
-        <aside class="border">
-            <div class="side1">
-                <h3>카테고리</h3>
-                <ul>
-                    <li><a href="#">data</a></li>
-                    <li><a href="#">data</a></li>
-                    <li><a href="#">data</a></li>
-                    <li><a href="#">data</a></li>
-                    <li><a href="#">data</a></li>
-                </ul>
-            </div>
-            <div class="side2">
-                <h3>최근 글</h3>
-                <ul>
-                    <li><a href="#">data</a></li>
-                    <li><a href="#">data</a></li>
-                    <li><a href="#">data</a></li>
-                </ul>
-            </div>
-        </aside>
+        <!-- content 끝 -->
+    
+        <!-- footer 시작 -->
+        <footer class="border div_algin_center a_font">출처 
+            <a href="http://ncov.mohw.go.kr/">코로나공식홈페이지</a>
+            <a href="http://www.mohw.go.kr/react/index.jsp">보건복지부</a>
+            <a href="http://kdca.go.kr/index.es?sid=a2">질병관리청</a>
+        </footer>
+        <!-- footer 끝 -->
     </div>
-    <!-- content 끝 -->
-
-    <!-- footer 시작 -->
-    <footer class="border div_algin_center a_font">출처 
-        <a href="http://ncov.mohw.go.kr/">코로나공식홈페이지</a>
-        <a href="http://www.mohw.go.kr/react/index.jsp">보건복지부</a>
-        <a href="http://kdca.go.kr/index.es?sid=a2">질병관리청</a>
-    </footer>
-    <!-- footer 끝 -->
 </body>
 </html>
