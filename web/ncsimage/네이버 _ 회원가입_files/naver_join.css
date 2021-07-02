@@ -5,12 +5,14 @@
 body{
     background-color: #f5f6f7;
 }
+
 #wrap{
     width: 550px;
     margin: 10px auto;
     border: none
     padding: 10px;
 }
+
 header > h1 {
     width: 550px;
     height: 55px;
@@ -30,12 +32,15 @@ h3{
     height: 16px;
     margin-bottom: 100px;
 }
+
+
 /* 아이디 */
 label{
     font-size: 18px;
     padding-left:5px;
     line-height: 40px;
 }
+
 /* 비밀번호 - 이름 사이 벌려놓기 */
 .join_group1{
     padding-bottom: 20px;
@@ -44,10 +49,12 @@ label{
 .join_group2{
     padding-bottom: 20px;
 }
+
 /* 전화 - 가입하기 사이 벌려놓기 */
 .join_phone{
     padding-bottom: 20px;
 }
+
 .birth_size > input{
     width: 172px;
     height: 60px;
@@ -67,13 +74,16 @@ label{
     width: 555px;
     height: 60px;
 }
+
 .join_phone > h3 > select{
     width: 555px;
     height: 60px;
 }
+
 .num1_num2{
     display: flex;
 }
+
 .num1 > input[type=text]{
     width: 400px;
     height: 60px;
@@ -92,15 +102,19 @@ label{
     border: 1px solid #03c75a;
     color: white;
 }
+
 .back_color{
     background-color: #f5f6f7;
 }
+
 .join_id > h3 > input::placeholder{
     float: right;
 }
+
 select{
     padding: 20px;
 }
+
 .serch > input[type=submit]{
     margin-top: 180px;
     overflow: hidden;
@@ -111,6 +125,7 @@ select{
     background-color: #03c75a;
     border: 1px solid #03c75a;
 }
+
 footer > ul{
     list-style: none;
     margin: 0 auto;
@@ -120,26 +135,32 @@ footer > ul > li{
     margin-top: 25px;
     display: inline-block;
 }
+
 footer > ul > li > a{
     font-size: 13px;
 
     color: black;
     text-decoration: none;
 }
+
 footer > ul > li > a:hover{
     text-decoration: underline;
 }
+
 .footer_a2{
     font-weight: bold;
 }
+
 .footer2{
     margin-top: -20px;
 }
+
 /* form사이즈 공통클래스 */
 .input_size{
     width: 550px;
     height: 60px;
 }
+
 input::placeholder{
     font-size: 17px;
     padding: 20px;
