@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // 브라우저가 html문서의 내용을 모두 로드 했을때 발생하는 이벤트 속성
+        // 이벤트 속성에는 핸들러(이벤트 처리 함수)를 등록한다.
+        window.onload = function () {
+            var list = '';
+            // list = list + '<ul>\n';
+            // list = list + ' <li>Javascript</li>\n';
+            // list = list + ' <li>JQuery</li>\n'; 
+            // list = list + '</ul>\n';
+            list += '<ul>\n';
+            list += ' <li>Javascript</li>\n';
+            list += ' <li>JQuery</li>\n'; 
+            list += '</ul>\n';
+            
+            console.log('출력할 html',list); // 모든 타입의 데이터를 출력
+
+            // html 문서의 body태그의 list가 가지는 문자열을 HTML 테그로 삽입
+
+            // 문서객체 케스팅 -> 테그를 자바스크립의 객체로 만드는 것
+            document.body.innerHTML = document.body.innerHTML + list;
+
+            // 문서객체를 캐스팅 -> html 컨트롤
+            
+        }
+        </script>
+
+</head>
+<body>
+
+</body>
+</html>
+<!-- <script>
+    //javascript에서의 숫잔는 정수와 실수를 구분하지 않고 하나의 타입으로 관리
+    // 숫자 -> number 타입 하나로 처리
+    var num = 10;
+    alert(num);
+    num = 10.2;
+    alert(num);
+    alert(5+3*2); // 3*2 -> 5+6
+    alert((5+3)*2);
+    // 세미콜론 문장의 종결을 의미하는 ;은 생략 가능 하지만 붙이자!!
+</script> -->
+
+<!-- <script>
+    // 비교연산 : > < >= <= == !=
+    // 문자열간의 크기 비교가 가능 -> 유니코드 값으로 비교!
+    alert('가 == 가 : ' + ('가' == '가'));
+    alert('가 == 하 : '+ ('가' == '하'));
+    alert('가 > 하 : ' + ('가' > '하'));
+    alert('가 < 하 : ' + ('가' < '하'));
+    // true = > 1, false => 0
+    alert('true > fale : ' + (true > false));
+</script> -->
+
+<!-- <script>
+    alert(true);
+    alert(false);
+
+    // 논리부정연산자 : !
+    alert('!true : ' + !true);
+    alert('!false : ' + !false);
+
+    var num = 10;
+    var chk = num > 0 && num < 100; // 0보다 크고 100보다 작은지 체크 논리연산
+
+    if(num > 0){
+        // 조건식의 결과가 true 일떄 실행하는 블록({})
+        alert('num 변수의 값은 0보다 큰 값 입니다.')
+    }
+
+    if(chk){
+        alert('num의 값은 0보다 크고 100보다 작은 숫자 입니다.');
+    }
+</script> -->
+
+<!-- <script>
+    // javascript의 변수
+    // 변수는 해당 값을 저장하는 것이 아니라 값이 저장된 메모리의 주소 값을 저장!!
+
+    // 변수의 선언 : var 키워드 식별자;
+    // var 식별자;
+    var pi; // 변수 pi 생성 -> undefined 값이 초기화
+    alert(pi); // undefined
+    pi = 3.141592; // 숫자 타입의 값을 저장 -> 정수와 실수를 구분하지 않는다.
+    alert(pi); // 3.141592;
+
+    // 변수 선언과 할당을 한번에 처리, 초기화
+    var PI = 3.14; 
+    alert(PI);
+    
+</script> -->
+
+<!-- <script>
+
+    // javascript의 타입
+    // 1. 문자열 : '', ""
+    // 2. 숫자 : 정수, 실수를 구분하지 않고 하나의 타입으로 처리, 8바이트 부동소숫점 형식으로 저장
+    // 3. bool : true, / false 논리값을 저장된
+    // 4. 함수 : 함수를 저장
+    // 5. 객체 : 객체를 저장
+    // 6. undefined : undefined 상태의 값을 저장
+
+    var str = 'String!!!';
+    var num = 100;
+    var check = false;
+    var printStr = function(){ alert('함수를 저장하는 변수로 호출')}; // 익명 함수로 정의
+    var objectVar = {
+        name:'SON', 
+        age:30, 
+        hello: function () { 
+            alert('메소드 호출')
+        }}; // 객체를 정의하는 간단한 방법
+    
+    // alert(str);
+    // alert(num);
+    // alert(check);
+    // alert(printStr);
+    // alert(objectVar);
+    
+    // 함수 호출
+    printStr(); 
+    // 객체 참조
+    alert(objectVar.name);
+    alert(objectVar.age);
+    objectVar.hello();
+
+    // 내장함수 객체 생성
+    var now = new Date();
+    alert(now);
+
+    // 객체 정의 : 속성(객체가 가지는 변수), 메소드(객체가 가지는 기능(함수))
+    var person = {
+        name: 'SON',
+        age: 30,
+        hello:function(){
+        }
+    };
+
+</script> -->
