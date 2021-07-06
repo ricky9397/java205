@@ -150,12 +150,26 @@
         Student.prototype.getAvg = function(){
             return this.getSum() / 3;
         }
-        Student.prototype.makeHtml = function(){
+
+        /* html */
+        // Student.prototype.makeHtml = function(){
+        //     html = '';
+        //     html += '   <tr>';
+        //     html += '       <td>'+ this.name +'</td>';
+        //     html += '       <td>'+ this.getSum() +'</td>';
+        //     html += '       <td>'+ this.getAvg() +'</td>';
+        //     html += '   </tr>';
+        //     return html;
+        // }
+        
+
+        /* toString */
+        Student.prototype.toString = function(){
             html = '';
             html += '   <tr>';
             html += '       <td>'+ this.name +'</td>';
-            html += '       <td>'+ this.getSum +'</td>';
-            html += '       <td>'+ this.getAvg +'</td>';
+            html += '       <td>'+ this.getSum() +'</td>';
+            html += '       <td>'+ this.getAvg() +'</td>';
             html += '   </tr>';
             return html;
         }
@@ -184,7 +198,7 @@
             html += '   </tr>';
 
             for(var i = 0; i < students.length; i++){
-                html += students[i].makeHtml();
+                html += students[i].toString();
             }
 
             html += '</table>';
@@ -194,7 +208,7 @@
 
     </script> -->
 
-    <script>
+    <!-- <script>
         // 생성자 함수에서 캡슐화
         // 변수들의 은닉 : 변수에 직접 참조를 하지 못하도록 처리
 
@@ -219,13 +233,52 @@
         var rec = new Rect(10, 5);
         rec.width = -2; // 오류
         console.log('Rect(10,5) area : ', rec.getArea());
+    </script> -->
+
+
+    <!-- <script>
+        
+        var num = 100;
+        var objNum = new Number(100);
+
+        /* 기본형 숫자타입 */
+        console.log(typeof num, num);
+        /* 객체형 숫자타입 */
+        console.log(typeof objNum, objNum);
+
+    </script> -->
+    
+
+    <!-- <script>
+        // Number 객체
+        var number = 273.12345;
+        console.log(typeof number);
+        var objNumber = new Number(number);
+        console.log(objNumber.toExponential());
+        console.log(objNumber.toFixed());
+        console.log(objNumber.toPrecision());
+
+    </script> -->
+
+
+    <script>
+        var str = 'hello~!!';
+        var objStr = new String('hello~!!');
+
+        console.log(typeof str, str);
+        console.log(typeof objStr, objStr);
+        console.log('str==objStr',str==objStr);
+        console.log(str.length);
+        console.log(objStr.length);
     </script>
 
+
     <!-- 메소드 불러올떄 () 까먹지말기^^ -->
+    
 </head>
 
 <body>
-
+    
 </body>
 
 </html>
