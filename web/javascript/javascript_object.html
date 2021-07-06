@@ -26,7 +26,7 @@
     </script> -->
 
 
-    <script>
+    <!-- <script>
         // 객체의 속성을 동적으로 추가
         var player = {};
         console.log(player);
@@ -38,12 +38,194 @@
         player.player = function(){
             alert('앞으로 달려갑니다!!!');
         };
+        player.address = '런던';
+
+        // 속성의 삭제
+        delete player.address;
+
         console.log(player);
+    </script> -->
+
+    <!-- <script>
+        
+        window.onload = function () {
+            // 학생들의 과목점수를 저장하는 배열
+            // 학생들의 과목 점수들은 객체로 생성 -> 배열로 객체를 저장
+            var students = [];
+            // 배열(객체)에 요소를 추가하는 메소드
+            students.push({ name: 'AAA', kor: 90, eng: 50, math: 50 });
+            students.push({ name: 'BBB', kor: 60, eng: 60, math: 60 });
+            students.push({ name: 'CCC', kor: 70, eng: 70, math: 70 });
+            students.push({ name: 'DDD', kor: 40, eng: 100, math: 80 });
+            students.push({ name: 'EEE', kor: 50, eng: 60, math: 90 });
+            students.push({ name: 'FFF', kor: 80, eng: 70, math: 60 });
+            students.push({ name: 'GGG', kor: 60, eng: 90, math: 50 });
+            students.push({ name: 'HHH', kor: 90, eng: 90, math: 60 });
+            students.push({ name: 'III', kor: 100, eng: 70, math: 80 });
+            students.push({ name: 'JJJ', kor: 50, eng: 80, math: 100 });
+    
+            // 각 요소 객체체에 메소드를 추가
+            // 합을 구해서 반환하는 메소드
+            // 평균값을 구해서 반환하는 메소드
+            for (var i = 0; i < students.length; i++) {
+                // 합을 구하는 메소드
+                students[i].getSum = function () {
+                    return this.kor + this.eng + this.math;
+                }
+                // 평균값을 구하는 메소드
+                students[i].getAvg = function () {
+                    return this.getSum() / 3;
+                }
+                // 데이터 출력 메소드
+                students[i].print = function () {
+                    return this.name + ' : ' + this.getSum() + ' : ' + this.getAvg();
+                }
+            }
+    
+            //var html = '<h3> 이름 : 총점 : 평균 </h3>';
+            var html = '<table border="1">';
+            html += '   <tr>';
+            html += '       <th>이름</th>';
+            html += '       <th>총점</th>';
+            html += '       <th>평균</th>';
+            html += '   </tr>';
+
+            for (var i = 0; i < students.length; i++) {
+                /* body 테그에 요소들을 추가 */
+                html += '   <tr>';
+                html += '       <td>'+students[i].name+'</td>';
+                html += '       <td>'+students[i].getSum()+'</td>';
+                html += '       <td>'+students[i].getAvg()+'</td>';
+                html += '   </tr>';
+                //html += '<h3>' + students[i].print() + '</h3>';
+            }
+            html += '</table>'
+            document.body.innerHTML = html;
+        }
+
+    </script> -->
+
+    
+    <!-- <script>
+
+        // 생성자 함수 : new 키워드로 객체를 생성해주는 함수
+        // 생성자 함수의 이름(식별자)는 대문자로 시작
+        function Student(name, kor, eng, math){
+            // 속성
+            this.name=name;
+            this.kor=kor;
+            this.eng=eng;
+            this.math=math;
+
+            // 총점을 구하는 메소드
+            this.getSum = function(){
+                return this.kor + this.eng + this.math;
+            }
+            // 평균점수를 구하는 메소드
+            this.getAvg = function(){
+                return this.getSum() / 3;
+            }
+            // html을 만들어주는 메소드
+            this.makeHtml = function(){
+                html = '';
+                html += '   <tr>';
+                html += '       <td>'+ this.name +'</td>';
+                html += '       <td>'+ this.getSum() +'</td>';
+                html += '       <td>'+ this.getAvg() +'</td>';
+                html += '   </tr>';
+                return html;
+            }
+        }
+        
+        // var st = new Student('한국', 100, 50, 80);
+        // console.log(typeof st);
+        // console.log(st);
+
+
+
+        /* prototype을 이용한 공통 메소드 정의 */
+        Student.prototype.getSum = function(){
+            return this.kor + this.eng + this.math;
+        }
+        Student.prototype.getAvg = function(){
+            return this.getSum() / 3;
+        }
+        Student.prototype.makeHtml = function(){
+            html = '';
+            html += '   <tr>';
+            html += '       <td>'+ this.name +'</td>';
+            html += '       <td>'+ this.getSum +'</td>';
+            html += '       <td>'+ this.getAvg +'</td>';
+            html += '   </tr>';
+            return html;
+        }
+
+
+
+        window.onload = function(){
+        // Student 타입의 객체들을 저장하는 배열생성
+        var students = [];
+        students.push(new Student('AAA', 100, 80, 50));
+        students.push(new Student('BBB', 70, 60, 40));
+        students.push(new Student('CCC', 80, 50, 30));
+        students.push(new Student('DDD', 90, 70, 50));
+        students.push(new Student('EEE', 50, 50, 60));
+        students.push(new Student('FFF', 40, 40, 70));
+        students.push(new Student('GGG', 80, 90, 80));
+        students.push(new Student('HHH', 70, 50, 90));
+        students.push(new Student('III', 50, 80, 50));
+        students.push(new Student('JJJ', 90, 70, 70));
+
+         var html = '<table border="1">';
+            html += '   <tr>';
+            html += '       <th>이름</th>';
+            html += '       <th>총점</th>';
+            html += '       <th>평균</th>';
+            html += '   </tr>';
+
+            for(var i = 0; i < students.length; i++){
+                html += students[i].makeHtml();
+            }
+
+            html += '</table>';
+
+            document.body.innerHTML = html;
+        }
+
+    </script> -->
+
+    <script>
+        // 생성자 함수에서 캡슐화
+        // 변수들의 은닉 : 변수에 직접 참조를 하지 못하도록 처리
+
+        function Rect(w, h){
+            // this.width = w;
+            // this.height = h;
+            var width = w;
+            var height = h;
+
+            this.getWidth = function(){
+                return width;
+            }
+            this.getHeight = function(){
+                return height;
+            }
+        }
+        
+        Rect.prototype.getArea = function(){
+            return this.getWidth() * this.getHeight();
+        }
+
+        var rec = new Rect(10, 5);
+        rec.width = -2; // 오류
+        console.log('Rect(10,5) area : ', rec.getArea());
     </script>
 
-
+    <!-- 메소드 불러올떄 () 까먹지말기^^ -->
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
