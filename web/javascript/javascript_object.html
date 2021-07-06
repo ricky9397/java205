@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Object</title>
+
+    <!-- <script>
+        // 객체 정의 => {}
+        var obj = {
+            // 속성의 정의 => 속성이름 : 데이터(숫자,문자,함수,객체,블리언)
+            // 여러개의 속성을 정의할 때는 콤마(,) 이용해서 추가해주면 된다
+            name : '손흥민',
+            age : 30,
+            // 함수-> 객체안에 존재하는 함수는 메소드라 칭한다.
+            hello : function(){ 
+                alert('안녕하세요.' + this.name + '입니다. 저의 나이는 ' + this.age + '세 입니다.');
+            }
+        };
+        console.log('obj type : ' + typeof obj, obj);
+
+        /* 객체안 메소드 호출 */
+        obj.hello();
+        console.log('이름 : ', obj.name);
+    </script> -->
+
+
+    <script>
+        // 객체의 속성을 동적으로 추가
+        var player = {};
+        console.log(player);
+
+        // 속성 추가
+        player.name = '손흥민';
+        player.team = 'Tot';
+        player.number = 7;
+        player.player = function(){
+            alert('앞으로 달려갑니다!!!');
+        };
+        console.log(player);
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
