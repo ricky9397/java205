@@ -16,3 +16,5 @@ const daysInWeek = 7;
 const maxNumber = 5;
 
 /* number은 크기와 상관없으 사용가능! 짱! */
+
+// HTML 문서에 작성된 테그 요소들을 캐스팅 -> 문서객체로 만드는 것
