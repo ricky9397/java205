@@ -3,6 +3,7 @@ let globalName = 'global name';
 
 {
     /* var를 쓰기도 하지만 let을 쓰는게 좋다 */
+    /* var는 블럭밖에서 사용 가능, let은 블럭안에 있으면 블럭밖에사용 불가능 */
     let name = 'ricky';
     console.log(name);
     name = 'hello';
