@@ -47,13 +47,13 @@ form label{
     padding: 0 5px;
 }
 
-#regForm input[type=submit]{
+#regForm input[type=submit], #editForm input[type=submit] {
     width: 100px;
     height: 56px;
     border: 2px solid #aaa;
     font-size: 1.5em;
     font-family: 'jua', sans-serif;
-    background-color: greenyellow;
+    background-color: lightsteelblue;
 }
 
 div.msg{
@@ -76,5 +76,44 @@ div.msg{
 #listArea > table td, #listArea > table th{
     padding: 10px;
     border: 1px solid #aaa;
+    text-align: center;
+}
+
+/* 회원 정보 수정 영역 */
+#editFormArea {
+    width: 350px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: rgb(204, 204, 228);
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    margin-left: -175px;
+
+    display: none;
+}
+
+#div_header{
+    border-bottom: 1px solid #aaa;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+
+#div_header > h2{
+    float: left;
+}
+
+#div_header > div{
+    float: right;
+}
+
+#editFormArea > table{
+    width: 100%;
+    margin-top: 15px;
+}
+
+#editForm > table td{
+    padding: 5px 10px;
     text-align: center;
 }
