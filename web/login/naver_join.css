@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
 }
+
 body{
     background-color: #f5f6f7;
 }
 #wrap{
     width: 550px;
     margin: 10px auto;
-    border: none
+    border: none;
     padding: 10px;
 }
 header > h1 {
@@ -55,7 +56,7 @@ label{
 }
 .birth_size > select{
     width: 172px;
-    height: 64px;
+    height: 80px;
     margin-right: 15px;
 }
 .birth_size{
@@ -149,4 +150,10 @@ input{
 }
 select{
     border: 1px solid #ddd;
+}
+
+
+input[type=text], input[type=password]{
+    padding: 10px;
+    font-size: 1.2em;
 }
