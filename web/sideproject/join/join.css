@@ -1,6 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     margin: 0;
     font-family: 'Nanum Pen Script', cursive;
+    background-color: aliceblue;
 }
 
 a{
@@ -61,23 +67,6 @@ a{
     color: #d49466;
 }
 
-.intro_img{
-    width: 100%;
-    height: 630px;
-}
-
-.footer_menu{
-    display: flex;
-    color: black;
-    justify-content: space-around;
-    list-style: none;
-    align-items: center;
-    margin-top: 0;
-}
-
-.footer_menu li{
-    padding: 8px 12px;
-}
 
 @media screen and (max-width: 768px){
     .navbar {
@@ -113,3 +102,46 @@ a{
     
 }
 
+#wrap{
+    width: 500px;
+    height: 600px;
+    margin: 0px auto;
+    margin-top: 10px;
+}
+
+header > h1{
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+#join_form{
+    padding: 0 30%;
+}
+
+form td{
+    display: block;
+    padding:10px;
+}
+
+form label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+td input[type="text"], td input[type="password"]{
+    width: 150px;
+    padding: 8px 15px;
+}
+
+td input[type="submit"]{
+    width: 185px;
+    padding: 8px 15px;
+    background-color: rgb(68, 63, 134);
+    color: white;
+}
+
+div.msg{
+    color: red;
+    display: none;
+}

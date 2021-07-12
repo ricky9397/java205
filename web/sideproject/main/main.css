@@ -1,11 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
 body{
     margin: 0;
     font-family: 'Nanum Pen Script', cursive;
+    background-color: rgb(56, 88, 177);
 }
 
 a{
@@ -66,6 +62,23 @@ a{
     color: #d49466;
 }
 
+.intro_img{
+    width: 100%;
+    height: 630px;
+}
+
+.footer_menu{
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    margin-top: 0;
+}
+
+.footer_menu li{
+    padding: 8px 12px;
+}
 
 @media screen and (max-width: 768px){
     .navbar {
@@ -101,25 +114,3 @@ a{
     
 }
 
-#wrap{
-    width: 600px;
-    border: 2px solid #ddd;
-    margin: 0px auto;
-    margin-top: 10px;
-}
-
-header > h1{
-    text-align: center;
-}
-
-#join_form{
-    padding: 0 30%;
-}
-
-form td{
-    display: block;
-    
-}
-
-#join_form{
-}
