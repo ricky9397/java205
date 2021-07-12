@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.navbar{
+    /* 옆으로 한줄 나란히 */
+    display: flex;
+    /* 사이사이 멀어지기 */
+    justify-content: space-between;
+    /* 가운데 정렬 */
+    align-items: center;
+    background-color: rgb(56, 88, 177);
+    padding: 8px 12px;
+}
+
+.navbar_logo{
+    font-size: 24px;
+    color: white;
+}
+
+.navbar_logo{
+    color: #d49466;
+}
+
+.navbar_menu{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar_menu li{
+    padding: 8px 60px;
+}
+
+.navbar_menu li:hover{
+    background-color: #d49466;
+    border-radius: 4px;
+}
+
+.navbar_icons{
+    list-style: none;
+    color: white;
+    display: flex;
+    margin-left: -10px;
+}
+
+.navbar_icons{
+    padding: 8px 12px;
+}
+
+.navbar_toogleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: #d49466;
+}
+
+.intro_img{
+    width: 100%;
+    height: 630px;
+}
+
+.footer_menu{
+    display: flex;
+    color: black;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    margin-top: 0;
+}
+
+.footer_menu li{
+    padding: 8px 12px;
+}
+
+@media screen and (max-width: 768px){
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .navbar_menu{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar_menu li{
+        width: 100%;
+        text-align: center;
+    }
+    .navbar_icons{
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar_toogleBtn {
+        display: block;
+    }
+
+    .navbar_menu.active,
+    .navbar_icons.active{
+        display: flex;
+    }
+    
+}
+
