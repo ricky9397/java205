@@ -9,102 +9,104 @@ Member.prototype.makeHtml = function () {
 
 var members = []; // new Array()
 
+$(document).ready(function () {
 
-window.onload = function () {
+    window.onload = function () {
 
-    if (localStorage.getItem('members') == null) {
-        localStorage.setItem('members', JSON.stringify(members));
-    } else {
-        members = JSON.parse(localStorage.getItem('members')); // JSON 문자열 -> 객체로 변환
-        console.log(members);
-        setList();
+        if (localStorage.getItem('members') == null) {
+            localStorage.setItem('members', JSON.stringify(members));
+        } else {
+            members = JSON.parse(localStorage.getItem('members')); // JSON 문자열 -> 객체로 변환
+            console.log(members);
+            setList();
+        }
+        var userID = document.querySelector('#userID');
+        var pw = document.querySelector('#pw');
+        var repw = document.querySelector('#repw');
+        var userName = document.querySelector('#userName');
+
+        var regForm = document.getElementById('regForm');
+
+        regForm.onsubmit = function () {
+
+            if (userID.value.trim().length < 1) {
+                $('#userID+div.msg').html('필수항목입니다.');
+                $('#userID+div.msg').css('display', 'block');
+                return false;
+            }
+
+            if (pw.value.trim().length < 1) {
+                $('#pw+div.msg').html('필수항목입니다.');
+                $('#pw+div.msg').css('display', 'block');
+                return false;
+            }
+
+            if (repw.value.trim().length < 1) {
+                $('#repw+div.msg').html('필수항목입니다.');
+                $('#repw+div.msg').css('display', 'block');
+                return false;
+            }
+
+            // 비밀번호 비밀번호 확인 일치 여부 체크
+            if (pw.value.trim() != repw.value.trim()) {
+                $('#repw+div.msg').html('비밀번호가 일치하지않습니다.');
+                $('#repw+div.msg').css('display', 'block');
+                return false;
+            }
+
+            // 사용자 이름 정보 
+            if (userName.value.trim() < 1) {
+                $('#userName+div.msg').html('필수항목입니다.');
+                $('#userName+div.msg').css('display', 'block');
+                return false;
+            }
+
+            console.log(userID.value);
+            console.log(pw.value);
+            console.log(repw.value);
+            console.log(userName.value);
+
+
+            members.push(new Member(userID.value, pw.value, userName.value));
+
+            localStorage.setItem('members', JSON.stringify(members));
+
+            alert('등록되었습니다.');
+            console.log('회원 리스트', members);
+
+            this.reset();
+
+            setList();
+
+            return false;
+        }
+
+        $('#userID').on('focus', function () {
+            $('#userID+div.msg').css('display', 'none');
+            $('#userID+div.msg').html('');
+            userID.value = '';
+        });
+
+        $('#pw').on('focus', function () {
+            $('#pw+div.msg').css('display', 'none');
+            $('#pw+div.msg').html('');
+            pw.value = '';
+        });
+
+        $('#repw').on('focus', function () {
+            $('#repw+div.msg').css('display', 'none');
+            $('#repw+div.msg').html('');
+            repw.value = '';
+        });
+
+        $('#userName').on('focus', function () {
+            $('#userName+div.msg').css('display', 'none');
+            $('#userName+div.msg').html('');
+            userName.value = '';
+        });
+
     }
-    var userID = document.querySelector('#userID');
-    var pw = document.querySelector('#pw');
-    var repw = document.querySelector('#repw');
-    var userName = document.querySelector('#userName');
-
-    var regForm = document.getElementById('regForm');
-
-    regForm.onsubmit = function () {
-
-        if (userID.value.trim().length < 1) {
-            $('#userID+div.msg').html('필수항목입니다.');
-            $('#userID+div.msg').css('display', 'block');
-            return false;
-        }
-
-        if (pw.value.trim().length < 1) {
-            $('#pw+div.msg').html('필수항목입니다.');
-            $('#pw+div.msg').css('display', 'block');
-            return false;
-        }
-
-        if (repw.value.trim().length < 1) {
-            $('#repw+div.msg').html('필수항목입니다.');
-            $('#repw+div.msg').css('display', 'block');
-            return false;
-        }
-
-        // 비밀번호 비밀번호 확인 일치 여부 체크
-        if (pw.value.trim() != repw.value.trim()) {
-            $('#repw+div.msg').html('비밀번호가 일치하지않습니다.');
-            $('#repw+div.msg').css('display', 'block');
-            return false;
-        }
-
-        // 사용자 이름 정보 
-        if (userName.value.trim() < 1) {
-            $('#userName+div.msg').html('필수항목입니다.');
-            $('#userName+div.msg').css('display', 'block');
-            return false;
-        }
-
-        console.log(userID.value);
-        console.log(pw.value);
-        console.log(repw.value);
-        console.log(userName.value);
-
-
-        members.push(new Member(userID.value, pw.value, userName.value));
-
-        localStorage.setItem('members', JSON.stringify(members));
-
-        alert('등록되었습니다.');
-        console.log('회원 리스트', members);
-
-        this.reset();
-
-        setList();
-
-        return false;
-    }
-
-    $('#userID').on('focus', function(){
-        $('#userID+div.msg').css('display', 'none');
-        $('#userID+div.msg').html('');
-        userID.value = '';
-    });
-
-    $('#pw').on('focus', function(){
-        $('#pw+div.msg').css('display', 'none');
-        $('#pw+div.msg').html('');
-        pw.value = '';
-    });
-
-    $('#repw').on('focus', function(){
-        $('#repw+div.msg').css('display', 'none');
-        $('#repw+div.msg').html('');
-        repw.value = '';
-    });
-
-    $('#userName').on('focus', function(){
-        $('#userName+div.msg').css('display', 'none');
-        $('#userName+div.msg').html('');
-        userName.value = '';
-    });
-
-}
+});
 
 function setList() {
 
@@ -131,7 +133,7 @@ function setList() {
     } else {
 
         var tbody = '';
-        $.each(members, function(index, item){
+        $.each(members, function (index, item) {
             console.log(index, item.userID);
             tbody += '<tr>';
             tbody += '  <td>' + index + '</td>';
@@ -141,7 +143,7 @@ function setList() {
             tbody += '  <td> <a href="javascript:editMember(' + index + ')">수정</a> | <a href="javascript:deleteMember(' + index + ')">삭제</a></td>';
             tbody += '</tr>';
         });
-        
+
     }
 
 
@@ -181,7 +183,7 @@ function editMember(index) {
     editName.value = members[index].userName;
     editIndex.value = index;
 
-    $('#editForm').on('submit', function(){
+    $('#editForm').on('submit', function () {
         if (editPw.value != editRePw.value) {
             alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
             return false;
