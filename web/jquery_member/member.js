@@ -11,8 +11,6 @@ var members = []; // new Array()
 
 $(document).ready(function () {
 
-    window.onload = function () {
-
         if (localStorage.getItem('members') == null) {
             localStorage.setItem('members', JSON.stringify(members));
         } else {
@@ -20,100 +18,89 @@ $(document).ready(function () {
             console.log(members);
             setList();
         }
-        var userID = document.querySelector('#userID');
-        var pw = document.querySelector('#pw');
-        var repw = document.querySelector('#repw');
-        var userName = document.querySelector('#userName');
 
-        var regForm = document.getElementById('regForm');
 
-        regForm.onsubmit = function () {
+        var userID = $('#userID');
+        var pw = $('#pw');
+        var repw = $('#repw');
+        var userName = $('#userName');
 
-            if (userID.value.trim().length < 1) {
+        $('#regForm').submit(function(){
+            if ($(userID).val().trim().length < 1) {
                 $('#userID+div.msg').html('필수항목입니다.');
                 $('#userID+div.msg').css('display', 'block');
                 return false;
             }
 
-            if (pw.value.trim().length < 1) {
+            if ($(pw).val().trim().length < 1) {
                 $('#pw+div.msg').html('필수항목입니다.');
                 $('#pw+div.msg').css('display', 'block');
                 return false;
             }
 
-            if (repw.value.trim().length < 1) {
+            if ($(repw).val().trim().length < 1) {
                 $('#repw+div.msg').html('필수항목입니다.');
                 $('#repw+div.msg').css('display', 'block');
                 return false;
             }
 
             // 비밀번호 비밀번호 확인 일치 여부 체크
-            if (pw.value.trim() != repw.value.trim()) {
+            if ($(pw).val().trim() != repw.val().trim()) {
                 $('#repw+div.msg').html('비밀번호가 일치하지않습니다.');
                 $('#repw+div.msg').css('display', 'block');
                 return false;
             }
 
             // 사용자 이름 정보 
-            if (userName.value.trim() < 1) {
+            if ($(userName).val().trim() < 1) {
                 $('#userName+div.msg').html('필수항목입니다.');
                 $('#userName+div.msg').css('display', 'block');
                 return false;
             }
-
-            console.log(userID.value);
-            console.log(pw.value);
-            console.log(repw.value);
-            console.log(userName.value);
-
-
-            members.push(new Member(userID.value, pw.value, userName.value));
+            
+            members.push(new Member(userID.val(), pw.val(), userName.val()));
 
             localStorage.setItem('members', JSON.stringify(members));
-
+    
             alert('등록되었습니다.');
             console.log('회원 리스트', members);
-
+    
             this.reset();
-
+    
             setList();
-
+    
             return false;
-        }
-
-        $('#userID').on('focus', function () {
+            
+        });
+        
+        $(userID).focus(function () {
             $('#userID+div.msg').css('display', 'none');
             $('#userID+div.msg').html('');
-            userID.value = '';
+            userID.val('');
         });
 
-        $('#pw').on('focus', function () {
+        $(pw).focus(function () {
             $('#pw+div.msg').css('display', 'none');
             $('#pw+div.msg').html('');
-            pw.value = '';
+            pw.val('');
         });
 
-        $('#repw').on('focus', function () {
+        $(repw).focus(function () {
             $('#repw+div.msg').css('display', 'none');
             $('#repw+div.msg').html('');
-            repw.value = '';
+            repw.val('');
         });
 
-        $('#userName').on('focus', function () {
+        $(userName).focus('focus', function () {
             $('#userName+div.msg').css('display', 'none');
             $('#userName+div.msg').html('');
-            userName.value = '';
+            userName.val('');
         });
-
-    }
 });
 
 function setList() {
 
-    console.log(members);
-
-
-    var list = document.querySelector('#list');
+    var list = $('#list');
 
     var tbody = '<tr>';
     tbody += '  <th>순번(index)</th>';
@@ -139,18 +126,14 @@ function setList() {
             tbody += '  <td>' + index + '</td>';
             tbody += '  <td>' + item.userID + '</td>';
             tbody += '  <td>' + item.pw + '</td>';
-            tbody += '  <td>' + item.username + '</td>';
+            tbody += '  <td>' + item.userName + '</td>';
             tbody += '  <td> <a href="javascript:editMember(' + index + ')">수정</a> | <a href="javascript:deleteMember(' + index + ')">삭제</a></td>';
             tbody += '</tr>';
         });
 
     }
 
-
-    list.innerHTML = tbody;
-
-
-
+    $(list).html(tbody);
 }
 
 function deleteMember(index) {
@@ -171,20 +154,20 @@ function editMember(index) {
 
     console.log(index, members[index]);
 
-    var editUserId = document.querySelector('#editId');
-    var editPw = document.querySelector('#editPw');
-    var editRePw = document.querySelector('#editRePw');
-    var editName = document.querySelector('#editName');
-    var editIndex = document.querySelector('#index');
+    var editUserId = $('#editId');
+    var editPw = $('#editPw');
+    var editRePw = $('#editRePw');
+    var editName = $('#editName');
+    var editIndex = $('#index');
 
-    editUserId.value = members[index].userID;
-    editPw.value = members[index].pw;
-    editRePw.value = members[index].pw;
-    editName.value = members[index].userName;
-    editIndex.value = index;
+    editUserId.val(members[index].userID);
+    editPw.val(members[index].pw);
+    editRePw.val(members[index].pw);
+    editName.val(members[index].userName);
+    editIndex.val(index);
 
     $('#editForm').on('submit', function () {
-        if (editPw.value != editRePw.value) {
+        if (editPw.val() != editRePw.val()) {
             alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
             return false;
         }
@@ -193,8 +176,8 @@ function editMember(index) {
             return false;
         }
 
-        members[editIndex.value].pw = editPw.value;
-        members[editIndex.value].userName = editName.value;
+        members[editIndex.val()].pw = editPw.val();
+        members[editIndex.val()].userName = editName.val();
 
         localStorage.setItem('members', JSON.stringify(members));
 
