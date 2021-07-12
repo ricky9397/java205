@@ -91,7 +91,8 @@ window.onload = function () {
             document.querySelector('#repw+div.msg').style.display = 'block';
             //repw.value = '';
             return false;
-        }  
+        }
+
         // 사용자 이름 정보 
         if (userName.value.trim() < 1) {
             //alert('이름을 입력해주세요.');
@@ -111,7 +112,6 @@ window.onload = function () {
 
         // 배열에 사용자 정보를 추가
         members.push(new Member(userid.value, pw.value, userName.value));
-    
 
         // 저장
         localStorage.setItem('members', JSON.stringify(members));
@@ -257,7 +257,7 @@ function editMember(index) {
         }
 
         if(!confirm('수정하시겠습니까?')){
-           return false; 
+            return false; 
         }
 
         members[editIndex.value].pw = editPw.value;
@@ -277,6 +277,7 @@ function editMember(index) {
     }
 
 }
+
 
 
 function editMemberClose(){
