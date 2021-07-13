@@ -136,9 +136,9 @@ td input[type="text"], td input[type="password"]{
 }
 
 td input[type="submit"]{
-    width: 185px;
+    width: 183px;
     padding: 8px 15px;
-    background-color: rgb(68, 63, 134);
+    background-color: rgb(56, 88, 177);
     color: white;
     border: none;
 }
