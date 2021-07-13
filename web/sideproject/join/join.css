@@ -132,6 +132,7 @@ form label{
 td input[type="text"], td input[type="password"]{
     width: 150px;
     padding: 8px 15px;
+    border: 1px solid #aaa;
 }
 
 td input[type="submit"]{
@@ -139,9 +140,22 @@ td input[type="submit"]{
     padding: 8px 15px;
     background-color: rgb(68, 63, 134);
     color: white;
+    border: none;
+}
+td input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid green;
 }
 
 div.msg{
     color: red;
     display: none;
 }
+
+
+
+

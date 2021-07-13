@@ -53,7 +53,7 @@ form label{
     border: 2px solid #aaa;
     font-size: 1.5em;
     font-family: 'jua', sans-serif;
-    background-color: lightsteelblue;
+    background-color: darkcyan;
 }
 
 div.msg{
@@ -87,9 +87,10 @@ div.msg{
     background-color: rgb(204, 204, 228);
     padding: 20px;
     position: absolute;
-    left: 50%;
+    left: 60%;
     top: 100px;
     margin-left: -175px;
+    margin-top: 110px;
 
     display: none;
 }
@@ -110,7 +111,7 @@ div.msg{
 
 #editFormArea > table{
     width: 100%;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 #editForm > table td{
