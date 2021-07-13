@@ -1,4 +1,4 @@
-CREATE TABLE  MEMBER (
+CREATE TABLE members(
                                 ID VARCHAR2(20) CONSTRAINT MEMBER_ID_NN PRIMARY key,
                                 PW VARCHAR2(20)CONSTRAINT MEMBER_PW_NN NOT NULL,
                                 NAME  VARCHAR2(20)CONSTRAINT MEMBER_NAME_NN NOT NULL ,
@@ -7,6 +7,6 @@ CREATE TABLE  MEMBER (
                               ) ;
                               
                               drop table member;
-                              select * from member;
+                              select * from members;
                               
                               commit;
