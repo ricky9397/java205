@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OHMYGOT</title>
-    <link rel="stylesheet" href="join.css">
+    <link rel="stylesheet" href="login.css">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-
     <nav class="navbar">
         <div class="navbar_logo">
             <i class="fab fa-accusoft"></i>
-            <a href="">OHMYGOT</a>
+            <a href="../main/main.html">OHMYGOT</a>
         </div>
 
         <ul class="navbar_menu">
@@ -35,48 +35,26 @@
             <i class="fas fa-bars"></i>
         </a>
     </nav>
-
-    <div id="wrap">
-
+    <div id="wraps">
         <header>
-            <h1>OHMYGOT 회원가입</h1>
+            <h1>로 그 인</h1>
         </header>
 
-        <form action="../loing/login.html" id="join_form">
+        <form action="../main/main.html" id="login_form">
             <table>
                 <tr>
                     <td>
-                        <label for="userId">아이디</label>
+                        <label for="loginId">아 이 디</label>
                         <input type="text" id="id" placeholder="아이디">
                         <div class="msg"></div>
                     </td>
                     <td>
-                        <label for="userPw">비밀번호</label>
+                        <label for="loginPw">비 밀 번 호</label>
                         <input type="password" id="pw" placeholder="비밀번호">
                         <div class="msg"></div>
                     </td>
                     <td>
-                        <label for="userPw2">비밀번호 확인</label>
-                        <input type="password" id="pw2" placeholder="비밀번호 확인">
-                        <div class="msg"></div>
-                    </td>
-                    <td>
-                        <label for="userName">이름</label>
-                        <input type="text" id="name" placeholder="이름">
-                        <div class="msg"></div>
-                    </td>
-                    <td>
-                        <label for="userEmail">이메일</label>
-                        <input type="text" id=email placeholder="이메일">
-                        <div class="msg"></div>
-                    </td>
-                    <td>
-                        <label for="userPhone">휴대폰번호</label>
-                        <input type="text" id=phone placeholder="휴대폰번호">
-                        <div class="msg"></div>
-                    </td>
-                    <td>
-                        <input type="submit" value="가입하기">
+                        <input type="submit" value="로그인">
                     </td>
                 </tr>
             </table>
@@ -87,7 +65,7 @@
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
         </script>
     <script src="https://kit.fontawesome.com/a639687fae.js" crossorigin="anonymous"></script>
-    <script src="join.js" defer></script>
+    <script src="login.js" defer></script>
 </body>
 
 </html>

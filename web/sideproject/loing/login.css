@@ -1,0 +1,155 @@
+body{
+    margin: 0;
+    font-family: 'Nanum Pen Script', cursive;
+    background-color: aliceblue;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.navbar{
+    /* 옆으로 한줄 나란히 */
+    display: flex;
+    /* 사이사이 멀어지기 */
+    justify-content: space-between;
+    /* 가운데 정렬 */
+    align-items: center;
+    background-color: rgb(56, 88, 177);
+    padding: 8px 12px;
+}
+
+.navbar_logo{
+    font-size: 24px;
+    color: white;
+}
+
+.navbar_logo{
+    color: #d49466;
+}
+
+.navbar_menu{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar_menu li{
+    padding: 8px 60px;
+}
+
+.navbar_menu li:hover{
+    background-color: #d49466;
+    border-radius: 4px;
+}
+
+.navbar_icons{
+    list-style: none;
+    color: white;
+    display: flex;
+    margin-left: -10px;
+}
+
+.navbar_icons{
+    padding: 8px 12px;
+}
+
+.navbar_toogleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: #d49466;
+}
+
+.intro_img{
+    width: 100%;
+    height: 630px;
+}
+
+@media screen and (max-width: 768px){
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .navbar_menu{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar_menu li{
+        width: 100%;
+        text-align: center;
+    }
+    .navbar_icons{
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar_toogleBtn {
+        display: block;
+    }
+
+    .navbar_menu.active,
+    .navbar_icons.active{
+        display: flex;
+    }
+    
+}
+
+#wraps{
+    width: 500px;
+    margin: 0px auto;
+    margin-top: 50px;
+}
+
+header h1 {
+    text-align: center;
+    padding: 10px;
+    font-size: 4em;
+    color: rgb(69, 69, 202);
+}
+
+#login_form{
+    padding: 0 28%;
+}
+
+form td{
+    display: block;
+}
+
+form label{
+    display: block;
+    font-size: 2.0em;
+    text-align: center;
+}
+
+td input[type="text"], td input[type="password"]{
+    width: 200px;
+    padding: 13px;
+    border: 1px solid #aaa;
+    margin-bottom: 5px;
+}
+
+td input[type="submit"]{
+    width: 228px;
+    padding: 14px;
+    margin-top: 15px;
+    font-size: 1.0em;
+    background-color: rgb(69, 69, 202);
+    color: white;
+    border: none;
+}
+
+td input[type="submit"]{
+    cursor: pointer;
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid green;
+}

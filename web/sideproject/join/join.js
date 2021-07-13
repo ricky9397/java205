@@ -51,11 +51,11 @@ $(document).ready(function () {
             $('#pw+div.msg').css('display', 'block');
             $('#pw').css('border', '1px solid red');
             return false;
-        } else if(!(pwck.test($(pw).val()))){
+        } else if (!(pwck.test($(pw).val()))) {
             $('#pw+div.msg').html('4~12자 입력하세요.');
             $('#pw+div.msg').css({ 'display': 'block', 'color': 'red' });
             $('#pw').css('border', '1px solid red');
-            return false; 
+            return false;
         } else {
             $('#pw+div.msg').html('');
             $('#pw+div.msg').css('display', 'block');
@@ -85,7 +85,7 @@ $(document).ready(function () {
             $('#name+div.msg').css({ 'display': 'block', 'color': 'red' });
             $('#name').css('border', '1px solid red');
             return false;
-        } else if(!(nameck.test($(name).val()))){
+        } else if (!(nameck.test($(name).val()))) {
             $('#name+div.msg').html('잘못입력하셨습니다.');
             $('#name+div.msg').css({ 'display': 'block', 'color': 'red' });
             $('#name').css('border', '1px solid red');
@@ -101,7 +101,7 @@ $(document).ready(function () {
             $('#email+div.msg').css({ 'display': 'block', 'color': 'red' });
             $('#email').css('border', '1px solid red');
             return false;
-        } else if(!(mailck.test($(email).val()))){
+        } else if (!(mailck.test($(email).val()))) {
             $('#email+div.msg').html('잘못입력하셨습니다.');
             $('#email+div.msg').css({ 'display': 'block', 'color': 'red' });
             $('#email').css('border', '1px solid red');
@@ -117,7 +117,7 @@ $(document).ready(function () {
             $('#phone+div.msg').css({ 'display': 'block', 'color': 'red' });
             $('#phone').css('border', '1px solid red');
             return false;
-        } else if(!(phoneck.test($(phone).val()))){
+        } else if (!(phoneck.test($(phone).val()))) {
             $('#phone+div.msg').html('잘못입력하셨습니다.');
             $('#phone+div.msg').css({ 'display': 'block', 'color': 'red' });
             $('#phone').css('border', '1px solid red');
