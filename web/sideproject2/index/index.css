@@ -107,3 +107,18 @@ body {
 li:hover{
     text-decoration: underline;
 }
+
+footer{
+    padding: 10px 30px;
+    text-align: center;
+}
+footer h2{
+    font-size: 1.0em;
+    margin-bottom: 10px;
+
+}
+
+footer p{
+    font-size: 0.5em;
+    margin-bottom: 5px;
+}

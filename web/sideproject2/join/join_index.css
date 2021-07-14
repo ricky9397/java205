@@ -55,61 +55,62 @@ header{
 .serch_li{
     list-style: none;
 }
+li:hover{
+    text-decoration: underline;
+}
+.center_wrap{
+    width: 700px;
+    margin: 0 auto;
+    background-color: white;
+}
 
-h2{
+.all_check{
     text-align: center;
-    padding: 50px;
-    font-size: 2.0em;
+    padding: 10px;
     margin-top: 30px;
 }
+.all_check2{
+    padding: 10px;
+    text-align: center;
+    margin: 0px auto;
+}
+.check p{
+    width: 500px;
+    height: 200px;
+    overflow: scroll;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+}
 
-form {
+.check{
     text-align: center;
 }
 
-form li{
-    list-style: none;
-}
-
-input[type="text"], input[type="password"]{
-    width: 250px;
-    padding: 10px 30px;
+.check h3{
+    text-align: center;
+    padding: 10px;
+    font-size: 1.0em;
     margin-bottom: 10px;
-    border-radius: 10px;
-    border: 1px solid #aaa;
+    border-top: 1px solid #ddd;
 }
 
+.check_v{
+    padding: 10px;
+    text-align: left;
+    margin-left: 85px;
+}
 
-
-input[type="submit"]{
-    width: 310px;
-    padding: 10px 88px;
-    border-radius: 10px;
-    border: none;
+.center_wrap input[type="submit"]{
+    width: 200px;
+    padding: 10px;
     background-color: #000;
     color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
     cursor: pointer;
 }
 
-input::placeholder{
-    color: #aaa;
-}
-
-.login_footer ul{
-    display: flex;
-    justify-content: center;
-}
-.login_footer li{
-    padding: 10px;
-}
-.login_footer li:hover{
-    text-decoration: underline;
-}
-
-li:hover{
-    text-decoration: underline;
+.join{
+    text-align: center;
 }
 
 footer{

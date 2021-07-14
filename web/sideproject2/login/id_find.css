@@ -63,51 +63,6 @@ h2{
     margin-top: 30px;
 }
 
-form {
-    text-align: center;
-}
-
-form li{
-    list-style: none;
-}
-
-input[type="text"], input[type="password"]{
-    width: 250px;
-    padding: 10px 30px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: 1px solid #aaa;
-}
-
-
-
-input[type="submit"]{
-    width: 310px;
-    padding: 10px 88px;
-    border-radius: 10px;
-    border: none;
-    background-color: #000;
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-input::placeholder{
-    color: #aaa;
-}
-
-.login_footer ul{
-    display: flex;
-    justify-content: center;
-}
-.login_footer li{
-    padding: 10px;
-}
-.login_footer li:hover{
-    text-decoration: underline;
-}
-
 li:hover{
     text-decoration: underline;
 }
@@ -125,4 +80,30 @@ footer h2{
 footer p{
     font-size: 0.5em;
     margin-bottom: 5px;
+}
+
+.id_find{
+    padding: 10px;
+    margin: 0 auto;
+}
+
+th{
+    text-align: left;
+}
+
+.id-find_check input{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+}
+
+.submit_check{
+    text-align: center;
+}
+.submit_check input{
+    background-color: #000;
+    color: white;
+    padding: 10px 50px;
+    border: none;
+    cursor: pointer;
 }

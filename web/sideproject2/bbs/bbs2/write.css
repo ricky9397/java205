@@ -55,7 +55,33 @@ header{
 .serch_li{
     list-style: none;
 }
-li:hover{
-    text-decoration: underline;
+
+footer{
+    padding: 10px 30px;
+    text-align: center;
+}
+footer h2{
+    font-size: 1.0em;
+    margin-bottom: 10px;
+
+}
+
+footer p{
+    font-size: 0.5em;
+    margin-bottom: 5px;
+}
+
+.center_font h2{
+    font-size: 1.5em;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.center_wrap{
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
 }
 
