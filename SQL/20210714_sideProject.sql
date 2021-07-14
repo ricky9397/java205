@@ -1,12 +1,12 @@
 drop table iorder;
-drop table member;
+drop table members;
 drop table product;
 
 CREATE TABLE  MEMBERS (
                                 ID VARCHAR2(20) CONSTRAINT MEMBER_ID_NN PRIMARY KEY,
                                 PW VARCHAR2(20)CONSTRAINT MEMBER_PW_NN NOT NULL,
                                 NAME  VARCHAR2(20)CONSTRAINT MEMBER_NAME_NN NOT NULL ,
-                                ADDRESS VARCHAR2(50)CONSTRAINT MEMBER_ADDRESS_NN NOT NULL,
+                                ADDRESS VARCHAR2(40)CONSTRAINT MEMBER_ADDRESS_NN NOT NULL,
                                 PHONENUM  VARCHAR2(20)CONSTRAINT MEMBER_NUM_NN NOT NULL,
                                 EMAIL VARCHAR2(20)CONSTRAINT MEMBER_EMAIL_NN NOT NULL
                               ) ;
