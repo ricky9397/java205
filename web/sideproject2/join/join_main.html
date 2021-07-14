@@ -6,7 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OHMYGOT</title>
-    <link rel="stylesheet" href="join_main.css">3
+    <link rel="stylesheet" href="join_main.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
+    </script>
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+    <!-- js -->
+    <script src="join_main.js"></script>
 </head>
 
 <body>
@@ -52,7 +59,7 @@
 
 
         <!-- 센터 -->
-        <form action="">
+        <form action="" id="join_form">
             <div class="center_wrap">
                 <div>
                     <h2>J O I N</h2>
@@ -62,7 +69,8 @@
                     <tr class="id_wrap">
                         <th>아이디</th>
                         <td>
-                            <input type="text">
+                            <input type="text" id="userId" name="id">
+                            <div class="msg"></div>
                             <span>아이디는 영문소문자 또는 숫자 4~16자로 입력해주세요.(영문소문자/숫자,4~16자)</span>
                         </td>
     
@@ -70,44 +78,53 @@
                     <tr>
                         <th>비밀번호</th>
                         <td>
-                            <input type="password">
+                            <input type="password" id="userPw" name="pw">
+                            <div class="msg"></div>
                             <span>영문 대소문자/숫자 4자~16자</span>
                         </td>
                     </tr>
                     <tr>
                         <th>비밀번호확인</th>
-                        <td><input type="password"></td>
+                        <td><input type="password" id="userPw2" name="pw2">
+                            <div class="msg"></div>
+                        </td>
                     </tr>
                     <tr>
                         <th>이름</th>
-                        <td><input type="text"></td>
+                        <td><input type="text" id="userName" name="name">
+                            <div class="msg"></div>
+                        </td>
                     </tr>
                     <tr>
                         <th>주소</th>
                         <td>
                             <div class="add_wrap">
-                                <input type="text" class="add">
-                                <a href="#"><img src="../img/우편번호.gif" alt="우편번호" class="ad_img"></a>
+                                <input type="text" class="add userAdd" id="zip" name="address">
+                                <input type="button" id="btnAdd" name="btnAdd">
                             </div>
-                            <input type="text" class="add1"><span>기본주소</span>
-                            <input type="text" class="add2"><span>나머지주소(선택입력가능)</span>
+                            <input type="text" class="add1 userAdd" id="addr1" name="address"><span>기본주소</span>
+                            <input type="text" class="add2 userAdd" id="addr2" name="address"><span>나머지주소(선택입력가능)</span>
+                            <div class="msg"></div>
                         </td>
                     </tr>
                     <tr>
                         <th>휴대전화</th>
                         <td>
                             <select>
-                                <option value="">010</option>
-                                <option value="">011</option>
-                                <option value="">016</option>
+                                <option>010</option>
+                                <option>011</option>
+                                <option>016</option>
                             </select> - 
-                            <input type="text" class="p_size"> -
-                            <input type="text" class="p_size">
+                            <input type="text" class="p_size userPhone" name="phone"> -
+                            <input type="text" class="p_size userPhone" name="phone">
+                            <div class="msg"></div>
                         </td>
                     </tr>
                     <tr>
                         <th>이메일</th>
-                        <td><input type="text"></td>
+                        <td><input type="text" id="userEmail" name="email">
+                            <div class="msg"></div>
+                        </td>
                     </tr>
                 </table>
                 <div class="s_size">
@@ -128,14 +145,7 @@
         </footer>
         <!-- 하단끝 -->
     </div>
-
-
-    <!-- js -->
-    <script src="join_main.js"></script>
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"
-        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
-        </script>
+    
 </body>
 
 </html>
