@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OHMYGOT</title>
     <link rel="stylesheet" href="pw_find.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
+        </script>
+    <!-- js -->
+    <script src="pw_find.js"></script>
 </head>
 
 <body>
@@ -50,30 +56,30 @@
         </div>
         <!-- 상단 끝 -->
 
-        
+
         <!-- 센터 -->
         <div>
             <h2>비밀번호 찾기</h2>
         </div>
-        <form action="">
+        <form action="" id="pwFind">
             <div>
                 <table class="id_find">
                     <tr>
                         <th>아이디</th>
                         <td class="id-find_check">
-                            <input type="text">
+                            <input type="text" id="userid" name="pw">
                         </td>
                     </tr>
                     <tr>
                         <th>이름</th>
                         <td class="id-find_check">
-                            <input type="text">
+                            <input type="text" id="userName" name="name">
                         </td>
                     </tr>
                     <tr>
                         <th>이메일로 찾기</th>
                         <td class="id-find_check">
-                            <input type="text">
+                            <input type="text" id="userEmail" name="email">
                         </td>
                     </tr>
                 </table>
@@ -96,13 +102,6 @@
         <!-- 하단끝 -->
     </div>
 
-
-    <!-- js -->
-    <script src="pw_find.js"></script>
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"
-        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
-        </script>
 </body>
 
 </html>

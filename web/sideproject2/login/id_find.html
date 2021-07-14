@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OHMYGOT</title>
     <link rel="stylesheet" href="id_find.css">
-    <!-- js -->
-    <script src="id_find.js"></script>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"
-        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
+    integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
     </script>
+    <!-- js -->
+    <script src="id_find.js"></script>
 </head>
 
 <body>
@@ -56,7 +56,7 @@
         </div>
         <!-- 상단 끝 -->
 
-        
+
         <!-- 센터 -->
         <div>
             <h2>아이디 찾기</h2>
@@ -67,14 +67,14 @@
                     <tr>
                         <th>이름</th>
                         <td class="id-find_check">
-                            <input type="text" class="userName" name="find_name">
+                            <input type="text" id="userName" name="find_name">
                             <div class="msg"></div>
                         </td>
                     </tr>
                     <tr>
                         <th>이메일로 찾기</th>
                         <td class="id-find_check">
-                            <input type="text" class="userEmail" name="find_mail">
+                            <input type="text" id="userEmail" name="find_mail">
                             <div class="msg"></div>
                         </td>
                     </tr>
@@ -96,6 +96,8 @@
             </div>
         </footer>
         <!-- 하단끝 -->
+
+
     </div>
 </body>
 

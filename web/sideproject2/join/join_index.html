@@ -6,7 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OHMYGOT</title>
-    <link rel="stylesheet" href="join_index.css">3
+    <link rel="stylesheet" href="join_index.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
+    </script>
+    <!-- js -->
+    <script src="join_index.js"></script>
 </head>
 
 <body>
@@ -60,7 +66,7 @@
             </div>
             <div class="all_check2">
                 <span>
-                    <input type="checkbox">
+                    <input type="checkbox" id="allCheck">
                     <strong>
                         이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.
                     </strong>
@@ -287,7 +293,7 @@
                         <span>
                             이용약관에 동의하십니까?
                         </span>
-                        <input type="checkbox">
+                        <input type="checkbox" class="checkItem">
                         <label for="check1">동의함</label>
                     </div>
                 </div>
@@ -358,7 +364,7 @@
                         <span>
                             개인정보 수집 및 이용에 동의하십니까? 
                         </span>
-                        <input type="checkbox">
+                        <input type="checkbox" class="checkItem">
                         <label for="check1">동의함</label>
                     </div>
                 </div>
@@ -382,12 +388,7 @@
     </div>
 
 
-    <!-- js -->
-    <script src="join_index.js"></script>
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"
-        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
-        </script>
+    
 </body>
 
 </html>
