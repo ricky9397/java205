@@ -19,23 +19,7 @@ $(document).ready(function () {
     // 휴대폰 번호 정규식
     var phoneck = /^([0-9]{3,4})?([0-9]{4})$/;
 
-    $(id).on('mouseover', function(){
-        if ($(id).val().trim().length < 1) {
-            $('#userId+div.msg').html('필수항목입니다.');
-            $('#userId+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('#userId').css('border', '1px solid red');
-            return false;
-        } else if (!(idck.test($(id).val()))) {
-            $('#userId+div.msg').html('4~16자 입력하세요.');
-            $('#userId+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('#userId').css('border', '1px solid red');
-            return false;
-        } else {
-            $('#userId+div.msg').html('멋진아이디네요');
-            $('#userId+div.msg').css({ 'display': 'block', 'color': 'green' });
-            $('#userId').css('border', '1px solid green');
-        }
-    }).on('mouseout', function(){
+    $(id).on('keyup', function(){
         if ($(id).val().trim().length < 1) {
             $('#userId+div.msg').html('필수항목입니다.');
             $('#userId+div.msg').css({ 'display': 'block', 'color': 'red' });
@@ -53,23 +37,7 @@ $(document).ready(function () {
         }
     });
 
-    $(pw).on('mouseover', function(){
-        if ($(pw).val().trim().length < 1) {
-            $('#userPw+div.msg').html('필수항목입니다.');
-            $('#userPw+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('#userPw').css('border', '1px solid red');
-            return false;
-        } else if (!(pwck.test($(pw).val()))) {
-            $('#userPw+div.msg').html('4~12자 입력하세요.');
-            $('#userPw+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('#userPw').css('border', '1px solid red');
-            return false;
-        } else {
-            $('#userPw+div.msg').html('');
-            $('#userPw+div.msg').css('display', 'block');
-            $('#userPw').css('border', '1px solid green');
-        }
-    }).on('mouseout', function(){
+    $(pw).on('keyup', function(){
         if ($(pw).val().trim().length < 1) {
             $('#userPw+div.msg').html('필수항목입니다.');
             $('#userPw+div.msg').css({ 'display': 'block', 'color': 'red' });
@@ -87,18 +55,7 @@ $(document).ready(function () {
         }
     });
 
-    $(pw2).on('mouseover', function(){
-        if ($(pw2).val().trim().length < 1) {
-            $('#userPw2+div.msg').html('필수항목입니다.');
-            $('#userPw2+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('#userPw2').css('border', '1px solid red');
-            return false;
-        } else {
-            $('#userPw2+div.msg').html('');
-            $('#userPw2+div.msg').css('display', 'block');
-            $('#userPw2').css('border', '1px solid green');
-        }
-    }).on('mouseout', function(){
+    $(pw2).on('keyup', function(){
         if ($(pw2).val().trim().length < 1) {
             $('#userPw2+div.msg').html('필수항목입니다.');
             $('#userPw2+div.msg').css({ 'display': 'block', 'color': 'red' });
@@ -111,23 +68,7 @@ $(document).ready(function () {
         }
     });
 
-    $(name).on('mouseover', function(){
-        if ($(name).val().trim().length < 1) {
-            $('#userName+div.msg').html('필수항목입니다.');
-            $('#userName+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('#userName').css('border', '1px solid red');
-            return false;
-        } else if (!(nameck.test($(name).val()))) {
-            $('#userName+div.msg').html('잘못입력하셨습니다.');
-            $('#userName+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('#userName').css('border', '1px solid red');
-            return false;
-        } else {
-            $('#userName+div.msg').html('');
-            $('#userName+div.msg').css({ 'display': 'block', 'color': 'green' });
-            $('#userName').css('border', '1px solid green');
-        }
-    }).on('mouseout', function(){
+    $(name).on('keyup', function(){
         if ($(name).val().trim().length < 1) {
             $('#userName+div.msg').html('필수항목입니다.');
             $('#userName+div.msg').css({ 'display': 'block', 'color': 'red' });
@@ -145,23 +86,7 @@ $(document).ready(function () {
         }
     });
 
-    $(phone).on('mouseover', function(){
-        if ($(phone).val().trim().length < 1) {
-            $('.userPhone+div.msg').html('필수항목입니다.');
-            $('.userPhone+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('.userPhone').css('border', '1px solid red');
-            return false;
-        } else if (!(phoneck.test($(phone).val()))) {
-            $('.userPhone+div.msg').html('잘못입력하셨습니다.');
-            $('.userPhone+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('.userPhone').css('border', '1px solid red');
-            return false;
-        } else {
-            $('.userPhone+div.msg').html('');
-            $('.userPhone+div.msg').css({ 'display': 'block', 'color': 'green' });
-            $('.userPhone').css('border', '1px solid green');
-        }
-    }).on('mouseout', function(){
+    $(phone).on('keyup', function(){
         if ($(phone).val().trim().length < 1) {
             $('.userPhone+div.msg').html('필수항목입니다.');
             $('.userPhone+div.msg').css({ 'display': 'block', 'color': 'red' });
@@ -179,23 +104,7 @@ $(document).ready(function () {
         }
     });
 
-    $(email).on('mouseover', function(){
-        if ($(email).val().trim().length < 1) {
-            $('#userEmail+div.msg').html('필수항목입니다.');
-            $('#userEmail+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('#userEmail').css('border', '1px solid red');
-            return false;
-        } else if (!(mailck.test($(email).val()))) {
-            $('#userEmail+div.msg').html('잘못입력하셨습니다.');
-            $('#userEmail+div.msg').css({ 'display': 'block', 'color': 'red' });
-            $('#userEmail').css('border', '1px solid red');
-            return false;
-        } else {
-            $('#userEmail+div.msg').html('');
-            $('#userEmail+div.msg').css({ 'display': 'block', 'color': 'green' });
-            $('#userEmail').css('border', '1px solid green');
-        }
-    }).on('mouseout', function(){
+    $(email).on('keyup', function(){
         if ($(email).val().trim().length < 1) {
             $('#userEmail+div.msg').html('필수항목입니다.');
             $('#userEmail+div.msg').css({ 'display': 'block', 'color': 'red' });
@@ -410,15 +319,37 @@ $(document).ready(function () {
         }).open();
     });
 
-    $("#userId").blur(function(){
-        var userId = $('#userId').val();
-        $.ajax({
-            type : "post",  // 통신할 메서드타입
-            url : join,   // 통신할url
-            data: { id : userId}, // 전송할 데이타
-            
+    // $('#idCheck').click(function(){
+    //     var idcheck = $('#userId').val();
+        
+    //     $ajax({
+    //         url : 'Join' + idcheck,
+    //         type : 'post',
+    //         success : function(data){
+    //             if(data == 'y'){
+    //                 alert('사용가능한 아이디입니다.');
+    //             } else if(data == 'n'){
+    //                 alert('이미 사용중인 아이디입니다.');
+    //             }
+    //         }
+    //     });
+    // });
+    function id_check() {
+		var userId = $('#userId').val();
+		$.ajax({
+			type : 'POST',
+			url : 'JoinCheckServlet',
+			data : {
+				userId : userId
+			},
+			success : function(data) {
+				if (data == 1) {
+					alert('사용가능한 아이디입니다.')
+				} else {
+					alert('이미 사용중인 아이디입니다.')
+				}
+			}
 
-        });
-    });
-
+		})
+} 
 });

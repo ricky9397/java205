@@ -1,5 +1,5 @@
 drop table iorder;
-drop table member;
+drop table members;
 drop table product;
 
 CREATE TABLE  MEMBERs (

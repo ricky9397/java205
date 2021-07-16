@@ -1,8 +1,8 @@
 drop table iorder;
-drop table members;
+drop table member;
 drop table product;
 
-CREATE TABLE  MEMBERS (
+CREATE TABLE  MEMBER (
                                 ID VARCHAR2(20) CONSTRAINT MEMBER_ID_NN PRIMARY KEY,
                                 PW VARCHAR2(20)CONSTRAINT MEMBER_PW_NN NOT NULL,
                                 NAME  VARCHAR2(20)CONSTRAINT MEMBER_NAME_NN NOT NULL ,
