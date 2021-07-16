@@ -22,7 +22,6 @@ $(document).ready(function () {
             $('#userPw').css('border', '1px solid green');
         }
         
-        alert('어서오세요. OH MY SHOP 입니다.')
     });
 
     $('#userId').focus(function () {
