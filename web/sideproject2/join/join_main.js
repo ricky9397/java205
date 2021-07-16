@@ -413,9 +413,11 @@ $(document).ready(function () {
     $("#userId").blur(function(){
         var userId = $('#userId').val();
         $.ajax({
-            type : "post",
-            url : join
+            type : "post",  // 통신할 메서드타입
+            url : join,   // 통신할url
+            data: { id : userId}, // 전송할 데이타
             
+
         });
     });
 
