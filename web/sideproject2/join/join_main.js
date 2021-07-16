@@ -410,4 +410,13 @@ $(document).ready(function () {
         }).open();
     });
 
+    $("#userId").blur(function(){
+        var userId = $('#userId').val();
+        $.ajax({
+            type : "post",
+            url : join
+            
+        });
+    });
+
 });
