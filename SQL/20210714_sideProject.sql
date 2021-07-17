@@ -65,5 +65,8 @@ commit;
 
               
 select * from iorder;
-select * from memberS;
+select * from member;
 select * from product;
+
+select email from member where id='1234' and pw='1234';
+
