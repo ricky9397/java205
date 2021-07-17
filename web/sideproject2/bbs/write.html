@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OHMYGOT</title>
     <link rel="stylesheet" href="write.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+    integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
+        </script>
+        <script src="write.js"></script>
 </head>
 
 <body>
@@ -50,7 +54,7 @@
         </div>
         <!-- 상단 끝 -->
 
-        
+
         <!-- 센터 -->
         <form action="">
             <div class="center_wrap">
@@ -60,14 +64,20 @@
                 <div>
                     <h2>COMMUNITY</h2>
                 </div>
-                <div>
-                    <span>제목</span>
-                    <input type="text" value="제목">
+                <div class="title">
+                    <span>WRITER</span>
+                    <input type="text">
                 </div>
                 <div>
-                    <textarea></textarea>
+                    <textarea class="bbs"></textarea>
+                    <div class="count_size">
+                        문자 : <span id="count">0</span>
+                    </div>
                 </div>
-    
+                <div class="bbs_btn_size">
+                    <input type="submit" value="REGISTER">
+                    <input type="button" value="CANCLE" onclick="history.back(-1)">
+                </div>
             </div>
 
         </form>
@@ -85,13 +95,6 @@
         <!-- 하단끝 -->
     </div>
 
-
-    <!-- js -->
-    <script src="write.js"></script>
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"
-        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
-        </script>
 </body>
 
 </html>

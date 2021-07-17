@@ -85,3 +85,54 @@ footer p{
     background-color: white;
 }
 
+/* 게시판 제목 */
+.title input{
+    width: 680px;
+    padding: 5px 20px;
+    margin-top: 30px;
+    border: 1px solid #bbb;
+}
+
+.title span{
+    margin-right: 20px;
+}
+
+.bbs{
+    width: 800px;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.count_size{
+    font-size: 0.9em;
+    color: #aaa;
+    padding: 5px;
+    width: 790px;
+    margin-left: 45px;
+    text-align: right;
+}
+
+.bbs_btn_size input {
+    padding: 10px 30px;
+    margin-bottom: 30px;
+}
+.bbs_btn_size{
+    width: 790px;
+    margin-left: 62px;
+    text-align: right;
+}
+
+.bbs_btn_size input[type="submit"]{
+    background-color: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.bbs_btn_size input[type="button"]{
+    background-color: white;
+    color: #000;
+    cursor: pointer;
+    border: 1px solid #bbb;
+}
+
