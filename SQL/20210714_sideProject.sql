@@ -79,8 +79,23 @@ CREATE TABLE BBS(
     BBSTITLE VARCHAR2(50),
     ID VARCHAR2(20),
     BBSDATE DATE DEFAULT SYSDATE,
+    BBSHIT NUMBER default 0,
+    BBSCONTENT VARCHAR2(2048),
+    BBSGROUP NUMBER,
+    BBSSTEP NUMBER,
+    BBSINDENT NUMBER
+);
+
+CREATE TABLE BBS(
+    BBSNUM NUMBER PRIMARY KEY,
+    BBSTITLE VARCHAR2(50),
+    ID VARCHAR2(20),
+    BBSDATE DATE DEFAULT SYSDATE,
     BBSHIT NUMBER,
     BBSCONTENT VARCHAR2(2048)
 );
-
+select * from bbs;
+insert into bbs values (1, '안녕하세요', test, sysdate, 0, '뭐이색기야', 1, 1, 0);
 DROP TABLE BBS;
+select max(bbsnum) from bbs;
+select bbsnum, bbstitle, id, bbsdate, bbshit from bbs order by bbsgroup, bbsstep asc;
