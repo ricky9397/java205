@@ -68,5 +68,19 @@ select * from iorder;
 select * from member;
 select * from product;
 
-select email from member where id='1234' and pw='1234';
+select to_char(sysdate, 'YYYY/MM/DD/HH:MI:SS') from dual;
 
+SELECT SYSDATE FROM DUAL;
+
+select id from member order by id desc;
+
+CREATE TABLE BBS(
+    BBSNUM NUMBER PRIMARY KEY,
+    BBSTITLE VARCHAR2(50),
+    ID VARCHAR2(20),
+    BBSDATE DATE DEFAULT SYSDATE,
+    BBSHIT NUMBER,
+    BBSCONTENT VARCHAR2(2048)
+);
+
+DROP TABLE BBS;
