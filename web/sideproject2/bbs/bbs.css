@@ -78,28 +78,33 @@ footer p{
     text-align: center;
 }
 
+
 th{
-    padding: 5px 60px;
+    padding: 5px;
     border-bottom: 1px solid #aaa;
-    margin: 0 auto;
     text-align: center;
+    margin: 0px auto;
+}
+
+.bb_size{
+    width: 100px;
 }
 
 .center_wrap{
     width: 900px;
-    margin: 0 auto;
+    margin: 0px auto;
     text-align: center;
     background-color: white;
 }
 
 .bbs_table{
-    margin: 0px auto;
+    margin: 0px 30px;
     text-align: center;
 }
 
 .butto_write{
     text-align: right;
-    margin-right: 60px;
+    margin-right: 35px;
 }
 .butto_write input[type="button"]{
     width: 100px;
