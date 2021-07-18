@@ -83,11 +83,13 @@ th{
     padding: 5px;
     border-bottom: 1px solid #aaa;
     text-align: center;
-    margin: 0px auto;
 }
 
 .bb_size{
     width: 100px;
+}
+.bb_size2{
+    width: 400px;
 }
 
 .center_wrap{
