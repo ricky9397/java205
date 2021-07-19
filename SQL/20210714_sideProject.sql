@@ -94,6 +94,7 @@ CREATE TABLE BBS(
     BBSHIT NUMBER,
     BBSCONTENT VARCHAR2(2048)
 );
+select * from bbs order by bbsnum desc;
 select * from bbs;
 insert into bbs values (1, '안녕하세요', test, sysdate, 0, '뭐이색기야', 1, 1, 0);
 DROP TABLE BBS;
