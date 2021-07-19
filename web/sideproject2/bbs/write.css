@@ -98,9 +98,10 @@ footer p{
 }
 
 .bbs{
-    width: 800px;
+    width: 765px;
     height: 400px;
     margin-top: 20px;
+    padding: 20px;
 }
 
 .count_size{
@@ -134,5 +135,21 @@ footer p{
     color: #000;
     cursor: pointer;
     border: 1px solid #bbb;
+}
+
+.file_tb th{
+    font-size: 0.8em;
+    color: rgb(95, 92, 92);
+    padding: 5px 20px;
+}
+
+.file_tb{
+    margin-left: 50px;
+    border-bottom: 1px solid #bbb;
+    margin-bottom: 20px;
+}
+
+.file_tb input{
+    font-size: 0.8em;
 }
 

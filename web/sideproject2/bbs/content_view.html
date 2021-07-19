@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OHMYGOT</title>
-    <link rel="stylesheet" href="write.css">
+    <link rel="stylesheet" href="content_view.css">
+
+    <!-- jquery -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"
-    integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
         </script>
-    <script src="write.js"></script>
+    <!-- js -->
+    <script src="content_view.js"></script>
 </head>
 
 <body>
@@ -54,44 +57,62 @@
         </div>
         <!-- 상단 끝 -->
 
-
+        
         <!-- 센터 -->
         <form action="">
             <div class="center_wrap">
                 <div class="center_font">
                     <h2>Q & A</h2>
                 </div>
-
-                <div>
-                    <h2>COMMUNITY</h2>
+                <div class="qa">
+                    <a href="#">공지사항</a>
+                    <a href="#">Q & A</a>
                 </div>
-                <div class="title">
-                    <span>WRITER</span>
-                    <input type="text">
-                </div>
-                <div>
-                    <textarea class="bbs"></textarea>
-                    <div class="count_size">
-                        문자 : <span id="count">0</span>
+                <div class="content_view_wrap">
+                    <table>
+                        <tr>
+                            <th>제 목</th>
+                            <td>ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ</td>
+                        </tr>
+                        <tr>
+                            <th>작성자</th>
+                            <td>test <p class="con_p">2021.7.19</p></td>
+                        </tr>
+                    </table> 
+                    <div class="content_m">
+                        <p>
+                            게시글
+                        </p>
                     </div>
-                </div>
-                <table class="file_tb">
-                    <tr>
-                        <th>FILE1</th>
-                        <td><input type="file"></td>
-                    </tr>
-                    <tr>
-                        <th>FILE2</th>
-                        <td><input type="file"></td>
-                    </tr>
-                    <tr>
-                        <th>FILE3</th>
-                        <td><input type="file"></td>
-                    </tr>
-                </table>
-                <div class="bbs_btn_size">
-                    <input type="submit" value="REGISTER">
-                    <input type="button" value="CANCLE" onclick="history.back(-1)">
+                    <div class="button1">
+                        <a href="#" >
+                            <input type="button" value="DELETE" class="con_dm">
+                        </a>
+                        <a href="#" >
+                            <input type="button" value="MODIFY" class="con_dm">
+                        </a>
+                        <div class="button2">
+                            <a href="#">
+                                <input type="button" value="LIST"  class="con_dm con_dm3">
+                            </a>
+                        </div>
+                    </div> 
+                    <div class="content_footer">
+                        <table>
+                            <tr>
+                                <th><h3>Comment</h3></th>
+                            </tr>
+                            <tr>
+                                <th >
+                                    <textarea ></textarea>
+                                    <div class="count_size">
+                                        문자 : <span id="count">0</span>
+                                    </div>
+                                    <input type="submit" value="댓글">
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </form>
@@ -109,6 +130,8 @@
         <!-- 하단끝 -->
     </div>
 
+
+    
 </body>
 
 </html>

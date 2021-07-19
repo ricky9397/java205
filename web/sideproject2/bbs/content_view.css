@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+#wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+header{
+    padding: 40px 0;
+    text-align: center;
+}
+
+li:hover{
+    text-decoration: underline;
+}
+
+.nav1{
+    display: flex;
+    margin-left: 50px;
+    list-style: none;
+}
+.nav1 a {
+    padding: 15px;
+    font-size: 0.5em;
+}
+.nav2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 280px;
+    list-style: none;
+    font-size: 0.8em;
+}
+.nav2 li{
+    margin-left: 80px;
+}
+
+.serch{
+    float: right;
+    margin-right: 100px;
+    text-decoration: none;
+}
+.serch_li{
+    list-style: none;
+}
+
+footer{
+    padding: 10px 30px;
+    text-align: center;
+}
+footer h2{
+    font-size: 1.0em;
+    margin-bottom: 10px;
+
+}
+
+footer p{
+    font-size: 0.5em;
+    margin-bottom: 5px;
+}
+
+.center_font h2{
+    font-size: 1.5em;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.qa{
+    margin-bottom: 30px;
+}
+.qa a{
+    padding: 0 5px;
+    font-size: 0.8em;
+}
+
+.qa a:hover{
+    text-decoration: underline;
+    color: #aaa;
+}
+
+.center_wrap{
+    width: 900px;
+    margin: 0px auto;
+    text-align: center;
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+/* 게시글 view */
+.content_view_wrap{
+    margin: 0px 20px;
+    border-top: 1px solid #ddd;
+}
+
+.content_view_wrap th{
+    font-size: 0.9em;
+    width: 50px;
+    padding: 5px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.content_view_wrap td{
+    font-size: 0.9em;
+    padding: 0 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    width: 820px;
+}
+
+.con_p{
+    padding: 5px;
+    color: rgb(138, 132, 132);
+    font-size: 0.7em;
+}
+
+/* 게시글 */
+.content_m{
+    text-align: left;
+    width: 820px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.con_dm{
+    width: 150px;
+    padding: 5px 15px;
+    background-color: white;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    font-size: 0.8em;
+    color: rgb(105, 95, 95);
+}
+
+.button1{
+    text-align: left;
+}
+.button2{
+    margin-top: -25px;
+    text-align: right;
+}
+
+/* 댓글 */
+.content_footer{
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+textarea{
+    width: 800px;
+    height: 70px;
+}
+.content_footer input{
+    background-color: #000;
+    color: white;
+    padding: 5px 60px;
+}
+
+.count_size{
+    font-size: 0.9em;
+    color: #aaa;
+    text-align: right;
+}

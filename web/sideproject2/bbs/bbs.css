@@ -116,3 +116,61 @@ th{
     border: none;
     cursor: pointer;
 }
+
+.bb_sizes th{
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+li:hover{
+    text-decoration: underline;
+}
+
+.bb_ss:hover{
+    text-decoration: underline;
+}
+
+.bbs_page_num1 a{
+    color: rgb(92, 90, 90);
+    padding: 0px 5px;
+    font-size: 0.8em;
+}
+
+.bbs_page_num2{
+    text-decoration: underline;
+}
+.bbs_page_num1{
+    margin-bottom: 20px;
+}
+
+.bbs_serch select{
+    border: 1px solid #bbb;
+    font-size: 0.8em;
+}
+.bbs_serch input{
+    border: none;
+    border-bottom: 1px solid #bbb;
+}
+
+.bbs_serch a{
+    font-size: 0.8em;
+    margin-left: 10px;
+    color: rgb(102, 97, 97);
+}
+
+.bbs_serch {
+    padding: 30px;
+}
+
+.qa{
+    margin-bottom: 30px;
+}
+.qa a{
+    padding: 0 5px;
+    font-size: 0.8em;
+}
+
+.qa a:hover{
+    text-decoration: underline;
+    color: #aaa;
+}
