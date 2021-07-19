@@ -1,0 +1,8 @@
+  
+C:\Users\bitcamp\Documents\GitHub\java205\jsp_project
+
+\.metadata
+\.plugins
+\org.eclipse.wst.server.core
+\tmp0
+\wtpwebapps
