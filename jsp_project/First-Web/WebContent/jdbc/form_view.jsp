@@ -2,18 +2,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-
 	Dept dept = (Dept) request.getAttribute("dept");
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+</style>
+<script>
+	
+</script>
 </head>
 <body>
+
 	<h1>부서 정보 수정</h1>
 	<hr>
+
 	<form action="editDept.jsp" method="post">
 		<table>
 			<tr>
@@ -30,9 +36,13 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="등록"> <input type="reset"></td>
+				<td>
+					<input type="submit" value="등록"> 
+					<input type="reset">
+				</td>
 			</tr>
 		</table>
 	</form>
+
 </body>
 </html>
