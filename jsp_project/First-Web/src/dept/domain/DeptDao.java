@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import jdbc.util.ConnectionProvider;
+import jdbc.util.jdbcUtil;
 
 public class DeptDao {
 	
@@ -15,11 +16,10 @@ public class DeptDao {
 	public static DeptDao getInstance() { return dao; }
 	
 	
-	public ArrayList<Dept> getList(){
-		ArrayList<Dept> list = new ArrayList<Dept>();
-		Connection conn = null;
+	public ArrayList<Dept> getDeptList(Connection conn){
 		Statement stmt =null;
 		ResultSet rs = null;
+		ArrayList<Dept> list = null;
 		
 		
 		try {
@@ -28,39 +28,18 @@ public class DeptDao {
 			stmt = conn.createStatement();
 			
 			rs = stmt.executeQuery(sql);
-			System.out.println("연결");
+			
+			list = new ArrayList<Dept>();
 			while(rs.next()) {
-				int deptno = rs.getInt("deptno");
-				String dname = rs.getString("dname");
-				String loc =rs.getString("loc");
-				
-				list.add(new Dept(deptno, dname, loc));
+				list.add(new Dept(rs.getInt("deptno"), rs.getString("dname"), rs.getString("loc")));
 			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			if(conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if(stmt != null) {
-				try {
-					stmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if(rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			jdbcUtil.close(conn);
+			jdbcUtil.close(rs);
+			jdbcUtil.close(stmt);
 		}
 		return list;
 	}
