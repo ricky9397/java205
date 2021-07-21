@@ -4,5 +4,4 @@ CREATE TABLE MEMBERS(
     NAME VARCHAR2(20),
     TIMES DATE DEFAULT SYSDATE
 );
-
-insert into MEMBERS values(test, 1, 2, sysdate);
+commit;

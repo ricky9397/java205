@@ -31,8 +31,6 @@
 		e.printStackTrace();	
 	}
 	
-	
-	
 	if(resultCnt>0){
 		%>
 		<script>
