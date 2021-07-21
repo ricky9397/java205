@@ -94,8 +94,10 @@ CREATE TABLE BBS(
     BBSHIT NUMBER,
     BBSCONTENT VARCHAR2(2048)
 );
-update bbs set bbstitle='안녕십니까', bbscontent='반갑습니다' where bbsnum=2;
-select * from bbs order by bbsnum desc;
+
+select max(bbsnum) from bbs;
+
+update bbs set bbshit=bbshit+1 where bbsnum=2;
 select * from bbs;
 insert into bbs values (1, '안녕하세요', test, sysdate, 0, '뭐이색기야', 1, 1, 0);
 DROP TABLE BBS;
