@@ -28,7 +28,7 @@
 		resultCnt = dao.updateDept(conn, new Dept(Integer.parseInt(deptno), dname, loc));
 		
 	} catch(Exception e){
-		e.printStackTrace();
+		e.printStackTrace();	
 	}
 	
 	
