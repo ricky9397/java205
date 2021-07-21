@@ -1,3 +1,5 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="dept.domain.DeptDao"%>
 <%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="dept.domain.Dept"%>
 <%@page import="java.sql.DriverManager"%>
@@ -13,32 +15,21 @@
 	
 	// 전달받은 부서번호로 부서정보를 가져온다
 	// 1. 드라이버 로드
-	Class.forName("com.mysql.cj.jdbc.Driver");
 	// 2. DB 연결
 	Connection conn = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
+	DeptDao dao = null;
+			
+	try{
+		
 	conn = ConnectionProvider.getConnection();
 	
-	Dept dept = null;
+	dao = DeptDao.getInstance();
 	
-	String sqlSelect = "select * from dept where deptno=? ";
-	pstmt = conn.prepareStatement(sqlSelect);
-	pstmt.setInt(1, Integer.parseInt(deptno));
+	request.setAttribute("dept", dao.selectByDeptno(conn, Integer.parseInt(deptno)));
 	
-	rs = pstmt.executeQuery();
-	
-	if(rs.next()){
-		dept = new Dept();
-		dept.setDeptno(rs.getInt("deptno"));
-		dept.setDname(rs.getString("dname"));
-		dept.setLoc(rs.getString("loc"));
+	} catch (Exception e){
+		e.printStackTrace();
 	}
-	
-	//out.println(dept);
-	
-	// 부서정보를 form_view.jsp 전달(공유)
-	request.setAttribute("dept", dept);
 	
 %>
 <jsp:forward page="form_view.jsp"/>

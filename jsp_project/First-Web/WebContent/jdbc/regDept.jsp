@@ -1,3 +1,5 @@
+<%@page import="dept.domain.Dept"%>
+<%@page import="dept.domain.DeptDao"%>
 <%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -14,23 +16,16 @@
 	int resultCnt = 0;
 	// 2. DB 처리 : insert
 	// 데이터베이스 드라이버 로드
-	Class.forName("com.mysql.cj.jdbc.Driver");
 	// 연결
 	Connection conn = null;
-	PreparedStatement pstmt = null;
+	
+	DeptDao dao = DeptDao.getInstance();
+	
 	try {
 		conn = ConnectionProvider.getConnection();
-		// PreparedStatement
-		String sqlInsert = "insert into dept values(?, ?, ?)";
-		pstmt = conn.prepareStatement(sqlInsert);
-		pstmt.setInt(1, Integer.parseInt(deptno));
-		pstmt.setString(2, dname);
-		pstmt.setString(3, loc);
-		resultCnt = pstmt.executeUpdate();
-		//out.println(resultCnt);
-		// insert -> int
-		// 3. dept_list.jsp 이동	
-		//response.sendRedirect("dept_list.jsp");
+		
+		resultCnt = dao.insertDept(conn, new Dept(Integer.parseInt(deptno), dname, loc));
+		
 	} catch (Exception e) {
 	}
 	if (resultCnt > 0) {
