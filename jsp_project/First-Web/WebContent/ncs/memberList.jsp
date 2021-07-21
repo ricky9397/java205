@@ -23,7 +23,6 @@
                 <th>비밀번호</th>
                 <th>이름</th>
                 <th>가입일자</th>
-                <th>관리</th>
             </tr>
             <%
             if(list != null){
