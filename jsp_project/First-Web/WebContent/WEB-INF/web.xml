@@ -21,20 +21,20 @@
   
   <!-- 에러페이지 등록 -->
   <!-- http 상태 코드로 등록 -->
-  <error-page>
+  <!-- <error-page>
   	<error-code>400</error-code>
   	<location>/error/error404.jsp</location>
   </error-page>
   <error-page>
   	<error-code>500</error-code>
   	<location>/error/error500.jsp</location>
-  </error-page>
+  </error-page> -->
   
   <!-- 에러 타입으로 등록 -->
-  <error-page>
+  <!-- <error-page>
   	<exception-type>java.lang.NullPointerException</exception-type>
   	<location>/error/errorTypeNull.jsp</location>
-  </error-page>
+  </error-page> -->
   
   
 </web-app>

@@ -117,25 +117,8 @@ public class MemberDao {
 			JdbcUtil.close(pstmt);
 		}
 		
-		
-		
-		
 		return member;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 
 }
