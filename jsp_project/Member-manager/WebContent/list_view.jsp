@@ -2,6 +2,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	List<Member> list = (List<Member>) request.getAttribute("result");
 %>
@@ -40,25 +41,22 @@
 			<th>관리</th>
 		</tr>
 		
-	<%
-		if(list!=null && !list.isEmpty()){
-			for(int i=0; i<list.size(); i++){
-				%>
-		<tr>
-			<td><%= list.get(i).getIdx() %></td>			
-			<td><%= list.get(i).getMemberid() %></td>
-			<td><%= list.get(i).getPassword() %></td>
-			<td><%= list.get(i).getMembername() %></td>
-			<td><%= list.get(i).getRegdate() %></td>
-			<td>
-				<a href="#">수정</a> 
-				<a href="#">삭제</a>
-			</td>
-		</tr>
-				<%
-			}
-		}
-	%>
+		
+		<c:if test="${result != null && !result.isEmpty()}">
+			<c:forEach items="${result}" var="member">
+				<tr>
+					<td>${member.idx}</td>			
+					<td>${member.memberid}</td>
+					<td>${member.password}</td>
+					<td>${member.membername}</td>
+					<td>${member.regdate}</td>
+					<td>
+						<a href="#">수정</a> 
+						<a href="#">삭제</a>
+					</td>
+				</tr>
+			</c:forEach>
+		</c:if>
 		
 		
 	</table>
