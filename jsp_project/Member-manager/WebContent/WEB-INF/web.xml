@@ -9,7 +9,7 @@
   </welcome-file-list>
   
   <!-- 드라이버 로드 서블릿 등록/설정 -->
-  <servlet>
+   <servlet>
   	<servlet-name>DriverLoader</servlet-name>
   	<servlet-class>jdbc.DriverLoader</servlet-class>
   	<init-param>
@@ -32,5 +32,14 @@
   	<filter-name>LoginCheckFilter</filter-name>
   	<url-pattern>/mypage.jsp</url-pattern>
   </filter-mapping>
+  
+  <context-param>
+		<param-name>jdbcdrivers</param-name>
+		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>jdbc.JdbcListener</listener-class>
+	</listener>
   
 </web-app>

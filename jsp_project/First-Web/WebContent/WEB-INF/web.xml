@@ -13,11 +13,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  <!-- <servlet>
+  <servlet>
   	<servlet-name>Loader</servlet-name>
   	<servlet-class>jdbc.util.Loader</servlet-class>
   	<load-on-startup>1</load-on-startup>
-  </servlet> -->
+  </servlet>
   
   <!-- 에러페이지 등록 -->
   <!-- http 상태 코드로 등록 -->
@@ -57,14 +57,14 @@
   </filter-mapping>
   
   
-  <context-param>
+<!--    <context-param>
   	<param-name>jdbcdriver</param-name>
   	<param-value>com.mysql.cj.jdbc.Driver</param-value>
   </context-param>
   
   <listener>
   	<listener-class>jdbc.util.jdbcListener</listener-class>
-  </listener>
+  </listener>  -->
   
   
 </web-app>
