@@ -1,18 +1,6 @@
 <%@page import="domain.LoginInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	LoginInfo loginInfo = (LoginInfo) session.getAttribute("loginInfo");
-
-	if(loginInfo == null){
-		%>
-<script>
-	alert('로그인이 필요한 페이지입니다.\n로그인 후 사용해주세요!!');
-	location.href = '<%= request.getContextPath()%>/loginForm.jsp';
-</script>
-		<%
-	} else {
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +23,7 @@
 		<h2>My Page</h2>
 		<hr>
 		<h3>
-			<%= loginInfo %>
+			${loginInfo}
 		</h3>
 	
 	
@@ -44,4 +32,5 @@
 
 </body>
 </html>
-<%}%>
+${pageContext.request.contextPath}
+

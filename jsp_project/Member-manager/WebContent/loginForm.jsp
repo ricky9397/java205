@@ -3,7 +3,6 @@
 	pageEncoding="UTF-8"%>
 <%
 	CookieBox cBox = new CookieBox(request);
-
 	String reid = cBox.exists("reid") ? cBox.getValue("reid") : "";
 	String checked = cBox.exists("reid") ? "checked" : "";
 %>
@@ -13,7 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/default.css">
+	href="<%= request.getContextPath()%>/css/default.css">
 <style>
 </style>
 <script>
@@ -36,7 +35,7 @@
 			<table>
 				<tr>
 					<th>ID</th>
-					<td><input type="text" name="memberid" value="<%=reid%>"></td>
+					<td><input type="text" name="memberid" value="${reid}"></td>
 				</tr>
 				<tr>
 					<th>PW</th>
@@ -45,7 +44,7 @@
 				<tr>
 					<th></th>
 					<td><input type="checkbox" name="reid" value="on"
-						<%=checked%>> 아이디 기억하기</td>
+						${checked}> 아이디 기억하기</td>
 				</tr>
 				<tr>
 					<th></th>
