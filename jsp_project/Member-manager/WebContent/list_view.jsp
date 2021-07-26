@@ -39,7 +39,7 @@
 		</tr>
 		
 		
-		<c:if test="${result != null && !result.isEmpty()}">
+		<c:if test="${result ne null and not empty result }">
 			<c:forEach items="${result}" var="member">
 				<tr>
 					<td>${member.idx}</td>			
