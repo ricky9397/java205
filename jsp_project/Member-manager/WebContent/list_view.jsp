@@ -43,7 +43,9 @@
 			<c:forEach items="${result}" var="member">
 				<tr>
 					<td>${member.idx}</td>			
-					<td>${member.memberid}</td>
+					<td>
+						<img src="<c:url value="/upload/${member.memberphoto}"/>" height="30">
+						${member.memberid}</td>
 					<td>${member.password}</td>
 					<td>${member.membername}</td>
 					<td>${member.regdate}</td>
