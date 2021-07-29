@@ -1,32 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+</style>
+<script>
+</script>
 </head>
 <body>
-	
+
 	<h1>LoginForm</h1>
-	<hr>
-	<form action="<c:url value="/member/login.jsp" />">
+	<hr>                   <!-- /web/member/login.jsp -->
+	<form action="<c:url value="/member/login.jsp"/>">  <!-- /web/member/mypage/mypage.jsp -->
 		<table>
 			<tr>
-				<th>아이디</th>
-				<td><input type="text" name="id"></td>
+				<td>아이디</td>
+				<td> <input type="text" name="id">
 			</tr>
 			<tr>
-				<th>비밀번호</th>
-				<td><input type="password" name="pw"></td>
+				<td>비밀번호</td>
+				<td> <input type="password" name="pw">
 			</tr>
 			<tr>
-				<th></th>
-				<td><input type="submit"></td>
+				<td></td>
+				<td> <input type="submit" >
 			</tr>
+			
 		</table>
+	
 	</form>
 	
+
 </body>
 </html>

@@ -1,4 +1,3 @@
-  
 C:\Users\bitcamp\Documents\GitHub\java205\jsp_project
 
 \.metadata

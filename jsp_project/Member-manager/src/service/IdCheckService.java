@@ -7,8 +7,17 @@ import dao.MemberDao;
 import util.ConnectionProvider;
 
 public class IdCheckService {
+	
+	private IdCheckService() {}
+	private static IdCheckService service = new IdCheckService();
+	public static IdCheckService getInstance() {
+		return service;
+	}
+	
 	public String idCheck(String memberId) {
-		String result = "n";
+		//String result = "N";
+		
+		int cnt = 0;
 		
 		Connection conn = null;
 		MemberDao dao = null;
@@ -17,15 +26,16 @@ public class IdCheckService {
 			conn = ConnectionProvider.getConnection();
 			dao = MemberDao.getInstance();
 			
-			int cnt = dao.selectById(conn, memberId);
+			cnt = dao.selectById(conn, memberId);
+			
+			//result = cnt > 0 ? "N" : "Y";
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		
-		return result;
-		
+		return cnt > 0 ? "N" : "Y";
 	}
+
 }

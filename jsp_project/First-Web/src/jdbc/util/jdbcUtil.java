@@ -5,11 +5,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class jdbcUtil {
-	
+public class JdbcUtil {
+
 	// Connection
 	public static void close(Connection conn) {
-		if(conn != null) {
+
+		if (conn != null) {
 			try {
 				conn.close();
 			} catch (SQLException e) {
@@ -17,8 +18,9 @@ public class jdbcUtil {
 				e.printStackTrace();
 			}
 		}
+
 	}
-	
+
 	// Statement, PreparedStatement
 	public static void close(Statement stmt) {
 		if(stmt != null) {
@@ -33,7 +35,7 @@ public class jdbcUtil {
 	
 	// ResultSet
 	public static void close(ResultSet rs) {
-		if(rs != null) {
+		if(rs!=null) {
 			try {
 				rs.close();
 			} catch (SQLException e) {
@@ -43,4 +45,5 @@ public class jdbcUtil {
 		}
 	}
 	
+
 }

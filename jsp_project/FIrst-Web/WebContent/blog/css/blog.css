@@ -1,0 +1,95 @@
+/* 
+웹폰트 
+나눔고딕, Jua, SunFlower
+
+font-family: 'Jua', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Sunflower', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic:wght@700&family=Sunflower:wght@300&display=swap');
+
+
+/* 브라우저 별 요소 스타일 초기화 */
+*, body, h1, h2, h3, h4, h5, h6, p, div, 
+header, nav, section, article, footer, 
+table, tr, td, th,
+input, textarea {
+    margin: 0;    
+    padding: 0;
+    font-family: Arial, '돋음체';
+    font-size: 16px;
+}
+
+body {
+    background-color: cornsilk;
+}
+
+/* 전체 요소를 감싸를 블록 */
+#main_wrap {
+    width: 768px;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    background-color: #FFF;
+    margin: 10px auto;
+    padding: 15px;
+}
+
+/* header 영역 */
+header {
+    padding: 10px;
+}
+
+header>h1 {
+    font-size: 1.5em;
+    font-family: 'Jua', sans-serif;
+}
+header>h4 {
+    font-size: 0.66em;
+    font-family: 'Jua', sans-serif;
+}
+
+
+/* navigation 영역 */
+nav {
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    overflow: hidden;
+    height: 35px;
+}
+
+nav>ul {
+    float: left;
+
+    list-style: none;
+    overflow: hidden;
+
+    
+}
+
+nav>ul>li {
+    float:left;
+    padding: 10px 10px;
+    font-size: 12px;
+}
+
+nav>div {
+    float: right;
+}
+
+nav>div>input {
+    display: inline-block;
+    height: 25px;
+    border: 1px solid #DDD;
+}
+
+/* 컨텐츠 영역 */
+
+
+/* 게시물 영역 */
+
+
+/* aside 영역 */
+
+
+/* footer 영역 */
+

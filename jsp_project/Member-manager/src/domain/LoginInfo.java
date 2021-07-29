@@ -12,14 +12,7 @@ public class LoginInfo {
 		this.memberId = memberId;
 		this.memberName = memberName;
 		this.memberPhoto = memberPhoto;
-		
 	}
-	
-
-	public String getMemberPhoto() {
-		return memberPhoto;
-	}
-
 
 	public int getIdx() {
 		return idx;
@@ -33,6 +26,9 @@ public class LoginInfo {
 		return memberName;
 	}
 
+	public String getMemberPhoto() {
+		return memberPhoto;
+	}
 
 	@Override
 	public String toString() {
@@ -40,5 +36,6 @@ public class LoginInfo {
 				+ memberPhoto + "]";
 	}
 
+	
 
 }

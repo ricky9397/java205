@@ -15,13 +15,13 @@ public class NowServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("GET 요청");
+		System.out.println("GET 로 요청");
 		
-		resp.setContentType("text/html; charset=utf-8");
+		resp.setContentType("text/html; charset=utf-8"); 
 		
 		PrintWriter writer = resp.getWriter();
 		writer.println("<html>");
-		writer.println("	<head><title>NowServlet</title></head>");
+		writer.println("<head><title>NowServlet</title></head>");
 		writer.println("<body>");
 		writer.println("<h1>"+new Date()+"</h1>");
 		writer.println("</body>");
@@ -30,13 +30,13 @@ public class NowServlet extends HttpServlet {
 		writer.close();
 		
 		
-		
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		System.out.println("POST로 요청");
-		
+		System.out.println("POST 로 요청");
 	}
+	
+	
+
 }

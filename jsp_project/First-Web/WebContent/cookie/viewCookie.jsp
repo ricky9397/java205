@@ -1,10 +1,10 @@
-  
 <%@page import="util.CookieBox"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 	//Cookie[] cookies = request.getCookies();
 	CookieBox cBox = new CookieBox(request);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -41,6 +41,12 @@
 	
 	<a href="editCookie.jsp">쿠키 수정</a>
 	<a href="deleteCookie.jsp">쿠키 삭제</a>
+
+
+
+
+
+
 
 
 </body>

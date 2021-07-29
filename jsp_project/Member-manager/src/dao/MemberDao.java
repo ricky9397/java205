@@ -29,7 +29,7 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 
 		String sql1 = "insert into member (memberid,password,membername) values (?, ?, ?)";
-		String sql2 = "insert into member (memberid,password,membername, memberphoto) values (?, ?, ?, ?)";
+		String sql2 = "insert into member (memberid,password,membername, memberphoto) values (?, ?, ?,?)";
 
 		try {
 			
@@ -44,13 +44,14 @@ public class MemberDao {
 				pstmt.setString(2, member.getPassword());
 				pstmt.setString(3, member.getMembername());
 				pstmt.setString(4, member.getMemberphoto());
-			} 
-
-			resultCnt = pstmt.executeUpdate();
+			}
 			
+			resultCnt = pstmt.executeUpdate();
+
 		} finally {
 			JdbcUtil.close(pstmt);
 		}
+
 		return resultCnt;
 
 	}
@@ -126,11 +127,14 @@ public class MemberDao {
 			JdbcUtil.close(pstmt);
 		}
 		
+		
+		
+		
 		return member;
 	}
-	
+
 	// ID 중복여부 확인을 위한 id 값으로 검색 -> 개수 반환
-	public int selectById(Connection conn, String memberId) {
+	public int selectById(Connection conn, String memberId) throws SQLException {
 		
 		int cnt = 0;
 		PreparedStatement pstmt = null;
@@ -138,9 +142,37 @@ public class MemberDao {
 		
 		String sql = "select count(*) from member where memberid=?";
 		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberId);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				cnt = rs.getInt(1);
+			}
+			
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
 		
 		return cnt;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }

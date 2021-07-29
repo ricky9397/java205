@@ -3,14 +3,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+</style>
+<script>
+	
+</script>
 </head>
 <body>
 
 	<h1>request Form Test</h1>
 	<hr>
-	<!-- 데이터를 처리할 위치로 전송 : input 요소에 name 속성을 반드시!!! 정의 해주어야 한다 -->
+	<!-- 데이터를 처리할 위치로 전송 : input 요소에 name 속성을 반드시!!! 정의 해주어야 한다!!!! -->
 	<form action="request_result.jsp" method="post">
 		<table>
 			<tr>
@@ -22,8 +27,8 @@
 				<td>
 					<select name="job">
 						<option>시스템엔지니어</option>
-						<option>자바프로그래머</option>
-						<option>그래픽디자이너</option>
+						<option>자바 프로그래머</option>
+						<option>그레픽 디자이너</option>
 					</select>
 				</td>
 			</tr>
@@ -38,11 +43,24 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-				<input type="submit"> 
-				<input type="reset"></td>
+					<input type="submit"> 
+					<input type="reset">
+				</td>
 			</tr>
 		</table>
 	</form>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

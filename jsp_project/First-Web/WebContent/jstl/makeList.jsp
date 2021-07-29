@@ -2,8 +2,9 @@
 <%@page import="member.Member"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%
+
 	List<Member> members = new ArrayList<Member>();
 	members.add(new Member("cool00", "1110", "COOL00"));
 	members.add(new Member("cool01", "1111", null));
@@ -15,6 +16,7 @@
 	members.add(new Member("cool07", "1117", null));
 	members.add(new Member("cool08", "1118", "COOL00"));
 	members.add(new Member("cool09", "1119", "COOL00"));
-
+	
 	session.setAttribute("members", members);
+
 %>

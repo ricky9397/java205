@@ -1,12 +1,10 @@
-<%@page import="java.util.ArrayList"%>
 <%@page import="dept.domain.Dept"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%
-	ArrayList<Dept> list = (ArrayList<Dept>) request.getAttribute("result");
+	List<Dept> list = (List<Dept>) request.getAttribute("result");
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,6 +73,14 @@
 	<%--
 		out.println(list);
 	--%>
+
+
+
+
+
+
+
+
 
 
 </body>

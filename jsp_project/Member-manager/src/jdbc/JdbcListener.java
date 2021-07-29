@@ -6,14 +6,18 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import com.mysql.cj.exceptions.ExceptionInterceptorChain;
+
 public class JdbcListener implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
+
 		System.out.println("Listener 진입!!");
+		
 		try {
 			ServletContext context = sce.getServletContext();
-			String drivers = context.getInitParameter("jdbcdrivers");
+			String drivers = context.getInitParameter("jdbcdriver");
 
 			StringTokenizer tokenizer = new StringTokenizer(drivers, ",");
 			while (tokenizer.hasMoreTokens()) {
@@ -25,10 +29,11 @@ public class JdbcListener implements ServletContextListener {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
-
+		// TODO Auto-generated method stub
 	}
 }

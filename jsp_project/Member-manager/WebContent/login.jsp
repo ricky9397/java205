@@ -40,7 +40,13 @@
 			e.printStackTrace();
 		}
 		
+		  
+		
 	}
+	
+	
+	
+	
 	
 	// ID 저장을 위한 쿠키 설정
 	// reid 값의 유무 체크
