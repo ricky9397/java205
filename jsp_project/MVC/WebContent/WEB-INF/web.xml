@@ -19,7 +19,7 @@
   	<url-pattern>/simple</url-pattern>
   </servlet-mapping> -->
   
-  <servlet>
+ <!--  <servlet>
   	<servlet-name>FrontController</servlet-name>
   	<servlet-class>controller.FrontController</servlet-class>
   	<init-param>
@@ -31,7 +31,7 @@
   <servlet-mapping>
   	<servlet-name>FrontController</servlet-name>
   	<url-pattern>*.do</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
   
   
   
