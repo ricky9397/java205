@@ -2,11 +2,11 @@ package pageService;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class LogOutService implements Command {
+public class InvalidService implements Command{
 
 	@Override
 	public String getPage(HttpServletRequest request) {
-		request.getSession().invalidate();
-		return "/WEB-INF/views/logout.jsp";
+		return "/WEB-INF/views/index.jsp";
 	}
+
 }
