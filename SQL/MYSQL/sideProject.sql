@@ -43,6 +43,7 @@ CREATE TABLE project.BBS(
     BBSDATE timestamp default current_timestamp,
     BBSHIT int,
     BBSCONTENT VARCHAR(2048) not null,
+    PHOTO VARCHAR(50) DEFAULT 'photo.png',
     constraint bbs_bbsnum_pk primary key(bbsnum)
 );    
 insert into project.bbs (BBSNUM, BBSTITLE, ID, BBSHIT, BBSCONTENT)  values(1, '안녕', 'test',0,'내용입니다');
