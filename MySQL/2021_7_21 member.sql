@@ -12,7 +12,7 @@ create table project.member (
 );
 
 -- Select
-select * from project.membemembermembermemberr;
+select * from project.memguestbook_messageguestbook_messagebemembermembermemberr;
 select * from project.member where idx=1;
 select * from project.member where memberid='cool' and password='1111';
 

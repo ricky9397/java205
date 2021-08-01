@@ -142,7 +142,7 @@ public class MessageDao {
 	}
 
 
-
+	// 삭제
 	public int deleteMessage(Connection conn, int mid) throws SQLException {
 		
 		int resultCnt = 0;
