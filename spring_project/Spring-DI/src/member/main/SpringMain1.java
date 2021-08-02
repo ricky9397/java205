@@ -2,18 +2,20 @@ package member.main;
 
 import java.util.Scanner;
 
-import member.dao.MemberDao;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
 import member.domain.RegRequest;
 import member.service.ChangePasswordService;
 import member.service.MemberRegService;
 
-public class MainForMembermanager {
+public class SpringMain1 {
 	
-	//static MemberDao dao = new MemberDao();
+	static ApplicationContext ctx;
 	
-	static Assembler assembler = new Assembler();
-
 	public static void main(String[] args) {
+		
+		ctx = new GenericXmlApplicationContext("classpath:appCtx1.xml");
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -44,7 +46,8 @@ public class MainForMembermanager {
 	private static void processChangePw(String[] values) {
 		
 		//ChangePasswordService service = new ChangePasswordService(dao);
-		ChangePasswordService service = assembler.getPasswordService();
+		//ChangePasswordService service = assembler.getPasswordService();
+		ChangePasswordService service = ctx.getBean("changePwService", ChangePasswordService.class);
 		
 		try {
 			service.changePassword(values[1], values[2], values[3]);
@@ -63,7 +66,8 @@ public class MainForMembermanager {
 		// MemberRegService 이용해서 정보 저장
 		
 		//MemberRegService service = new MemberRegService(dao);
-		MemberRegService service = assembler.getRegService();
+		//MemberRegService service = assembler.getRegService();
+		MemberRegService service = ctx.getBean("regService", MemberRegService.class);
 		RegRequest request = new RegRequest();
 		request.setEmail(values[1]);
 		request.setName(values[2]);

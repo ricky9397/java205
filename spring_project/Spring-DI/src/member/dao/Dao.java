@@ -5,7 +5,7 @@ import java.util.Collection;
 import member.domain.Member;
 
 public interface Dao {
-	
+
 	// 회원 데이터를 email로 검색 -> Member 객체 반환
 	Member selectByEmail(String email);
 	
@@ -17,5 +17,8 @@ public interface Dao {
 	
 	// 전체 데이터 출력
 	Collection<Member> selectAll();
+	
+	
+	
 	
 }

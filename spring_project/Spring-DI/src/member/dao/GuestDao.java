@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import member.domain.Member;
 
-public class GuestDao implements Dao{
+public class GuestDao implements Dao {
 
 	@Override
 	public Member selectByEmail(String email) {
@@ -15,13 +15,13 @@ public class GuestDao implements Dao{
 	@Override
 	public void insert(Member member) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void update(Member member) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -29,5 +29,5 @@ public class GuestDao implements Dao{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 }

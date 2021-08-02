@@ -9,8 +9,12 @@ import member.domain.Member;
 public class MemberDao implements Dao {
 	
 	private static int nextId = 0;
-	private Map<String, Member> map = new HashMap<>();
-	//          <email, Member>
+	private Map<String, Member> map = new HashMap();
+	//          email , Member
+	
+	public MemberDao() {
+		System.out.println("MemberDao 인스턴스 생성");
+	}
 	
 	@Override
 	public Member selectByEmail(String email) {
