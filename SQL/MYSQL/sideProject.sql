@@ -33,6 +33,8 @@ CREATE TABLE  project.product (
                                 count int,
                                 constraint iorder_oidx_pk primary key(oidx)
                               ) ;
+delete from project.iorder where icode=1 and id='test';
+select * from bbs where id='test' order by bbsnum;
 
                               
 -- 게시판 테이블                              
