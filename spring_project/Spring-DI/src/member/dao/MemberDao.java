@@ -2,6 +2,7 @@ package member.dao;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import member.domain.Member;
@@ -11,10 +12,11 @@ public class MemberDao implements Dao {
 	private static int nextId = 0;
 	private Map<String, Member> map = new HashMap();
 	//          email , Member
-	
+
 	public MemberDao() {
 		System.out.println("MemberDao 인스턴스 생성");
 	}
+	
 	
 	@Override
 	public Member selectByEmail(String email) {

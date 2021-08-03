@@ -21,6 +21,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	
+	<!-- 자동 bean 등록 : 애노테이션 찾아서 bean 생성 -->
+	<!-- 
+		context:component-scan 
+		@Component  : 일반 객체
+		@Controller : 기능 Controller
+		@Service	: Service
+		@Repository : DAO
+	 -->
 	<context:component-scan base-package="com.bitcamp.firstSpring" />
 	
 	

@@ -9,12 +9,40 @@ import member.domain.RegRequest;
 public class MemberRegService {
 	
 	//Dao dao = new MemberDao();
-	Dao dao ;
+	private Dao dao ;
+	private int num;
+	
+	// 프러퍼티 방식의 주입 : setter 메소드를 이용, 기본생성자가 필요
+	public void setDao(Dao dao) {
+		this.dao = dao;
+	}
+	
+	
+	// 생성자 정의
+	// 정수데이터를 받는 생성자
+	
+	// 기본생성자
+	public MemberRegService() {
+		System.out.println("MemberRegService()");
+	}
+	
+	public MemberRegService(int num) {
+		//this.dao = dao;
+		System.out.println("MemberRegService 인스턴스 생성");
+	}
 	
 	public MemberRegService(Dao dao) {
 		this.dao = dao;
 		System.out.println("MemberRegService 인스턴스 생성");
 	}
+	
+	public MemberRegService(Dao dao, int num) {
+		this.dao = dao;
+		this.num = num;
+		System.out.println("MemberRegService 인스턴스 생성");
+	}
+	/////////////////////////////////////////////////////////
+	
 	
 	public void regMember(RegRequest request) throws Exception {
 		

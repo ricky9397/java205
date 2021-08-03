@@ -72,6 +72,7 @@ select * from project.bbs;
 select * from project.comments;
 
 
+
 -- drop
 drop table project.members;                              
 drop table project.product;
