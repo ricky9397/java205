@@ -5,9 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
-	
+
 	@RequestMapping("/")
 	public String index() {
-		return "index";  //  /WEB_INF/views/index.jsp
+		return "index";   // /WEB_INF/views/index.jsp
 	}
+	
 }
