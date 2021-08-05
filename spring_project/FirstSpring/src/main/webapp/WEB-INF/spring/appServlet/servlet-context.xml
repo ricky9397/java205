@@ -29,9 +29,10 @@
 							p:maxUploadSize="10000000"
 							>
 	</beans:bean>
+	<!-- 
 	<beans:bean id="fileDao" class="com.bitcamp.firstSpring.dao.FileUploadDao"/>
 	<beans:bean id="fileService" class="com.bitcamp.firstSpring.FileUploadService"/>
-	
+	 -->
 	
 	
 	<!-- 자동 bean 등록 : 애노테이션 찾아서 bean 생성 -->

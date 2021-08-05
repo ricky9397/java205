@@ -1,5 +1,8 @@
 package com.bitcamp.firstSpring.dao;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class FileUploadDao implements Dao{
 
 	@Override
