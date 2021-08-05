@@ -29,7 +29,8 @@
 							p:maxUploadSize="10000000"
 							>
 	</beans:bean>
-	
+	<beans:bean id="fileDao" class="com.bitcamp.firstSpring.dao.FileUploadDao"/>
+	<beans:bean id="fileService" class="com.bitcamp.firstSpring.FileUploadService"/>
 	
 	
 	
@@ -41,7 +42,5 @@
 				@Repository	: DAO
 	 -->
 	<context:component-scan base-package="com.bitcamp.firstSpring" />
-	
-	
 	
 </beans:beans>
