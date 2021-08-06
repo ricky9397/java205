@@ -15,4 +15,6 @@ public class IndexController {
 		System.out.println("/ 진입");
 		return "redirect:/index";
 	}
+	
+	
 }
