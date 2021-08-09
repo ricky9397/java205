@@ -27,6 +27,15 @@
 	
 	<context:component-scan base-package="com.bitcamp.op" />
 	
+	<!-- 로그인 상태를 확인하는 interceptor 등록 -->
+	<!-- <interceptors>
+		<interceptor>
+			<mapping path="/board/**"/>
+			<beans:bean class="com.bitcamp.op.interceptor.AuthCheckInterceptor"/>
+		</interceptor>
+	</interceptors> -->
+	
+	
 	
 	
 </beans:beans>

@@ -20,38 +20,37 @@
 
 
 	<div id="content">
-		<h2>Login</h2>
+		<h2>회원가입</h2>
 		<hr>
-
-		<form method="post">
-
+		<form method="post" enctype="multipart/form-data"> 
 			<table>
 				<tr>
-					<th>ID</th>
-					<%--=reid--%>
-					<td><input type="text" name="memberid"
-						value="${cookie.reid.value}"></td>
+					<td>아이디</td>
+					<td>
+						<input type="text" name="memberid" id="memberid">
+						<span id="msg" class="display_none"></span>
+					</td>
 				</tr>
 				<tr>
-					<th>PW</th>
+					<td>비밀번호</td>
 					<td><input type="password" name="password"></td>
 				</tr>
 				<tr>
-					<th></th>
-					<%--=checked--%>
-					<td><input type="checkbox" name="reid" value="on"
-						${cookie.reid ne null ? 'checked' : ''}> 아이디 기억하기
-						<input type="text" name="redirectUri" value="${redirectUri ne null ? redirectUri:''}">
-						
-					</td>
-						
+					<td>이름</td>
+					<td><input type="text" name="membername"></td>
 				</tr>
 				<tr>
-					<th></th>
-					<td><input type="submit"></td>
+					<td>사진</td>
+					<td><input type="file" name="photo"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit">
+						<input type="reset" >
+					</td>
 				</tr>
 			</table>
-
 		</form>
 
 
