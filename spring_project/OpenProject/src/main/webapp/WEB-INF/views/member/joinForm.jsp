@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Open Project : 로그인</title>
+<title>Open Project : 회원가입</title>
 
 <%@ include file="/WEB-INF/views/frame/metaheader.jsp"%>
 
@@ -41,12 +41,12 @@
 				</tr>
 				<tr>
 					<td>사진</td>
-					<td><input type="file" name="photo"></td>
+					<td><input type="file" name="memberphoto"></td>
 				</tr>
 				<tr>
 					<td></td>
 					<td>
-						<input type="submit">
+						<input type="submit" value="등록">
 						<input type="reset" >
 					</td>
 				</tr>

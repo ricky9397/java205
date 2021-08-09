@@ -27,9 +27,7 @@ public class JoinService {
 		int result = 0;
 		Connection conn = null;
 		try {
-			System.out.println("조인시작");
 			saveFile(request, report.getPhoto());
-			System.out.println(report.getPhoto());
 			conn = ConnectionProvider.getConnection();
 			result = dao.insertMember(conn, report.getMember());
 		} catch (SQLException e) {
@@ -44,7 +42,9 @@ public class JoinService {
 
 	private void saveFile(HttpServletRequest request, MultipartFile file) throws IllegalStateException, IOException {
 		String saveDir = request.getSession().getServletContext().getRealPath(UPLOAD_URI);
+		System.out.println(saveDir);
 		File newFile = new File(saveDir, file.getOriginalFilename());
+		System.out.println(newFile);
 		file.transferTo(newFile);
 	}
 }
