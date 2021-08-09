@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Open Project : 로그인</title>
+<title>Open Project : 회원가입</title>
 
 <%@ include file="/WEB-INF/views/frame/metaheader.jsp"%>
 
@@ -22,7 +22,8 @@
 	<div id="content">
 		<h2>회원가입</h2>
 		<hr>
-		<form method="post" enctype="multipart/form-data"> 
+
+		<form method="post">
 			<table>
 				<tr>
 					<td>아이디</td>
@@ -41,12 +42,12 @@
 				</tr>
 				<tr>
 					<td>사진</td>
-					<td><input type="file" name="photo"></td>
+					<td><input type="file" name="memberphoto"></td>
 				</tr>
 				<tr>
 					<td></td>
 					<td>
-						<input type="submit">
+						<input type="submit" value="회원가입">
 						<input type="reset" >
 					</td>
 				</tr>

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav>
 	<ul>
-		<li><a href="<c:url value='/member/join'/>">회원가입</a></li>
+		<li><a href="<c:url value='/member/regform'/>">회원가입</a></li>
 		<li><a href="<c:url value='/member/login'/>">로그인</a></li>
 		<li><a>로그아웃</a></li>
 		<li><a>회원 리스트</a></li>

@@ -13,8 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.bitcamp.op.jdbc.ConnectionProvider;
 import com.bitcamp.op.member.dao.MemberDao;
-import com.bitcamp.op.member.domain.Member;
-import com.bitcamp.op.member.domain.Report;
+import com.bitcamp.op.member.domain.JoinRequest;
 
 @Service
 public class JoinService {
@@ -24,13 +23,13 @@ public class JoinService {
 	@Autowired
 	MemberDao dao;
 
-	public int join(Report report, HttpServletRequest request) {
+	public int joinMember(JoinRequest requestMember, HttpServletRequest request) {
 		int result = 0;
 		Connection conn = null;
 		try {
-			saveFile(request, report.getPhoto());
 			conn = ConnectionProvider.getConnection();
-			result = dao.insertMember(conn, report.getMember());
+			saveFile(request, requestMember.getMemberphoto());
+			result = dao.insertMember(conn, requestMember.getMember());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (IllegalStateException e) {

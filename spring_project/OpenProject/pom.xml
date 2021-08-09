@@ -117,9 +117,12 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- 1. 파일 업로드 2. 데이터베이스( 드라이버) -->
-
+		
+		<!-- 
+						1. 파일 업로드
+						2. 데이터베이스 ( 드라이버 )
+		
+		 -->
 		<!-- commons-fileupload -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -134,7 +137,7 @@
 			<version>2.7</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<!-- mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -142,7 +145,6 @@
 		</dependency>
 		
 		
-
 	</dependencies>
 	<build>
 		<plugins>
