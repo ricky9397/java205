@@ -13,7 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.bitcamp.op.jdbc.ConnectionProvider;
 import com.bitcamp.op.member.dao.MemberDao;
-import com.bitcamp.op.member.domain.Member;
 import com.bitcamp.op.member.domain.Report;
 
 @Service
@@ -28,7 +27,9 @@ public class JoinService {
 		int result = 0;
 		Connection conn = null;
 		try {
+			System.out.println("조인시작");
 			saveFile(request, report.getPhoto());
+			System.out.println(report.getPhoto());
 			conn = ConnectionProvider.getConnection();
 			result = dao.insertMember(conn, report.getMember());
 		} catch (SQLException e) {

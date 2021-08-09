@@ -26,12 +26,11 @@ public class JoinController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String login(
 			Report report,
-			Model model,
 			HttpServletRequest request
 			) {
-
-		joinService.join(report, request);
 		
+		System.out.println(report);
+		joinService.join(report, request);
 		return "member/join";
 	}
 

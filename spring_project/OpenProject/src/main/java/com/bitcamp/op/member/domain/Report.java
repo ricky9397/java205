@@ -41,7 +41,10 @@ public class Report {
 	public void setPhoto(MultipartFile photo) {
 		this.photo = photo;
 	}
-	
+	@Override
+	public String toString() {
+		return "Report [id=" + id + ", pw=" + pw + ", name=" + name + ", photo=" + photo + "]";
+	}
 	public Member getMember() {
 		return new Member(this.id, this.pw, this.name, this.photo.getOriginalFilename());
 	}
