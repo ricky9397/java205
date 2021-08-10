@@ -30,24 +30,10 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
-	<!-- encoding filter 등록 -->
-	<filter>
-		<filter-name>encodingFilter</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>utf-8</param-value>
-		</init-param>
-	</filter>
-	
-	<filter-mapping>
-		<filter-name>encodingFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	
 	<!-- 데이터 베이스 드라이버 로더 -->
+	
 	<servlet>
-		<servlet-name>DriverLoader</servlet-name>	
+		<servlet-name>DriverLoader</servlet-name>
 		<servlet-class>com.bitcamp.op.jdbc.DriverLoader</servlet-class>
 		<init-param>
 			<param-name>driver</param-name>
@@ -58,4 +44,14 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 </web-app>
