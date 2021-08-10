@@ -24,37 +24,29 @@
 		<h2>회원가입</h2>
 		<hr>
 
-		<form method="post" enctype="multipart/form-data">
+		<%-- ${memberRegRequest} --%>
+		${regRequest}
 
 			<table>
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="memberid" id="memberid">
-						<span id="msg" class="display_none"></span> 
-						<img id="loadingimg" class="display_none" alt="loading"
-						src="<c:url value="/image/loading.gif"/>">
+					<td>
 					</td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
-					<td><input type="password" name="password"></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>이름</td>
-					<td><input type="text" name="membername"></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>사진</td>
-					<td><input type="file" name="photo"></td>
-				</tr>
-				<tr>
 					<td></td>
-					<td><input type="submit"> <input type="reset">
-					</td>
-				</tr>
+				</tr>				
 			</table>
 
-		</form>
 
 
 

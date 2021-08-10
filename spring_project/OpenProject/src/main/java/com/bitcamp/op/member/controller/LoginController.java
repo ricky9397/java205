@@ -1,5 +1,6 @@
 package com.bitcamp.op.member.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -19,18 +20,16 @@ public class LoginController {
 	
 	@Autowired
 	private LoginService loginService;
-	
-	
+
 	@RequestMapping(method = RequestMethod.GET)
 	public String loginForm(
-			@RequestHeader(value = "referer", required = false) String redirectUri,
+			@RequestHeader(value="referer", required = false) String rediectUri,
 			Model model
 			) {
 		
-		model.addAttribute("redirectUri", redirectUri);
+		model.addAttribute("redirectUri", rediectUri);
 		return "member/loginForm";
 	}
-	
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public String login(
@@ -40,19 +39,32 @@ public class LoginController {
 			@RequestParam(value = "reid", required = false) String reid,
 			HttpSession session,
 			HttpServletResponse response,
+			HttpServletRequest request,
 			Model model
 			) {
 		
 		// 사용자가 입력한 id, pw 서비스에 전달해서 로그인 처리
-		boolean loginChk = loginService.login(memberid, password, reid, session, response);
+		boolean loginChk =  loginService.login(memberid, password, reid, session, response);
 		model.addAttribute("loginChk", loginChk);
 		
 		String view = "member/login";
-		if(redirectUri != null && loginChk) {
-			view = "redirect:" + redirectUri;
+		
+		if(chkURI(redirectUri) && loginChk) {
+			
+			redirectUri = redirectUri.substring(request.getContextPath().length());
+			view = "redirect:"+redirectUri;
 		}
 		
 		return view;
 	}
+	
+	private boolean chkURI(String uri) {
+		boolean chk = true;
+		if(!uri.startsWith("/op")) {
+			chk = false;
+		}
+		return chk;
+	}
+	
 	
 }

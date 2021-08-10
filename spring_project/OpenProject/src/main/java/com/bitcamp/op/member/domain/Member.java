@@ -12,13 +12,6 @@ public class Member {
 	private String memberphoto;
 	private Timestamp regdate;
 
-	public Member(String memberid, String password, String username, String memberphoto) {
-		this.memberid = memberid;
-		this.password = password;
-		this.membername = username;
-		this.memberphoto = memberphoto;
-	}
-	
 	public Member(int idx, String memberid, String password, String username, String memberphoto, Timestamp regdate) {
 		this.idx = idx;
 		this.memberid = memberid;
@@ -83,6 +76,8 @@ public class Member {
 	public Date getDate() {
 		return new Date(getRegdate().getTime());
 	}
+
+	
 
 	@Override
 	public String toString() {

@@ -1,42 +1,30 @@
 package com.bitcamp.op.member.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.bitcamp.op.member.domain.JoinRequest;
-import com.bitcamp.op.member.service.JoinService;
+import com.bitcamp.op.member.domain.MemberRegRequest;
 
 @Controller
-@RequestMapping("member/regform")
+@RequestMapping("/member/memberReg")
 public class MemberRegController {
-	
-	
-	@Autowired
-	private JoinService joinService;
-	
+
 	@RequestMapping(method = RequestMethod.GET)
-	public String getRegForm() {
+	public String regForm() {
 		return "member/regForm";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String join(
-			JoinRequest joinRequest,
-			HttpServletRequest request
+	public String reg(
+			@ModelAttribute("regRequest") MemberRegRequest regRequest
 			) {
 		
-		System.out.println(joinRequest.getMemberid());
-		System.out.println(joinRequest.getPassword());
-		System.out.println(joinRequest.getMembername());
-		System.out.println(joinRequest.getMembername());
-		int result = joinService.joinMember(joinRequest, request);
-		System.out.println(result);
-		return "member/test";
+		System.out.println(regRequest);
+		
+		
+		return "member/reg";
 	}
-	
 	
 }
