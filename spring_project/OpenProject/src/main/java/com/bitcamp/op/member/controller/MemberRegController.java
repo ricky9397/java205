@@ -30,8 +30,16 @@ public class MemberRegController {
 			HttpServletRequest request,
 			Model model
 			) {
-		model.addAttribute("result", regService.memberReg(regRequest, request));
-		return "member/reg";
+		int result = regService.memberReg(regRequest, request);
+		
+		model.addAttribute("result", result);
+		
+		String view = "member/reg"; 
+		if(result == 1) {
+			// 인덱스 페이지로 리다이렉트
+			view = "redirect:/index";
+		}
+		return view;
 	}
 	
 }
