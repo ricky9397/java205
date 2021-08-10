@@ -23,9 +23,18 @@
 	<div id="content">
 		<h2>회원가입</h2>
 		<hr>
-
+		
 		<%-- ${memberRegRequest} --%>
 		${regRequest}
+		
+		
+		<c:if test="${result eq 1}">
+			<h3>회원 가입 성공</h3>
+		</c:if>
+		<c:if test="${result eq 0}">
+			<h3>회원 가입 실패</h3>
+		</c:if>
+
 
 			<table>
 				<tr>
