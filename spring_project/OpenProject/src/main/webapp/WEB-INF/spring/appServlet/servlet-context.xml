@@ -35,11 +35,6 @@
 	
 	
 	
-	
-	
-	
-	
-	
 	<!-- 로그인 상태를 확인하는 interceptor 등록 -->
 	<interceptors>
 		<interceptor>
