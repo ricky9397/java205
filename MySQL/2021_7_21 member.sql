@@ -15,12 +15,12 @@ create table project.member (
 select * from project.memguestbook_messageguestbook_messagebemembermembermemberr;
 select * from project.member where idx=1;
 select * from project.member where memberid='cool' and password='1111';
-
+select * from member;
 -- insert
 INSERT INTO project.member
 (memberid, password, membername)
 VALUES
-('cool', '1111', 'COOL');
+('dddd', '2222', 'COOL');
 
 -- update
 update project.member
