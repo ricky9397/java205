@@ -10,18 +10,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.bitcamp.op.member.service.IdCheckService;
 
 @Controller
-public class IdcheckController {
+public class IdCheckController {
 	
 	@Autowired
 	private IdCheckService checkService;
-	
-	@RequestMapping(value = "/member/idCheck")
+
+	@RequestMapping(value="/member/idCheck", method =  RequestMethod.POST)
 	public String idCheck(
 			@RequestParam("mid") String uid,
 			Model model
 			) {
 		
-		model.addAttribute("result", checkService.idCheck(uid));
+		model.addAttribute("result",checkService.idCheck(uid));
+		
 		return "member/idcheck";
 	}
 	

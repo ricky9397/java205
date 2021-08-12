@@ -9,9 +9,10 @@
 
 <%@ include file="/WEB-INF/views/frame/metaheader.jsp" %>
 
+
 <c:if test="${param.result == 1}">
 	<script>
-		alert('회원가입을 축하합니다.')
+		alert('회원가입을 축하합니다.');
 	</script>
 </c:if>
 

@@ -54,7 +54,7 @@ public class MemberRegRequest {
 				memberid, 
 				password, 
 				membername, 
-				null,
+				null, 
 				null);
 	}
 	

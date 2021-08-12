@@ -15,10 +15,10 @@ import com.bitcamp.op.member.service.MemberRegService;
 @Controller
 @RequestMapping("/member/memberReg")
 public class MemberRegController {
-
+	
 	@Autowired
 	private MemberRegService regService;
-	
+
 	@RequestMapping(method = RequestMethod.GET)
 	public String regForm() {
 		return "member/regForm";
@@ -30,16 +30,22 @@ public class MemberRegController {
 			HttpServletRequest request,
 			Model model
 			) {
+		//System.out.println(regRequest);
+		
 		int result = regService.memberReg(regRequest, request);
 		
 		model.addAttribute("result", result);
 		
-		String view = "member/reg"; 
+		String view = "member/reg" ;
 		if(result == 1) {
-			// 인덱스 페이지로 리다이렉트
+			// 인텍스 페이지로 리다이렉트
 			view = "redirect:/index";
 		}
 		return view;
 	}
 	
 }
+
+
+
+

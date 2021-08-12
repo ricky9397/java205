@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,20 +10,22 @@
 <%@ include file="/WEB-INF/views/frame/metaheader.jsp"%>
 
 <style>
-	.display_none {
-		display: none;
-	}
-	.color_blue {
-		color : blue;
-	}
-	.color_red {
-		color : red;
-	}
-	#loadingimg {
-		height : 20px;
-	}
+.display_none {
+	display: none;
+}
+
+.color_blue {
+	color: blue;
+}
+
+.color_red {
+	color: red;
+}
+
+#loadingimg {
+	height: 20px;
+}
 </style>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
 	
 	$(document).ready(function(){
@@ -38,6 +40,8 @@
 		
 		$('#memberid').focusout(function(){
 			// ajax 비동기 통신 > id를 서버로 보내고 사용 가능 유무의 응답 코드를 받는다 -> 화면에 메시지 출력
+			
+			
 			
 			$.ajax({
 				url : '<c:url value="/member/idCheck"/>',
@@ -94,11 +98,12 @@
 			<table>
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="memberid" id="memberid">
+					<td>
+						<input type="text" name="memberid" id="memberid">
 						<span id="msg" class="display_none"></span> 
-						<img id="loadingimg" class="display_none" alt="loading"
-						src="<c:url value="/image/loading.gif"/>">
-					</td>
+						<img id="loadingimg"
+						class="display_none" alt="loading"
+						src="<c:url value="/images/loading.gif"/>"></td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
@@ -120,6 +125,22 @@
 			</table>
 
 		</form>
+
+
+
+
 	</div>
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
