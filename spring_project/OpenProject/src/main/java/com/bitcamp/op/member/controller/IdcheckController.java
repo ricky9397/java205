@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.bitcamp.op.member.service.IdCheckService;
 
 @Controller
-public class IdCheckController {
+public class IdcheckController {
 	
 	@Autowired
 	private IdCheckService checkService;
