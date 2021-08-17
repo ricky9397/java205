@@ -26,7 +26,7 @@ public interface Dao {
 	// 검색을 통한 회원 리스트
 	List<Member> selectMember(SearchType searchType);
 	
-	// Rest get : idx 값으로 Member 객체를 반환
+	// Rest get : idx 값으로 Member 객체 반환
 	Member selectByIdx(int idx);
 	
 }
