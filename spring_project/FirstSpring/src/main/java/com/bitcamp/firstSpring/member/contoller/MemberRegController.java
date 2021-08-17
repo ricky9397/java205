@@ -4,14 +4,19 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.bitcamp.firstSpring.member.domain.JoinRequest;
+import com.bitcamp.firstSpring.member.domain.MemberRegRequest;
+
+//1. Controller에서 get/post 구분하기
+//2. post 에서 데이터 받는 코드 작성 ( 3가지 방법 )
+//3. view로 데이터 전달
 
 @Controller
-@RequestMapping("/member/regform")
+@RequestMapping("/member/memberReg")
 public class MemberRegController {
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -19,45 +24,29 @@ public class MemberRegController {
 		return "member/memberRegForm";
 	}
 	
-	
-//	@RequestMapping("/member/regform")
 	@RequestMapping(method = RequestMethod.POST)
-	public String join(
-			@RequestParam("memberid") String id,
-			@RequestParam("password") String pw,
-			@RequestParam("membername") String name,
-			@RequestParam("photo") String photo,
+	public String memberReg(
 			
+			@RequestParam(value = "memberid", required = false) String memberid,
+			@RequestParam(value = "password", required = false) String password,
+			@RequestParam(value = "membername", required = false) String membername,
 			HttpServletRequest request,
-			
-			JoinRequest joinRequest,
-			
+			@ModelAttribute("regRequest") MemberRegRequest regRequest,
 			Model model
+			
 			) {
 		
-		// 단일 request
-		model.addAttribute("id", id);
-		model.addAttribute("pw", pw);
-		model.addAttribute("name", name);
-		model.addAttribute("photo", photo);
+		model.addAttribute("memberid", memberid);
+		model.addAttribute("password", password);
+		model.addAttribute("membername", membername);
 		
-		// 이너테이션 사용안하고 하나씩 값받을때
-		String uid = request.getParameter("memberid");
-		String upw = request.getParameter("password");
-		String uname = request.getParameter("membername");
-		String uphoto = request.getParameter("photo");
+		model.addAttribute("memberName", request.getParameter("membername"));
+		model.addAttribute("memberPassword", request.getParameter("password"));
+		model.addAttribute("memberId", request.getParameter("memberid"));
 		
-		model.addAttribute("uid", uid);
-		model.addAttribute("upw", upw);
-		model.addAttribute("uname", uname);
-		model.addAttribute("uphoto", uphoto);
+		// 회원가입을 위한 Service 객체를 이용한 핵심 처리....
 		
-		
-		// 객체 사용 한방에~
-		System.out.println(joinRequest);
-		
-		
-		return "member/memberList";
+		return "member/memberReg";
 	}
 	
 }

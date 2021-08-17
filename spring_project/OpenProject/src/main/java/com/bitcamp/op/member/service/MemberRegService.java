@@ -2,6 +2,7 @@ package com.bitcamp.op.member.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.bitcamp.op.jdbc.ConnectionProvider;
+import com.bitcamp.op.jdbc.JdbcUtil;
 import com.bitcamp.op.member.dao.Dao;
+import com.bitcamp.op.member.dao.JdbcTemplateMemberDao;
+import com.bitcamp.op.member.dao.MemberDao;
+import com.bitcamp.op.member.dao.mybatisMemberDao;
 import com.bitcamp.op.member.domain.Member;
 import com.bitcamp.op.member.domain.MemberRegRequest;
 
@@ -26,13 +32,13 @@ public class MemberRegService {
 	//@Autowired
 	//private JdbcTemplateMemberDao dao;
 	
-//	@Autowired
-//	private mybatisMemberDao dao;
+	//@Autowired
+	//private mybatisMemberDao dao;
+	
+	private Dao dao;
 	
 	@Autowired
 	private SqlSessionTemplate template;
-	
-	private Dao dao;
 
 	public int memberReg(MemberRegRequest regRequest, HttpServletRequest request) {
 
@@ -76,7 +82,6 @@ public class MemberRegService {
 			// conn = ConnectionProvider.getConnection();
 			
 			dao = template.getMapper(Dao.class);
-			
 
 			resultCnt = dao.insertMember(member);
 
@@ -107,7 +112,7 @@ public class MemberRegService {
 
 		// 업로드 파일의 contentType
 		String contentType = file.getContentType();
-		if (!(contentType.equals("image/jpeg") || contentType.equals("image/png") || contentType.equals("image/gif"))) {
+		if (!(contentType.equals("image/jpeg") ||contentType.equals("image/jpg") || contentType.equals("image/png") || contentType.equals("image/gif"))) {
 			throw new Exception("허용하지 않는 파일 타입 : " + contentType);
 		}
 

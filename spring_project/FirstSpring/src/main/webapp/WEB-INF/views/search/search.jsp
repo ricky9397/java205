@@ -8,21 +8,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+
 	<h1>검색</h1>
 	<h3>
 		최근 관심 검색어 : 
-		<c:forEach items="${queryList}" var="query">
-			${query}
-		</c:forEach>
 		
+		<c:forEach items="${queryList}" var="query">
+		${query}
+		</c:forEach>
 	</h3>
 	
 	<select>
 		<c:forEach items="${searchTypeList}" var="searchType">
-		<option value="${searchType.value}"> ${searchType.label}</option>
+		<option value="${searchType.value}"> ${searchType.label} </option>
 		</c:forEach>
 	</select>
 	<input> <input type="submit">
+	
+	
+
 </body>
 </html>

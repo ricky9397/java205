@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<h1> NullPointerException 예외가 발생했습니다.</h1>
+	
 	
 </body>
 </html>

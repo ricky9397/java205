@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1>  ${userId} 님의 Mypage 입니다.</h1>
+	<h1>simple.jsp</h1>
 
 </body>
 </html>

@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<h1>이전 페이지의 주소: ${re}</h1>
+
+	<h1>이전 페이지의 주소 : ${re}</h1> 
 	<input type="hidden" name="redirecturl" value="${re}">
-	
+
 </body>
 </html>

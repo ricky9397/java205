@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ViewController {
-	
+
 	@RequestMapping("/view/view1")
 	public void getPage1() {
 		
@@ -67,8 +67,13 @@ public class ViewController {
 	
 	@RequestMapping("/view/view3")
 	public Map getPage3() {
+		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("name", "COOL");
-		return map;
+		
+		return map;		
 	}
+	
+	
+	
 }

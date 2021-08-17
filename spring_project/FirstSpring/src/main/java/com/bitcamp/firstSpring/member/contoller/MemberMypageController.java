@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MemberMypageController {
 	
-	
 	@RequestMapping("/member/mypage/{id}")
 	public String mypage(
+			
 			@PathVariable("id") String uid,
 			Model model
+			
 			) {
 		
 		System.out.println(uid);
@@ -21,5 +22,5 @@ public class MemberMypageController {
 		
 		return "member/mypage";
 	}
-	
+
 }

@@ -10,6 +10,7 @@ public class HeaderController {
 
 	@RequestMapping("/header/header")
 	public String getHeader(
+			
 			@RequestHeader("referer") String reString,
 			Model model
 			
@@ -18,6 +19,10 @@ public class HeaderController {
 		System.out.println(reString);
 		model.addAttribute("re", reString);
 		
-		return "redirect:" + reString;
+		//return "header/headerInfo";
+		return "redirect:"+reString;
+		//return "redirect:/member/login";
+		
 	}
+	
 }

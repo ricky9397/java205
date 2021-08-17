@@ -8,7 +8,23 @@
 </head>
 <body>
 
-	<h1>  ${userId} 님의 Mypage 입니다.</h1>
+	<h1>form.jsp</h1>
+	
+	<form method="post">
+	
+		이름 : <input type="text" name="name"><br>
+		나이 : <input type="text" name="age"> <br>
+		<input type="submit">
+	
+	
+	</form>
+	
+	
+	
+	
+	
+	
+	
 
 </body>
 </html>

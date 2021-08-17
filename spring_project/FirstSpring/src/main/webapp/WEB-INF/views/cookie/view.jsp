@@ -8,10 +8,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<h1>쿠키가 정보를 확인합니다..</h1>
-	<h3> username = ${userName }</h3>
-	<a href="<c:url value="/"/>">홈으로가기</a> <br>
+						<!-- http://localhost:8080/mvc/cookie/make -->
+						
+	<h1>쿠키정보를 확인합니다.</h1>
 	
+	<h3>username = ${userName}</h3>
+	
+	
+	<a href="<c:url value='/'/>">홈으로 가기</a> <br>
+		
+
 </body>
 </html>
