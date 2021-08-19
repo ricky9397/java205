@@ -57,6 +57,7 @@ public class MemberRegService {
 
 				// 새로운 저장 폴더 : File
 				File newDir = new File(request.getSession().getServletContext().getRealPath(UPLOAD_URI));
+				System.out.println(newDir);
 
 				// 폴더가 존재하지 않으면 폴더 생성
 				if (!newDir.exists()) {
