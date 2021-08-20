@@ -4,18 +4,19 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Member {
 
 	private int idx;
 	private String memberid;
-	@JsonIgnore // json 반환 뺼떄
+	@JsonIgnore
 	private String password;
 	private String membername;
 	private String memberphoto;
-	// @JsonFormat(shape = Shape.STRING) // json형태 날짜
-	@JsonFormat(pattern = "yyyy.MM.dd. HH:mm:ss") // 패턴형식 json 날짜[
+	//@JsonFormat(shape = Shape.STRING)
+	@JsonFormat(pattern = "yyyy.MM.dd. HH:mm")
 	private Timestamp regdate;
 
 	public Member(int idx, String memberid, String password, String username, String memberphoto, Timestamp regdate) {
@@ -64,7 +65,6 @@ public class Member {
 
 	public Timestamp getRegdate() {
 		return new Timestamp(regdate.getTime()-(1000*60*60*9));
-		//return regdate;
 	}
 
 	public void setRegdate(Timestamp regdate) {

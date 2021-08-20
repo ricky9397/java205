@@ -161,6 +161,9 @@
 					cache : false,
 					success : function(data) {
 						console.log(data);
+						if(data==1){
+							alert('회원가입이 되었습니다.');
+						}
 					}
 				});
 
@@ -191,6 +194,9 @@
 					contentType : 'application/json',
 					success : function(data) {
 						console.log(data);
+						if(data==1){
+							alert('회원가입이 되었습니다.');
+						}
 					}
 				});
 
