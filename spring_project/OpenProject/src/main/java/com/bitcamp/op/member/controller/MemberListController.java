@@ -22,7 +22,7 @@ public class MemberListController {
 			SearchType searchType,
 			Model model
 			) {
-		
+			
 		System.out.println(searchType);
 		
 		List<Member> list = null;
