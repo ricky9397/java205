@@ -1,24 +1,7 @@
-create table project.chatroom(
-	messageidx int auto_increment,
-    chatidx int,
-    chatcontent varchar(2048),
-    chatdate timestamp default current_timestamp,
-    cridx int,
-    memidx int,
-    constraint chatroom_messageidx_pk primary key(messageidx),
-    FOREIGN KEY (`CRIDX`) REFERENCES `CARRY` (`CRIDX`)
-);
 
 insert into project.chatroom
 (chatidx, chatcontent, cridx, memidx)
  values(1, '안녕하세요 황철순캐리입니다..', 5, 1);
-
-
-
-create table project.chatlist(
-	chatidx int auto_increment,
-    constraint chatlist_chatidx_pk primary key(chatidx)
-);
 
 insert into project.chatlist values(2);
 
@@ -91,17 +74,38 @@ CREATE TABLE `MEMBER` (
   PRIMARY KEY (`MEMIDX`)
 );
 insert into member(mememail, mempw, memname, memnick) values();
+select * from member where MEMEMAIL='test@test.com' and mempw='1234';
 select * from member;
-
 
 CREATE TABLE `CARRY` (
   `CRIDX` int NOT NULL AUTO_INCREMENT COMMENT '캐리IDX',
-  `CRID` int NOT NULL COMMENT '캐리아이디',
+  `CRID` varchar(30) NOT NULL COMMENT '캐리아이디',
   `CRPW` varchar(30) NOT NULL COMMENT '비밀번호',
   `CRNAME` varchar(50) NOT NULL COMMENT '캐리실명',
   `CRNICK` varchar(50) NOT NULL COMMENT '캐리닉네임',
   `PLACENAME` varchar(255) DEFAULT NULL COMMENT '소속플레이스',
   PRIMARY KEY (`CRIDX`)
-)
+);
+select * from carry;
 
-insert into carry(crid, crpw, crname, crnick, placename) values();
+CREATE TABLE `CHATLIST` (
+  `CHATIDX` int NOT NULL COMMENT '채팅방번호',
+  PRIMARY KEY (`CHATIDX`)
+) ;
+
+CREATE TABLE `CHATROOM` (
+  `MESSAGEIDX` int NOT NULL AUTO_INCREMENT COMMENT '메세지 번호',
+  `CHATIDX` int NOT NULL COMMENT '채팅방번호',
+  `CHATCONTENT` mediumtext NOT NULL COMMENT '대화내용',
+  `CHATDATE` timestamp NOT NULL COMMENT '대화시간',
+  `CRIDX` int NOT NULL COMMENT '캐리번호',
+  `MEMIDX` int NOT NULL COMMENT '회원번호',
+  PRIMARY KEY (`MESSAGEIDX`),
+  KEY `FK_CARRY_TO_CHATROOM` (`CRIDX`),
+  KEY `FK_MEMBER_TO_CHATROOM` (`MEMIDX`),
+  KEY `FK_CHATLIST_TO_CHATROOM` (`CHATIDX`),
+  CONSTRAINT `FK_CARRY_TO_CHATROOM` FOREIGN KEY (`CRIDX`) REFERENCES `CARRY` (`CRIDX`),
+  CONSTRAINT `FK_CHATLIST_TO_CHATROOM` FOREIGN KEY (`CHATIDX`) REFERENCES `CHATLIST` (`CHATIDX`),
+  CONSTRAINT `FK_MEMBER_TO_CHATROOM` FOREIGN KEY (`MEMIDX`) REFERENCES `MEMBER` (`MEMIDX`)
+);
+
