@@ -87,7 +87,7 @@ CREATE TABLE `CARRY` (
   PRIMARY KEY (`CRIDX`)
 );
 select * from carry;
-
+select * from carry where crid='test' and crpw="1111";
 CREATE TABLE `CHATLIST` (
   `CHATIDX` int NOT NULL COMMENT '채팅방번호',
   PRIMARY KEY (`CHATIDX`)
