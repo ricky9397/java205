@@ -11,7 +11,7 @@ create table project.chatroom(
 
 insert into project.chatroom
 (chatidx, chatcontent, cridx, memidx)
- values(2, '반갑습니다.', 6, 2);
+ values(1, '안녕하세요 황철순캐리입니다..', 5, 1);
 
 
 
@@ -21,8 +21,6 @@ create table project.chatlist(
 );
 
 insert into project.chatlist values(2);
-
-
 
 select * from chatroom;
 select * from chatlist;
@@ -51,9 +49,22 @@ select c.crnick, c.centername, m.chatcontent, m.chatdate
 from project.carry c, project.chatroom m, project.chatlist l
 where c.cridx=m.cridx and m.chatidx=l.chatidx;	
 
+select *
+from project.carry c, project.chatroom m, project.chatlist l
+where c.cridx=m.cridx and m.chatidx=l.chatidx ;
+
+select * from chatlist where memidx=1;
+
+select *
+from project.chatroom m, project.chatlist l
+where m.chatidx=l.chatidx;
+
 select m.chatcontent, m.chatdate
 from project.chatroom m, project.chatlist l
 where l.chatidx=1 and m.chatidx=l.chatidx;
+
+select * from chatroom where chatidx=2;
+
 
 select chatidx from chatlist;
 
@@ -67,6 +78,30 @@ create table project.center(
 select * from project.center;
 insert into project.center (centername, centeraddress) values ('짐캐리휘트니스','서울서대문구마포구');
 
--- select c.rnick, c.centername, t.centeraddress
--- from project.carry c, project.center t
--- where c.
+
+
+
+
+CREATE TABLE `MEMBER` (
+  `MEMIDX` int NOT NULL AUTO_INCREMENT COMMENT '회원번호',
+  `MEMEMAIL` varchar(40) NOT NULL COMMENT '이메일',
+  `MEMPW` varchar(30) NOT NULL COMMENT '비밀번호',
+  `MEMNAME` varchar(50) NOT NULL COMMENT '이름',
+  `MEMNICK` varchar(50) NOT NULL COMMENT '닉네임',
+  PRIMARY KEY (`MEMIDX`)
+);
+insert into member(mememail, mempw, memname, memnick) values();
+select * from member;
+
+
+CREATE TABLE `CARRY` (
+  `CRIDX` int NOT NULL AUTO_INCREMENT COMMENT '캐리IDX',
+  `CRID` int NOT NULL COMMENT '캐리아이디',
+  `CRPW` varchar(30) NOT NULL COMMENT '비밀번호',
+  `CRNAME` varchar(50) NOT NULL COMMENT '캐리실명',
+  `CRNICK` varchar(50) NOT NULL COMMENT '캐리닉네임',
+  `PLACENAME` varchar(255) DEFAULT NULL COMMENT '소속플레이스',
+  PRIMARY KEY (`CRIDX`)
+)
+
+insert into carry(crid, crpw, crname, crnick, placename) values();
