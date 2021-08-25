@@ -73,13 +73,9 @@ CREATE TABLE `MEMBER` (
   `MEMNICK` varchar(50) NOT NULL COMMENT '닉네임',
   PRIMARY KEY (`MEMIDX`)
 );
-insert into member(mememail, mempw, memname, memnick) values();
+insert into member(mememail, mempw, memname, memnick) values('test@test.com', 1111, '김자바', '황철순');
 select * from member where MEMEMAIL='test@test.com' and mempw='1234';
-select memidx from member where MEMEMAIL='test@test.com';
-
-
-
-
+select * from member;
 
 CREATE TABLE `CARRY` (
   `CRIDX` int NOT NULL AUTO_INCREMENT COMMENT '캐리IDX',
@@ -90,26 +86,13 @@ CREATE TABLE `CARRY` (
   `PLACENAME` varchar(255) DEFAULT NULL COMMENT '소속플레이스',
   PRIMARY KEY (`CRIDX`)
 );
+insert into carry(crid, crpw, crname, crnick, placename) values('test', '1111', '김동길', '김종국', '라이프휘트니스짐');
 select * from carry;
 select * from carry where crid='test' and crpw="1111";
-
 CREATE TABLE `CHATLIST` (
-  `CHATIDX` int NOT NULL auto_increment COMMENT '채팅방번호',
-  `CRIDX` int NOT NULL COMMENT '캐리번호',
-  `MEMIDX` int NOT NULL COMMENT '회원번호',
-  PRIMARY KEY (`CHATIDX`),
-  KEY `FK_CARRY_TO_CHATLIST` (`CRIDX`),
-  KEY `FK_MEMBER_TO_CHATLIST` (`MEMIDX`),
-  CONSTRAINT `FK_CARRY_TO_CHATLIST` FOREIGN KEY (`CRIDX`) REFERENCES `CARRY` (`CRIDX`),
-  CONSTRAINT `FK_MEMBER_TO_CHATLIST` FOREIGN KEY (`MEMIDX`) REFERENCES `MEMBER` (`MEMIDX`)
-);
-select * from chatlist;
-delete from chatlist where chatidx=1;
-insert into chatlist(crnick,mememail) value('dd','dd');
-select * from chatlist where crnick='황철순';
-
-select (select * from carry) 
-from chatlist;
+  `CHATIDX` int NOT NULL COMMENT '채팅방번호',
+  PRIMARY KEY (`CHATIDX`)
+) ;
 
 CREATE TABLE `CHATROOM` (
   `MESSAGEIDX` int NOT NULL AUTO_INCREMENT COMMENT '메세지 번호',
@@ -118,8 +101,6 @@ CREATE TABLE `CHATROOM` (
   `CHATDATE` timestamp NOT NULL COMMENT '대화시간',
   `CRIDX` int NOT NULL COMMENT '캐리번호',
   `MEMIDX` int NOT NULL COMMENT '회원번호',
-  `CHATPOSITION` INT DEFAULT 0 COMMENT '0=방에서 안나감, 1=방에서나감',
-  `CHATREAD` INT DEFAULT 0 COMMENT '0=읽지않음, 1=읽음',
   PRIMARY KEY (`MESSAGEIDX`),
   KEY `FK_CARRY_TO_CHATROOM` (`CRIDX`),
   KEY `FK_MEMBER_TO_CHATROOM` (`MEMIDX`),
@@ -128,6 +109,4 @@ CREATE TABLE `CHATROOM` (
   CONSTRAINT `FK_CHATLIST_TO_CHATROOM` FOREIGN KEY (`CHATIDX`) REFERENCES `CHATLIST` (`CHATIDX`),
   CONSTRAINT `FK_MEMBER_TO_CHATROOM` FOREIGN KEY (`MEMIDX`) REFERENCES `MEMBER` (`MEMIDX`)
 );
-insert into chatroom (chatidx, chatcontent, cridx, memidx) values(1, '안녕하세요', 1, 1);
-
 
