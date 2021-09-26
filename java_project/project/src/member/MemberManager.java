@@ -1,17 +1,13 @@
 package member;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 import admin.DBconn;
 import orders.OrderDao;
 import orders.OrderManager;
 import product.ProductDao;
-import run.StartMenu;
 
 public class MemberManager {
 	public static int idx;
